@@ -16,7 +16,7 @@ const translations = {
       cvLink: '#'
     },
     sections: {
-      certifications: 'My Certifications',
+      certifications: 'Skills overview',
       workSchool: 'Work & Education',
       projects: 'Personal Projects',
       viewAll: 'View All',
@@ -39,11 +39,11 @@ const translations = {
       cvLink: '#'
     },
     sections: {
-      certifications: 'Mes Certifications',
+      certifications: 'Aperçu des compétences',
       workSchool: 'Expérience & Formation',
-      projects: 'Projets Personnels',
-      viewAll: 'Voir Tout',
-      viewDetails: 'Voir les Détails'
+      projects: 'Projets personnels',
+      viewAll: 'Tout voir',
+      viewDetails: 'Voir les détails'
     }
   },
   de: {
@@ -62,11 +62,11 @@ const translations = {
       cvLink: '#'
     },
     sections: {
-      certifications: 'Meine Zertifizierungen',
+      certifications: 'Kompetenzübersicht',
       workSchool: 'Berufserfahrung & Ausbildung',
       projects: 'Persönliche Projekte',
-      viewAll: 'Alle Anzeigen',
-      viewDetails: 'Details Anzeigen'
+      viewAll: 'Alle anzeigen',
+      viewDetails: 'Details anzeigen'
     }
   },
   lb: {
@@ -85,10 +85,10 @@ const translations = {
       cvLink: '#'
     },
     sections: {
-      certifications: 'Meng Zertifizéierungen',
-      workSchool: 'Berufferfaarung & Ausbildung',
+      certifications: 'Iwwersiicht vun de Kompetenzen',
+      workSchool: 'Berufferfarung & Ausbildung',
       projects: 'Perséinlech Projeten',
-      viewAll: 'All Gesinn',
+      viewAll: 'All gesinn',
       viewDetails: 'Detailer kucken'
     }
   }

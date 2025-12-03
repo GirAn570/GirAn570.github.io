@@ -1,0 +1,43 @@
+/* Backup of style.css on 2025-12-03 */
+
+/* Main Styles */
+:root {
+  --primary-color: #2563eb;         /* blue-600 */
+  --secondary-color: #22c55e;       /* green-500 accent */
+  --accent-color: #38bdf8;          /* cyan-400 for highlights */
+  --text-color: #0f172a;            /* slate-900 */
+  --muted-text-color: #64748b;      /* slate-500 */
+  --bg-color: #0b1120;              /* navy/dark background for tech feel */
+  --bg-elevated: #020617;           /* slightly darker panels */
+  --card-bg: #020617;
+  --border-color: #1e293b;
+  --card-shadow: 0 24px 80px rgba(15, 23, 42, 0.85);
+  --transition: all 0.25s ease;
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --nav-height: 72px;
+}
+
+/* Dark mode colors will be in dark-mode.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #e5e7eb;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.14), transparent 55%),
+    radial-gradient(circle at top right, rgba(37, 99, 235, 0.22), transparent 55%),
+    #020617;
+  min-height: 100vh;
+  transition: var(--transition);
+}
+
+...
