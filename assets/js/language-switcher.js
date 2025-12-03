@@ -9,10 +9,10 @@ const translations = {
       contact: 'Contact'
     },
     hero: {
-      title: 'Hi, I\'m [Your Name]',
-      subtitle: 'Cloud Computing Professional',
-      description: 'I\'m passionate about cloud technologies and building scalable solutions. With a background in [your background], I specialize in [your skills].',
-      cvButton: 'Download CV',
+      title: 'Hi, I\'m Andrea GIROTTO',
+      subtitle: 'BTS Cloud Computing student',
+      description: 'I am a BTS Cloud Computing student at Lycée Guillaume Kroll in Luxembourg with experience in Office 365, Linux and Windows Server 2022, Power Automate, Python, Regex and project management.',
+      cvButton: 'Download CV (EN)',
       cvLink: '#'
     },
     sections: {
@@ -32,10 +32,10 @@ const translations = {
       contact: 'Contact'
     },
     hero: {
-      title: 'Bonjour, je suis [Votre Nom]',
-      subtitle: 'Professionnel du Cloud Computing',
-      description: 'Passionné par les technologies cloud et la création de solutions évolutives. Avec une formation en [votre formation], je me spécialise dans [vos compétences].',
-      cvButton: 'Télécharger CV',
+      title: 'Bonjour, je suis Andrea GIROTTO',
+      subtitle: 'Étudiant en BTS Cloud Computing',
+      description: 'Je suis étudiant en BTS Cloud Computing au Lycée Guillaume Kroll au Luxembourg avec de l\'expérience sur Office 365, Linux et Windows Server 2022, Power Automate, Python, Regex et la gestion de projet.',
+      cvButton: 'Télécharger le CV (EN)',
       cvLink: '#'
     },
     sections: {
@@ -55,10 +55,10 @@ const translations = {
       contact: 'Kontakt'
     },
     hero: {
-      title: 'Hallo, ich bin [Ihr Name]',
-      subtitle: 'Cloud Computing Experte',
-      description: 'Ich bin begeistert von Cloud-Technologien und dem Aufbau skalierbarer Lösungen. Mit einem Hintergrund in [Ihrem Hintergrund] spezialisiere ich mich auf [Ihre Fähigkeiten].',
-      cvButton: 'Lebenslauf Herunterladen',
+      title: 'Hallo, ich bin Andrea GIROTTO',
+      subtitle: 'BTS-Student für Cloud Computing',
+      description: 'Ich studiere BTS Cloud Computing am Lycée Guillaume Kroll in Luxemburg und habe Erfahrung mit Office 365, Linux und Windows Server 2022, Power Automate, Python, Regex und Projektmanagement.',
+      cvButton: 'Lebenslauf (EN) herunterladen',
       cvLink: '#'
     },
     sections: {
@@ -78,10 +78,10 @@ const translations = {
       contact: 'Kontakt'
     },
     hero: {
-      title: 'Moien, ech sinn [Äre Numm]',
-      subtitle: 'Cloud Computing Expert',
-      description: 'Ech sinn begeeschtert vu Cloud-Technologien an dem Opbau vu skaléierbaren Léisungen. Mat engem Hannergrond an [Äre Hannergrond] spezialiséiere ech mech op [Är Fäegkeeten].',
-      cvButton: 'CV eroflueden',
+      title: 'Moien, ech sinn Andrea GIROTTO',
+      subtitle: 'BTS Cloud Computing Student',
+      description: 'Ech studéiere BTS Cloud Computing am Lycée Guillaume Kroll zu Lëtzebuerg an hunn Erfarung mat Office 365, Linux an Windows Server 2022, Power Automate, Python, Regex an Projetmanagement.',
+      cvButton: 'CV (EN) eroflueden',
       cvLink: '#'
     },
     sections: {

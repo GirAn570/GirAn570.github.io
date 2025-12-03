@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional portfolio showcasing my work in Cloud Computing">
+  <title>Andrea GIROTTO | Cloud Computing Student</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css" id="dark-mode-style">
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">Portfolio</a>
+        
+        <div class="nav-links">
+          <a href="#home" class="active" data-i18n-nav="home">Home</a>
+          <a href="pages/certifications/" data-i18n-nav="certifications">Certifications</a>
+          <a href="pages/work-school/" data-i18n-nav="workSchool">Work/School</a>
+          <a href="pages/projects/" data-i18n-nav="projects">Projects</a>
+          <a href="#contact" data-i18n-nav="contact">Contact</a>
+          
+          <!-- Language Switcher -->
+          <div class="language-switcher">
+            <button data-lang="en" title="English">EN</button>
+            <button data-lang="fr" title="Français">FR</button>
+            <button data-lang="de" title="Deutsch">DE</button>
+            <button data-lang="lb" title="Lëtzebuergesch">LB</button>
+          </div>
+          
+          <!-- Dark Mode Toggle -->
+          <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-image-container">
+          <img src="assets/images/profile.jpg" alt="Profile Picture" class="hero-image">
+        </div>
+        <div class="hero-content">
+          <h1 data-i18n="hero.title">Hi, I'm Andrea GIROTTO</h1>
+          <h2 data-i18n="hero.subtitle">Cloud Computing Student</h2>
+          <p data-i18n="hero.description">
+            I'm a passionate Cloud Computing student at Lycée Guillaume Kroll, currently pursuing a BTS in Cloud Computing.
+            With skills in Linux, Windows Server, Python, and more, I'm excited about building cloud solutions.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary" data-i18n="sections.contact">Contact Me</a>
+            <a href="#" class="btn btn-secondary" data-i18n="hero.cvButton">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Preview -->
+  <section id="certifications-preview" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n-section="certifications">My Certifications</h2>
+        <a href="pages/certifications/" class="btn-text" data-i18n="sections.viewAll">View All</a>
+      </div>
+      
+      <div class="cards">
+        <!-- Skill Card 1 -->
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3>System Administration</h3>
+          <p>Linux & Windows Server 2022</p>
+          <p>Configuration and management of server environments</p>
+        </div>
+        
+        <!-- Skill Card 2 -->
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Programming</h3>
+          <p>Python, Regex</p>
+          <p>Automation and problem-solving</p>
+        </div>
+        
+        <!-- Skill Card 3 -->
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3>Cloud Technologies</h3>
+          <p>Currently Learning</p>
+          <p>Pursuing BTS in Cloud Computing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work/School Preview -->
+  <section id="work-school-preview" class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n-section="workSchool">Work & Education</h2>
+        <a href="pages/work-school/" class="btn-text" data-i18n="sections.viewAll">View All</a>
+      </div>
+      
+      <div class="timeline">
+        <!-- Education Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>BTS Cloud Computing</h3>
+            <h4>Lycée Guillaume Kroll</h4>
+            <p class="timeline-date">2025 - Present</p>
+            <p>Currently pursuing a degree in Cloud Computing with focus on cloud infrastructure and services.</p>
+          </div>
+        </div>
+
+        <!-- Education Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Bachelor in Physics</h3>
+            <h4>Université de Luxembourg</h4>
+            <p class="timeline-date">2024 - 2025</p>
+            <p>Studied Physics, developing strong analytical and problem-solving skills.</p>
+          </div>
+        </div>
+
+        <!-- Work Experience Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Summer Job - Quality Control</h3>
+            <h4>CGPO (State Personnel and Organization Management Center)</h4>
+            <p class="timeline-date">Summer 2022 & 2023</p>
+            <p>Quality control of digitized documents and systematic filing of physical archives.</p>
+          </div>
+        </div>
+
+        <!-- Work Experience Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Internship - Order Processing</h3>
+            <h4>Klepper S.A. (Electronic Distributor)</h4>
+            <p class="timeline-date">2021 & 2022</p>
+            <p>Quality control, order preparation, and administrative document management.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Preview -->
+  <section id="projects-preview" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n-section="projects">Personal Projects</h2>
+        <a href="pages/projects/" class="btn-text" data-i18n="sections.viewAll">View All</a>
+      </div>
+      
+      <div class="cards">
+        <!-- Project Card 1 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/project1.jpg" alt="Project 1">
+          </div>
+          <div class="card-content">
+            <h3>Cloud Migration Project</h3>
+            <p>Description of the project and technologies used.</p>
+            <div class="card-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">Docker</span>
+            </div>
+            <a href="pages/projects/#project1" class="btn btn-outline" data-i18n="sections.viewDetails">View Details</a>
+          </div>
+        </div>
+        
+        <!-- Project Card 2 -->
+        <div class="card">
+          <div class="card-image">
+            <img src="assets/images/project2.jpg" alt="Project 2">
+          </div>
+          <div class="card-content">
+            <h3>Serverless Application</h3>
+            <p>Description of the project and technologies used.</p>
+            <div class="card-tags">
+              <span class="tag">AWS Lambda</span>
+              <span class="tag">API Gateway</span>
+              <span class="tag">DynamoDB</span>
+            </div>
+            <a href="pages/projects/#project2" class="btn btn-outline" data-i18n="sections.viewDetails">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-i18n="nav.contact">Get In Touch</h2>
+        <p>Feel free to reach out for collaborations or just a friendly hello</p>
+      </div>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h3>Email</h3>
+              <a href="mailto:your.email@example.com">your.email@example.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <div>
+              <h3>LinkedIn</h3>
+              <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourprofile</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <div>
+              <h3>GitHub</h3>
+              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">github.com/yourusername</a>
+            </div>
+          </div>
+        </div>
+        
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" data-i18n="sections.sendMessage">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="#home">Andrea GIROTTO</a>
+          <p>Cloud Computing Professional</p>
+        </div>
+        
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home" data-i18n-nav="home">Home</a></li>
+            <li><a href="#certifications" data-i18n-nav="certifications">Certifications</a></li>
+            <li><a href="#work" data-i18n-nav="workSchool">Work/School</a></li>
+            <li><a href="#projects" data-i18n-nav="projects">Projects</a></li>
+            <li><a href="#contact" data-i18n-nav="contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-social">
+          <h3>Connect</h3>
+          <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2023</span> Your Name. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+          <span>|</span>
+          <a href="#" data-i18n="footer.terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/language-switcher.js"></script>
+  
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Back to top button
+    const backToTopButton = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // Form submission handling
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // Add your form submission logic here
+        alert('Thank you for your message! I will get back to you soon.');
+        contactForm.reset();
+      });
+    }
+  </script>
+</body>
+</html>
