@@ -19,8 +19,63 @@ const translations = {
       certifications: 'Skills overview',
       workSchool: 'Work & Education',
       projects: 'Personal Projects',
+      contact: 'Contact',
+      contactCta: 'Contact Me',
+      contactDescription: 'If you would like to contact me, you can use the information below.',
       viewAll: 'View All',
-      viewDetails: 'View Details'
+      viewDetails: 'View Details',
+      sendMessage: 'Send Message'
+    },
+    skills: {
+      sysAdminTitle: 'System Administration',
+      sysAdminTech: 'Linux & Windows Server 2022',
+      sysAdminDesc: 'Configuration and management of server environments',
+      programmingTitle: 'Programming & Automation',
+      programmingTech: 'Python, Regex, Power Automate',
+      programmingDesc: 'Automation and problem-solving',
+      softTitle: 'Soft Skills',
+      softDesc: 'Problem solving, good listener, curious, fast learner, team work'
+    },
+    timeline: {
+      btsTitle: 'BTS Cloud Computing',
+      btsOrg: 'Lycée Guillaume Kroll',
+      btsDate: '2025 - Present',
+      btsDesc: 'Currently pursuing a degree in Cloud Computing with focus on cloud infrastructure and services.',
+      physicsTitle: 'Bachelor in Physics',
+      physicsOrg: 'Université de Luxembourg',
+      physicsDate: '2024 - 2025',
+      physicsDesc: 'Studied Physics, developing strong analytical and problem-solving skills.',
+      cgpoTitle: 'Summer Job - Quality Control',
+      cgpoOrg: 'CGPO (State Personnel and Organization Management Center)',
+      cgpoDate: 'Summer 2022 & 2023',
+      cgpoDesc: 'Quality control of digitized documents and systematic filing of physical archives.',
+      klepperTitle: 'Internship - Order Processing',
+      klepperOrg: 'Klepper S.A. (Household appliance distributor)',
+      klepperDate: '2021 & 2022',
+      klepperDesc: 'Quality control, order preparation, and administrative document management.'
+    },
+    projects: {
+      placeholderTitle: 'Projects',
+      placeholderDesc: 'Detailed project descriptions will be added here as they are documented.'
+    },
+    contact: {
+      emailLabel: 'Email',
+      linkedinLabel: 'LinkedIn'
+    },
+    form: {
+      name: 'Name',
+      email: 'Email',
+      subject: 'Subject',
+      message: 'Message',
+      successAlert: 'Thank you for your message! I will get back to you soon.'
+    },
+    footer: {
+      subtitle: 'BTS Cloud Computing student',
+      quickLinks: 'Quick Links',
+      connect: 'Connect',
+      allRights: 'All rights reserved.',
+      privacy: 'Privacy Policy',
+      terms: 'Terms of Service'
     }
   },
   fr: {
@@ -42,8 +97,63 @@ const translations = {
       certifications: 'Aperçu des compétences',
       workSchool: 'Expérience & Formation',
       projects: 'Projets personnels',
+      contact: 'Contact',
+      contactCta: 'Me contacter',
+      contactDescription: 'Si vous souhaitez me contacter, vous pouvez utiliser les informations ci-dessous.',
       viewAll: 'Tout voir',
-      viewDetails: 'Voir les détails'
+      viewDetails: 'Voir les détails',
+      sendMessage: 'Envoyer le message'
+    },
+    skills: {
+      sysAdminTitle: 'Administration système',
+      sysAdminTech: 'Linux & Windows Server 2022',
+      sysAdminDesc: 'Configuration et gestion d\'environnements serveur',
+      programmingTitle: 'Programmation & Automatisation',
+      programmingTech: 'Python, Regex, Power Automate',
+      programmingDesc: 'Automatisation et résolution de problèmes',
+      softTitle: 'Compétences interpersonnelles',
+      softDesc: 'Résolution de problèmes, bonne écoute, curieux, apprentissage rapide, travail en équipe'
+    },
+    timeline: {
+      btsTitle: 'BTS Cloud Computing',
+      btsOrg: 'Lycée Guillaume Kroll',
+      btsDate: '2025 - Présent',
+      btsDesc: 'Actuellement en formation Cloud Computing axée sur l\'infrastructure et les services cloud.',
+      physicsTitle: 'Bachelor en Physique',
+      physicsOrg: 'Université de Luxembourg',
+      physicsDate: '2024 - 2025',
+      physicsDesc: 'Études de physique, développant des compétences analytiques et de résolution de problèmes.',
+      cgpoTitle: 'Job d\'été - Contrôle qualité',
+      cgpoOrg: 'CGPO (Centre de gestion du personnel et de l\'organisation de l\'État)',
+      cgpoDate: 'Été 2022 & 2023',
+      cgpoDesc: 'Contrôle qualité de documents numérisés et classement systématique d\'archives physiques.',
+      klepperTitle: 'Stage - Préparation de commandes',
+      klepperOrg: 'Klepper S.A. (Distributeur d\'électroménager)',
+      klepperDate: '2021 & 2022',
+      klepperDesc: 'Contrôle qualité, préparation de commandes et gestion administrative de documents.'
+    },
+    projects: {
+      placeholderTitle: 'Projets',
+      placeholderDesc: 'Les descriptions détaillées des projets seront ajoutées ici au fur et à mesure.'
+    },
+    contact: {
+      emailLabel: 'Email',
+      linkedinLabel: 'LinkedIn'
+    },
+    form: {
+      name: 'Nom',
+      email: 'Email',
+      subject: 'Sujet',
+      message: 'Message',
+      successAlert: 'Merci pour votre message ! Je vous répondrai bientôt.'
+    },
+    footer: {
+      subtitle: 'Étudiant en BTS Cloud Computing',
+      quickLinks: 'Liens rapides',
+      connect: 'Réseaux',
+      allRights: 'Tous droits réservés.',
+      privacy: 'Politique de confidentialité',
+      terms: 'Conditions d\'utilisation'
     }
   },
   de: {
@@ -62,11 +172,66 @@ const translations = {
       cvLink: '#'
     },
     sections: {
-      certifications: 'Kompetenzübersicht',
-      workSchool: 'Berufserfahrung & Ausbildung',
+      certifications: 'Fähigkeiten-Überblick',
+      workSchool: 'Beruf & Ausbildung',
       projects: 'Persönliche Projekte',
+      contact: 'Kontakt',
+      contactCta: 'Kontakt aufnehmen',
+      contactDescription: 'Wenn Sie mich kontaktieren möchten, können Sie die folgenden Informationen verwenden.',
       viewAll: 'Alle anzeigen',
-      viewDetails: 'Details anzeigen'
+      viewDetails: 'Details anzeigen',
+      sendMessage: 'Nachricht senden'
+    },
+    skills: {
+      sysAdminTitle: 'Systemadministration',
+      sysAdminTech: 'Linux & Windows Server 2022',
+      sysAdminDesc: 'Konfiguration und Verwaltung von Serverumgebungen',
+      programmingTitle: 'Programmierung & Automatisierung',
+      programmingTech: 'Python, Regex, Power Automate',
+      programmingDesc: 'Automatisierung und Problemlösung',
+      softTitle: 'Soziale Kompetenzen',
+      softDesc: 'Problemlösung, gutes Zuhören, neugierig, schnelles Lernen, Teamarbeit'
+    },
+    timeline: {
+      btsTitle: 'BTS Cloud Computing',
+      btsOrg: 'Lycée Guillaume Kroll',
+      btsDate: '2025 - Heute',
+      btsDesc: 'Derzeit in Ausbildung im Bereich Cloud Computing mit Fokus auf Cloud-Infrastruktur und -Dienste.',
+      physicsTitle: 'Bachelor in Physik',
+      physicsOrg: 'Université de Luxembourg',
+      physicsDate: '2024 - 2025',
+      physicsDesc: 'Physikstudium mit Entwicklung starker analytischer und problemlösender Fähigkeiten.',
+      cgpoTitle: 'Sommerjob - Qualitätskontrolle',
+      cgpoOrg: 'CGPO (Staatliches Personalverwaltungszentrum)',
+      cgpoDate: 'Sommer 2022 & 2023',
+      cgpoDesc: 'Qualitätskontrolle digitalisierter Dokumente und systematische Archivierung physischer Unterlagen.',
+      klepperTitle: 'Praktikum - Auftragsbearbeitung',
+      klepperOrg: 'Klepper S.A. (Haushaltsgeräte-Distributor)',
+      klepperDate: '2021 & 2022',
+      klepperDesc: 'Qualitätskontrolle, Auftragsvorbereitung und administrative Dokumentenverwaltung.'
+    },
+    projects: {
+      placeholderTitle: 'Projekte',
+      placeholderDesc: 'Detaillierte Projektbeschreibungen werden hier hinzugefügt, sobald sie dokumentiert sind.'
+    },
+    contact: {
+      emailLabel: 'E-Mail',
+      linkedinLabel: 'LinkedIn'
+    },
+    form: {
+      name: 'Name',
+      email: 'E-Mail',
+      subject: 'Betreff',
+      message: 'Nachricht',
+      successAlert: 'Vielen Dank für Ihre Nachricht! Ich werde mich bald bei Ihnen melden.'
+    },
+    footer: {
+      subtitle: 'BTS-Student für Cloud Computing',
+      quickLinks: 'Schnellzugriff',
+      connect: 'Verbinden',
+      allRights: 'Alle Rechte vorbehalten.',
+      privacy: 'Datenschutzerklärung',
+      terms: 'Nutzungsbedingungen'
     }
   },
   lb: {
@@ -85,11 +250,66 @@ const translations = {
       cvLink: '#'
     },
     sections: {
-      certifications: 'Iwwersiicht vun de Kompetenzen',
-      workSchool: 'Berufferfarung & Ausbildung',
+      certifications: 'Iwwersiicht vun de Fäegkeeten',
+      workSchool: 'Aarbecht & Ausbildung',
       projects: 'Perséinlech Projeten',
-      viewAll: 'All gesinn',
-      viewDetails: 'Detailer kucken'
+      contact: 'Kontakt',
+      contactCta: 'Kontaktéiert mech',
+      contactDescription: 'Wann Dir mat mir a Kontakt triede wëllt, kënnt Dir déi folgend Informatioun benotzen.',
+      viewAll: 'Alles gesinn',
+      viewDetails: 'Detailer kucken',
+      sendMessage: 'Noriicht schécken'
+    },
+    skills: {
+      sysAdminTitle: 'Systemadministratioun',
+      sysAdminTech: 'Linux & Windows Server 2022',
+      sysAdminDesc: 'Konfiguratioun a Gestioun vu Serverëmfeld',
+      programmingTitle: 'Programméierung & Automatiséierung',
+      programmingTech: 'Python, Regex, Power Automate',
+      programmingDesc: 'Automatiséierung a Problemléisung',
+      softTitle: 'Soft Skills',
+      softDesc: 'Problemléisung, gutt nolauschteren, virwëtzeg, séier léieren, Teamaarbecht'
+    },
+    timeline: {
+      btsTitle: 'BTS Cloud Computing',
+      btsOrg: 'Lycée Guillaume Kroll',
+      btsDate: '2025 - Elo',
+      btsDesc: 'Momentan an der Ausbildung am Cloud Computing mat Fokus op Cloud-Infrastruktur an -Servicer.',
+      physicsTitle: 'Bachelor a Physik',
+      physicsOrg: 'Université de Luxembourg',
+      physicsDate: '2024 - 2025',
+      physicsDesc: 'Physikstudium, staark analytesch a problemléisend Fäegkeeten entwéckelt.',
+      cgpoTitle: 'Summerjob - Qualitéitskontroll',
+      cgpoOrg: 'CGPO (Centre de gestion du personnel et de l\'organisation de l\'État)',
+      cgpoDate: 'Summer 2022 & 2023',
+      cgpoDesc: 'Qualitéitskontroll vun digitaliséierten Dokumenter a systematesch Archivéierung vu physesche Dokumenter.',
+      klepperTitle: 'Stage - Bestellungsveraarbechtung',
+      klepperOrg: 'Klepper S.A. (Elektrogeräter-Distributeur)',
+      klepperDate: '2021 & 2022',
+      klepperDesc: 'Qualitéitskontroll, Virbereedung vu Bestellungen an administrativ Dokumenteverwaltung.'
+    },
+    projects: {
+      placeholderTitle: 'Projeten',
+      placeholderDesc: 'Detailléiert Projetbeschreiwunge ginn hei bäigefüügt wann se dokumentéiert sinn.'
+    },
+    contact: {
+      emailLabel: 'Email',
+      linkedinLabel: 'LinkedIn'
+    },
+    form: {
+      name: 'Numm',
+      email: 'Email',
+      subject: 'Sujet',
+      message: 'Noriicht',
+      successAlert: 'Merci fir Är Noriicht! Ech melle mech geschwënn bei Iech.'
+    },
+    footer: {
+      subtitle: 'BTS Cloud Computing Student',
+      quickLinks: 'Schnellzougang',
+      connect: 'Verbannen',
+      allRights: 'All Rechter reservéiert.',
+      privacy: 'Dateschutz-Richtlinn',
+      terms: 'Benotzungsbedéngungen'
     }
   }
 };
@@ -140,6 +360,76 @@ function updateContent(lang) {
     const key = button.getAttribute('data-i18n-btn');
     if (translations[lang]?.sections?.[key]) {
       button.textContent = translations[lang].sections[key];
+    }
+  });
+
+  // Update section texts using data-i18n="sections.xxx"
+  const sectionTextEls = document.querySelectorAll('[data-i18n^="sections."]');
+  sectionTextEls.forEach(el => {
+    const fullKey = el.getAttribute('data-i18n');
+    const key = fullKey.split('.')[1];
+    if (translations[lang]?.sections?.[key]) {
+      el.textContent = translations[lang].sections[key];
+    }
+  });
+
+  // Update footer texts
+  const footerTextEls = document.querySelectorAll('[data-i18n^="footer."]');
+  footerTextEls.forEach(el => {
+    const fullKey = el.getAttribute('data-i18n');
+    const key = fullKey.split('.')[1];
+    if (translations[lang]?.footer?.[key]) {
+      el.textContent = translations[lang].footer[key];
+    }
+  });
+
+  // Update skills cards
+  const skillsEls = document.querySelectorAll('[data-i18n^="skills."]');
+  skillsEls.forEach(el => {
+    const fullKey = el.getAttribute('data-i18n');
+    const key = fullKey.split('.')[1];
+    if (translations[lang]?.skills?.[key]) {
+      el.textContent = translations[lang].skills[key];
+    }
+  });
+
+  // Update timeline items
+  const timelineEls = document.querySelectorAll('[data-i18n^="timeline."]');
+  timelineEls.forEach(el => {
+    const fullKey = el.getAttribute('data-i18n');
+    const key = fullKey.split('.')[1];
+    if (translations[lang]?.timeline?.[key]) {
+      el.textContent = translations[lang].timeline[key];
+    }
+  });
+
+  // Update projects section
+  const projectsEls = document.querySelectorAll('[data-i18n^="projects."]');
+  projectsEls.forEach(el => {
+    const fullKey = el.getAttribute('data-i18n');
+    const key = fullKey.split('.')[1];
+    if (translations[lang]?.projects?.[key]) {
+      el.textContent = translations[lang].projects[key];
+    }
+  });
+
+  // Update contact labels
+  const contactEls = document.querySelectorAll('[data-i18n^="contact."]');
+  contactEls.forEach(el => {
+    const fullKey = el.getAttribute('data-i18n');
+    const key = fullKey.split('.')[1];
+    if (translations[lang]?.contact?.[key]) {
+      el.textContent = translations[lang].contact[key];
+    }
+  });
+
+  // Update form labels
+  const formEls = document.querySelectorAll('[data-i18n^="form."]');
+  formEls.forEach(el => {
+    const fullKey = el.getAttribute('data-i18n');
+    const key = fullKey.split('.')[1];
+    if (translations[lang]?.form?.[key]) {
+      el.textContent = translations[lang].form[key];
     }
   });
   
