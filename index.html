@@ -46,7 +46,34 @@
           <!-- Dark Mode Toggle -->
           <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         </div>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          ☰
+        </button>
       </nav>
+    </div>
+    <div class="mobile-nav" aria-hidden="true">
+      <div class="mobile-nav-overlay"></div>
+      <div class="mobile-nav-panel">
+        <div class="mobile-nav-links">
+          <a href="#home" class="active" data-i18n-nav="home">Home</a>
+          <a href="#certifications-preview" data-i18n-nav="certifications">Certifications</a>
+          <a href="#work-school-preview" data-i18n-nav="workSchool">Work/School</a>
+          <a href="#projects-preview" data-i18n-nav="projects">Projects</a>
+          <a href="#contact" data-i18n-nav="contact">Contact</a>
+        </div>
+
+        <div class="mobile-nav-footer">
+          <div class="language-switcher">
+            <button data-lang="en" title="English">EN</button>
+            <button data-lang="fr" title="Français">FR</button>
+            <button data-lang="de" title="Deutsch">DE</button>
+            <button data-lang="lb" title="Lëtzebuergesch">LB</button>
+          </div>
+
+          <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </div>
+      </div>
     </div>
   </header>
 

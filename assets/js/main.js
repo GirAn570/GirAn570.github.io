@@ -7,9 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.documentElement.setAttribute('data-theme', savedTheme);
   
   // Update theme toggle button
-  const themeToggle = document.querySelector('.theme-toggle');
-  if (themeToggle) {
-    themeToggle.innerHTML = savedTheme === 'dark' ? '🌞' : '🌙';
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+  if (themeToggles.length) {
+    themeToggles.forEach(btn => {
+      btn.innerHTML = savedTheme === 'dark' ? '🌞' : '🌙';
+    });
   }
   
   // Set active language in language switcher
@@ -31,9 +33,11 @@ function toggleDarkMode() {
   localStorage.setItem('theme', newTheme);
   
   // Update the toggle button
-  const themeToggle = document.querySelector('.theme-toggle');
-  if (themeToggle) {
-    themeToggle.innerHTML = newTheme === 'dark' ? '🌞' : '🌙';
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+  if (themeToggles.length) {
+    themeToggles.forEach(btn => {
+      btn.innerHTML = newTheme === 'dark' ? '🌞' : '🌙';
+    });
   }
 }
 
@@ -55,9 +59,11 @@ function changeLanguage(lang) {
 // Add event listeners when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
   // Dark mode toggle
-  const themeToggle = document.querySelector('.theme-toggle');
-  if (themeToggle) {
-    themeToggle.addEventListener('click', toggleDarkMode);
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+  if (themeToggles.length) {
+    themeToggles.forEach(btn => {
+      btn.addEventListener('click', toggleDarkMode);
+    });
   }
   
   // Language switcher
@@ -68,4 +74,44 @@ document.addEventListener('DOMContentLoaded', () => {
       changeLanguage(lang);
     });
   });
+
+  // Mobile navigation
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+  const mobilePanel = document.querySelector('.mobile-nav-panel');
+  const mobileLinks = mobilePanel ? mobilePanel.querySelectorAll('a[data-i18n-nav]') : [];
+
+  function setMobileNavOpen(isOpen) {
+    if (!mobileNav || !mobileToggle) return;
+    mobileNav.classList.toggle('open', isOpen);
+    mobileNav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  if (mobileToggle && mobileNav) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = mobileNav.classList.contains('open');
+      setMobileNavOpen(!isOpen);
+    });
+
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener('click', () => setMobileNavOpen(false));
+    }
+
+    if (mobileLinks.length) {
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => setMobileNavOpen(false));
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!mobileNav.classList.contains('open')) return;
+      if (mobilePanel && !mobilePanel.contains(e.target) && !mobileToggle.contains(e.target)) {
+        setMobileNavOpen(false);
+      }
+    });
+  }
 });
