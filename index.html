@@ -22,6 +22,9 @@
   <link rel="stylesheet" href="assets/css/dark-mode.css" id="dark-mode-style">
 </head>
 <body>
+  <!-- Skip to main content link -->
+  <a href="#home" class="skip-link">Skip to main content</a>
+
   <!-- Header & Navigation -->
   <header class="header">
     <div class="container">
@@ -44,7 +47,7 @@
           </div>
 
           <!-- Dark Mode Toggle -->
-          <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
         </div>
 
         <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -71,7 +74,7 @@
             <button data-lang="lb" title="Lëtzebuergesch">LB</button>
           </div>
 
-          <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
         </div>
       </div>
     </div>
@@ -94,6 +97,31 @@
             Power Automate, Python, Regex and project management.
           </p>
 
+          <div class="hero-badges">
+            <div class="badge-group">
+              <span class="badge-label">Languages</span>
+              <div class="badges">
+                <span class="badge badge-lang" title="French">FR <span class="badge-level">Native</span></span>
+                <span class="badge badge-lang" title="Luxembourgish">LB <span class="badge-level">Native</span></span>
+                <span class="badge badge-lang" title="English">EN <span class="badge-level">C1</span></span>
+                <span class="badge badge-lang" title="German">DE <span class="badge-level">B1</span></span>
+              </div>
+            </div>
+            
+            <div class="badge-group">
+              <span class="badge-label">Tools</span>
+              <div class="badges">
+                <span class="badge badge-tool">Office 365</span>
+                <span class="badge badge-tool">Linux</span>
+                <span class="badge badge-tool">Windows Server 2022</span>
+                <span class="badge badge-tool">Power Automate</span>
+                <span class="badge badge-tool">Python</span>
+                <span class="badge badge-tool">Regex</span>
+                <span class="badge badge-tool">Project Mgmt</span>
+              </div>
+            </div>
+          </div>
+
           <div class="hero-cta">
             <a href="#contact" class="btn btn-primary" data-i18n-btn="contactCta">Contact Me</a>
             <a href="#" class="btn btn-secondary" data-i18n="hero.cvButton">Download CV</a>
@@ -115,7 +143,7 @@
         <!-- Skill Card 1 (from Hard Skills in CV) -->
         <div class="card">
           <div class="card-icon">
-            <i class="fas fa-server"></i>
+            <i class="fas fa-server" aria-hidden="true"></i>
           </div>
           <h3 data-i18n="skills.sysAdminTitle">System Administration</h3>
           <p data-i18n="skills.sysAdminTech">Linux &amp; Windows Server 2022</p>
@@ -125,7 +153,7 @@
         <!-- Skill Card 2 (from Hard Skills in CV) -->
         <div class="card">
           <div class="card-icon">
-            <i class="fas fa-code"></i>
+            <i class="fas fa-code" aria-hidden="true"></i>
           </div>
           <h3 data-i18n="skills.programmingTitle">Programming & Automation</h3>
           <p data-i18n="skills.programmingTech">Python, Regex, Power Automate</p>
@@ -135,7 +163,7 @@
         <!-- Skill Card 3 (from Soft Skills in CV) -->
         <div class="card">
           <div class="card-icon">
-            <i class="fas fa-cloud"></i>
+            <i class="fas fa-cloud" aria-hidden="true"></i>
           </div>
           <h3 data-i18n="skills.softTitle">Soft Skills</h3>
           <p data-i18n="skills.softDesc">Problem solving, good listener, curious, fast learner, team work</p>
@@ -226,7 +254,7 @@
       <div class="contact-container">
         <div class="contact-info">
           <div class="contact-item">
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-envelope" aria-hidden="true"></i>
             <div>
               <h3 data-i18n="contact.emailLabel">Email</h3>
               <a href="mailto:andrea.girotto.2005@gmail.com">andrea.girotto.2005@gmail.com</a>
@@ -234,7 +262,7 @@
           </div>
 
           <div class="contact-item">
-            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
             <div>
               <h3 data-i18n="contact.linkedinLabel">LinkedIn</h3>
               <a href="https://www.linkedin.com/in/andrea-girotto-47861231b" target="_blank" rel="noopener noreferrer">linkedin.com/in/andrea-girotto-47861231b</a>
@@ -293,7 +321,7 @@
           <h3 data-i18n="footer.connect">Connect</h3>
           <div class="social-links">
             <a href="https://www.linkedin.com/in/andrea-girotto-47861231b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i>
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -313,7 +341,7 @@
 
   <!-- Back to Top Button -->
   <button id="back-to-top" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
   </button>
 
   <!-- JavaScript -->

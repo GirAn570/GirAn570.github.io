@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (themeToggles.length) {
     themeToggles.forEach(btn => {
       btn.innerHTML = savedTheme === 'dark' ? '🌞' : '🌙';
+      btn.setAttribute('aria-pressed', savedTheme === 'dark' ? 'true' : 'false');
     });
   }
   
@@ -37,6 +38,7 @@ function toggleDarkMode() {
   if (themeToggles.length) {
     themeToggles.forEach(btn => {
       btn.innerHTML = newTheme === 'dark' ? '🌞' : '🌙';
+      btn.setAttribute('aria-pressed', newTheme === 'dark' ? 'true' : 'false');
     });
   }
 }

@@ -58,3 +58,16 @@
   border-color: #4b5563;
   color: #9ca3af;
 }
+
+/* Badge overrides for dark mode */
+[data-theme="dark"] .badge-lang {
+  background: rgba(37, 99, 235, 0.15);
+  border-color: rgba(37, 99, 235, 0.4);
+  color: #60a5fa; /* lighter blue for better contrast on dark */
+}
+
+[data-theme="dark"] .badge-tool {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: var(--text-color);
+}
