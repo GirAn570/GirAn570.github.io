@@ -28,7 +28,7 @@
   --navbar-link-color: #0f172a;
   --navbar-link-hover-color: #111827;
 
-  --overlay-scrim: rgba(15, 23, 42, 0.35);
+  --overlay-scrim: rgba(15, 23, 42, 0.55);
   --mobile-nav-bg: var(--bg-elevated);
 
   /* Section overlays & cards */
