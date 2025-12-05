@@ -627,6 +627,22 @@ button:focus:not(:focus-visible) {
   margin: 0.55rem 0 0.4rem;
 }
 
+.timeline-group {
+  margin-top: 1.75rem;
+}
+
+.timeline-group:first-of-type {
+  margin-top: 0;
+}
+
+.timeline-group-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted-text-color);
+  margin-bottom: 1.25rem;
+}
+
 /* Contact section */
 .contact-container {
   display: grid;

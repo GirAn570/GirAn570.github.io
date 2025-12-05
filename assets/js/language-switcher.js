@@ -37,6 +37,8 @@ const translations = {
       softDesc: 'Problem solving, good listener, curious, fast learner, team work'
     },
     timeline: {
+      educationHeading: 'Education',
+      workHeading: 'Work Experience',
       btsTitle: 'BTS Cloud Computing',
       btsOrg: 'Lycée Guillaume Kroll',
       btsDate: '2025 - Present',
@@ -45,6 +47,10 @@ const translations = {
       physicsOrg: 'Université de Luxembourg',
       physicsDate: '2024 - 2025',
       physicsDesc: 'Studied Physics, developing strong analytical and problem-solving skills.',
+      baccalaureateTitle: 'European Baccalaureate',
+      baccalaureateOrg: 'Ecole Internationale de Differdange',
+      baccalaureateDate: '2017 - 2024',
+      baccalaureateDesc: 'Completed the European Baccalaureate with an overall grade of 72/100.',
       cgpoTitle: 'Summer Job - Quality Control',
       cgpoOrg: 'CGPO (State Personnel and Organization Management Center)',
       cgpoDate: 'Summer 2022 & 2023',
@@ -115,6 +121,8 @@ const translations = {
       softDesc: 'Résolution de problèmes, bonne écoute, curieux, apprentissage rapide, travail en équipe'
     },
     timeline: {
+      educationHeading: 'Formation',
+      workHeading: 'Expérience professionnelle',
       btsTitle: 'BTS Cloud Computing',
       btsOrg: 'Lycée Guillaume Kroll',
       btsDate: '2025 - Présent',
@@ -123,6 +131,10 @@ const translations = {
       physicsOrg: 'Université de Luxembourg',
       physicsDate: '2024 - 2025',
       physicsDesc: 'Études de physique, développant des compétences analytiques et de résolution de problèmes.',
+      baccalaureateTitle: 'Baccalauréat européen',
+      baccalaureateOrg: 'École Internationale de Differdange',
+      baccalaureateDate: '2017 - 2024',
+      baccalaureateDesc: 'Obtention du Baccalauréat européen avec une note globale de 72/100.',
       cgpoTitle: 'Job d\'été - Contrôle qualité',
       cgpoOrg: 'CGPO (Centre de gestion du personnel et de l\'organisation de l\'État)',
       cgpoDate: 'Été 2022 & 2023',
@@ -193,6 +205,8 @@ const translations = {
       softDesc: 'Problemlösung, gutes Zuhören, neugierig, schnelles Lernen, Teamarbeit'
     },
     timeline: {
+      educationHeading: 'Ausbildung',
+      workHeading: 'Berufserfahrung',
       btsTitle: 'BTS Cloud Computing',
       btsOrg: 'Lycée Guillaume Kroll',
       btsDate: '2025 - Heute',
@@ -201,6 +215,10 @@ const translations = {
       physicsOrg: 'Université de Luxembourg',
       physicsDate: '2024 - 2025',
       physicsDesc: 'Physikstudium mit Entwicklung starker analytischer und problemlösender Fähigkeiten.',
+      baccalaureateTitle: 'Europäisches Abitur',
+      baccalaureateOrg: 'Ecole Internationale de Differdange',
+      baccalaureateDate: '2017 - 2024',
+      baccalaureateDesc: 'Abschluss des Europäischen Abiturs mit einer Gesamtnote von 72/100.',
       cgpoTitle: 'Sommerjob - Qualitätskontrolle',
       cgpoOrg: 'CGPO (Staatliches Personalverwaltungszentrum)',
       cgpoDate: 'Sommer 2022 & 2023',
@@ -271,6 +289,8 @@ const translations = {
       softDesc: 'Problemléisung, gutt nolauschteren, virwëtzeg, séier léieren, Teamaarbecht'
     },
     timeline: {
+      educationHeading: 'Ausbildung',
+      workHeading: 'Aarbechtserfarung',
       btsTitle: 'BTS Cloud Computing',
       btsOrg: 'Lycée Guillaume Kroll',
       btsDate: '2025 - Elo',
@@ -279,6 +299,10 @@ const translations = {
       physicsOrg: 'Université de Luxembourg',
       physicsDate: '2024 - 2025',
       physicsDesc: 'Physikstudium, staark analytesch a problemléisend Fäegkeeten entwéckelt.',
+      baccalaureateTitle: 'Europäescht Baccalauréat',
+      baccalaureateOrg: 'Ecole Internationale de Differdange',
+      baccalaureateDate: '2017 - 2024',
+      baccalaureateDesc: 'Europäescht Baccalauréat ofgeschloss mat enger Gesamtnot vu 72/100.',
       cgpoTitle: 'Summerjob - Qualitéitskontroll',
       cgpoOrg: 'CGPO (Centre de gestion du personnel et de l\'organisation de l\'État)',
       cgpoDate: 'Summer 2022 & 2023',
