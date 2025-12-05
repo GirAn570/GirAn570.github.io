@@ -53,11 +53,11 @@ const translations = {
       baccalaureateDesc: 'Completed the European Baccalaureate with an overall grade of 72/100.',
       cgpoTitle: 'Summer Job - Quality Control',
       cgpoOrg: 'CGPO (State Personnel and Organization Management Center)',
-      cgpoDate: 'Summer 2022 & 2023',
+      cgpoDate: '2x One month in 2022 & 2023',
       cgpoDesc: 'Quality control of digitized documents and systematic filing of physical archives.',
       klepperTitle: 'Internship - Order Processing',
       klepperOrg: 'Klepper S.A. (Household appliance distributor)',
-      klepperDate: '2021 & 2022',
+      klepperDate: '2x One week in 2021 & 2022',
       klepperDesc: 'Quality control, order preparation, and administrative document management.'
     },
     projects: {
@@ -142,11 +142,11 @@ const translations = {
       baccalaureateDesc: 'Obtention du Baccalauréat européen avec une note globale de 72/100.',
       cgpoTitle: 'Job d\'été - Contrôle qualité',
       cgpoOrg: 'CGPO (Centre de gestion du personnel et de l\'organisation de l\'État)',
-      cgpoDate: 'Été 2022 & 2023',
+      cgpoDate: '2x un mois en 2022 & 2023',
       cgpoDesc: 'Contrôle qualité de documents numérisés et classement systématique d\'archives physiques.',
       klepperTitle: 'Stage - Préparation de commandes',
       klepperOrg: 'Klepper S.A. (Distributeur d\'électroménager)',
-      klepperDate: '2021 & 2022',
+      klepperDate: '2x une semiane en 2021 & 2022',
       klepperDesc: 'Contrôle qualité, préparation de commandes et gestion administrative de documents.'
     },
     projects: {
@@ -231,11 +231,11 @@ const translations = {
       baccalaureateDesc: 'Abschluss des Europäischen Abiturs mit einer Gesamtnote von 72/100.',
       cgpoTitle: 'Sommerjob - Qualitätskontrolle',
       cgpoOrg: 'CGPO (Staatliches Personalverwaltungszentrum)',
-      cgpoDate: 'Sommer 2022 & 2023',
+      cgpoDate: '2x ein monat in 2022 & 2023',
       cgpoDesc: 'Qualitätskontrolle digitalisierter Dokumente und systematische Archivierung physischer Unterlagen.',
       klepperTitle: 'Praktikum - Auftragsbearbeitung',
       klepperOrg: 'Klepper S.A. (Haushaltsgeräte-Distributor)',
-      klepperDate: '2021 & 2022',
+      klepperDate: '2x eine woche in 2021 & 2022',
       klepperDesc: 'Qualitätskontrolle, Auftragsvorbereitung und administrative Dokumentenverwaltung.'
     },
     projects: {
@@ -320,11 +320,11 @@ const translations = {
       baccalaureateDesc: 'Europäescht Baccalauréat ofgeschloss mat enger Gesamtnot vu 72/100.',
       cgpoTitle: 'Summerjob - Qualitéitskontroll',
       cgpoOrg: 'CGPO (Centre de gestion du personnel et de l\'organisation de l\'État)',
-      cgpoDate: 'Summer 2022 & 2023',
+      cgpoDate: '2x ee mount am 2022 & 2023',
       cgpoDesc: 'Qualitéitskontroll vun digitaliséierten Dokumenter a systematesch Archivéierung vu physesche Dokumenter.',
       klepperTitle: 'Stage - Bestellungsveraarbechtung',
       klepperOrg: 'Klepper S.A. (Elektrogeräter-Distributeur)',
-      klepperDate: '2021 & 2022',
+      klepperDate: '2x eng woch am 2021 & 2022',
       klepperDesc: 'Qualitéitskontroll, Virbereedung vu Bestellungen an administrativ Dokumenteverwaltung.'
     },
     projects: {
