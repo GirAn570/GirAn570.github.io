@@ -82,6 +82,11 @@ const translations = {
       allRights: 'All rights reserved.',
       privacy: 'Privacy Policy',
       terms: 'Terms of Service'
+    },
+    error404: {
+      title: 'Page Not Found',
+      message: 'Sorry, the page you\'re looking for doesn\'t exist or has been moved.',
+      backHome: 'Back to Home'
     }
   },
   fr: {
@@ -166,6 +171,11 @@ const translations = {
       allRights: 'Tous droits réservés.',
       privacy: 'Politique de confidentialité',
       terms: 'Conditions d\'utilisation'
+    },
+    error404: {
+      title: 'Page introuvable',
+      message: 'Désolé, la page que vous recherchez n\'existe pas ou a été déplacée.',
+      backHome: 'Retour à l\'accueil'
     }
   },
   de: {
@@ -250,6 +260,11 @@ const translations = {
       allRights: 'Alle Rechte vorbehalten.',
       privacy: 'Datenschutzerklärung',
       terms: 'Nutzungsbedingungen'
+    },
+    error404: {
+      title: 'Seite nicht gefunden',
+      message: 'Entschuldigung, die von Ihnen gesuchte Seite existiert nicht oder wurde verschoben.',
+      backHome: 'Zur Startseite'
     }
   },
   lb: {
@@ -334,6 +349,11 @@ const translations = {
       allRights: 'All Rechter reservéiert.',
       privacy: 'Dateschutz-Richtlinn',
       terms: 'Benotzungsbedéngungen'
+    },
+    error404: {
+      title: 'Säit net fonnt',
+      message: 'Pardon, d\'Säit déi Dir sicht existéiert net méi oder gouf verréckelt.',
+      backHome: 'Zréck op d\'Haaptsäit'
     }
   }
 };
@@ -434,6 +454,16 @@ function updateContent(lang) {
     const key = fullKey.split('.')[1];
     if (translations[lang]?.projects?.[key]) {
       el.textContent = translations[lang].projects[key];
+    }
+  });
+
+  // Update 404 page texts
+  const errorEls = document.querySelectorAll('[data-i18n^="error404."]');
+  errorEls.forEach(el => {
+    const fullKey = el.getAttribute('data-i18n');
+    const key = fullKey.split('.')[1];
+    if (translations[lang]?.error404?.[key]) {
+      el.textContent = translations[lang].error404[key];
     }
   });
 
