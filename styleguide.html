@@ -28,7 +28,7 @@
           <a href="#components">Components</a>
           <a href="#layouts">Layouts</a>
 
-          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">◐</button>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false"><i class="fas fa-moon" aria-hidden="true"></i></button>
         </div>
 
         <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
@@ -55,7 +55,7 @@
             <button type="button">LB</button>
           </div>
 
-          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">◐</button>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false"><i class="fas fa-moon" aria-hidden="true"></i></button>
         </div>
       </div>
     </div>
@@ -385,75 +385,8 @@ console.log('theme', theme);</code></pre>
 
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    function syncThemeButtons(theme) {
-      document.querySelectorAll('.theme-toggle').forEach(btn => {
-        btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-      });
-    }
-
-    function setTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
-      syncThemeButtons(theme);
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      setTheme(savedTheme);
-
-      document.querySelectorAll('.theme-toggle').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const current = document.documentElement.getAttribute('data-theme') || 'light';
-          setTheme(current === 'dark' ? 'light' : 'dark');
-        });
-      });
-
-      const backToTopButton = document.getElementById('back-to-top');
-      window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-          backToTopButton.classList.add('show');
-        } else {
-          backToTopButton.classList.remove('show');
-        }
-      });
-
-      backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-
-      const mobileToggle = document.querySelector('.mobile-menu-toggle');
-      const mobileNav = document.querySelector('.mobile-nav');
-      const mobileOverlay = document.querySelector('.mobile-nav-overlay');
-      const mobilePanel = document.querySelector('.mobile-nav-panel');
-
-      function setMobileNavOpen(isOpen) {
-        if (!mobileNav || !mobileToggle) return;
-        mobileNav.classList.toggle('open', isOpen);
-        mobileNav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-        mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-      }
-
-      if (mobileToggle && mobileNav) {
-        mobileToggle.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const isOpen = mobileNav.classList.contains('open');
-          setMobileNavOpen(!isOpen);
-        });
-
-        if (mobileOverlay) {
-          mobileOverlay.addEventListener('click', () => setMobileNavOpen(false));
-        }
-
-        document.addEventListener('click', (e) => {
-          if (!mobileNav.classList.contains('open')) return;
-          if (mobilePanel && !mobilePanel.contains(e.target) && !mobileToggle.contains(e.target)) {
-            setMobileNavOpen(false);
-          }
-        });
-      }
-    });
   </script>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

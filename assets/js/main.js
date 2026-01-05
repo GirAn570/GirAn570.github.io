@@ -8,14 +8,22 @@ function updateThemeToggleButtons(theme) {
   themeToggles.forEach(btn => {
     btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
 
-    const icon = btn.querySelector('i');
-    if (icon) {
-      icon.classList.remove('fa-moon', 'fa-sun');
-      icon.classList.add(theme === 'dark' ? 'fa-sun' : 'fa-moon');
-      return;
+    let icon = btn.querySelector('i');
+    if (!icon) {
+      btn.textContent = '';
+      icon = document.createElement('i');
+      icon.setAttribute('aria-hidden', 'true');
+      icon.classList.add('fas');
+      btn.appendChild(icon);
+    } else {
+      icon.setAttribute('aria-hidden', 'true');
+      if (!icon.classList.contains('fas') && !icon.classList.contains('fa-solid')) {
+        icon.classList.add('fas');
+      }
     }
 
-    btn.textContent = theme === 'dark' ? '🌞' : '🌙';
+    icon.classList.remove('fa-moon', 'fa-sun');
+    icon.classList.add(theme === 'dark' ? 'fa-sun' : 'fa-moon');
   });
 }
 
