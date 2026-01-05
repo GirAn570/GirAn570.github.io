@@ -1,19 +1,31 @@
 // Main JavaScript file
 // This will be used for any site-wide functionality
 
+function updateThemeToggleButtons(theme) {
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+  if (!themeToggles.length) return;
+
+  themeToggles.forEach(btn => {
+    btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+
+    const icon = btn.querySelector('i');
+    if (icon) {
+      icon.classList.remove('fa-moon', 'fa-sun');
+      icon.classList.add(theme === 'dark' ? 'fa-sun' : 'fa-moon');
+      return;
+    }
+
+    btn.textContent = theme === 'dark' ? '🌞' : '🌙';
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize dark mode if preference is set
   const savedTheme = localStorage.getItem('theme') || 'light';
   document.documentElement.setAttribute('data-theme', savedTheme);
   
   // Update theme toggle button
-  const themeToggles = document.querySelectorAll('.theme-toggle');
-  if (themeToggles.length) {
-    themeToggles.forEach(btn => {
-      btn.innerHTML = savedTheme === 'dark' ? '🌞' : '🌙';
-      btn.setAttribute('aria-pressed', savedTheme === 'dark' ? 'true' : 'false');
-    });
-  }
+  updateThemeToggleButtons(savedTheme);
   
   // Set active language in language switcher
   const currentLang = document.documentElement.lang || 'en';
@@ -34,13 +46,7 @@ function toggleDarkMode() {
   localStorage.setItem('theme', newTheme);
   
   // Update the toggle button
-  const themeToggles = document.querySelectorAll('.theme-toggle');
-  if (themeToggles.length) {
-    themeToggles.forEach(btn => {
-      btn.innerHTML = newTheme === 'dark' ? '🌞' : '🌙';
-      btn.setAttribute('aria-pressed', newTheme === 'dark' ? 'true' : 'false');
-    });
-  }
+  updateThemeToggleButtons(newTheme);
 }
 
 // Function to change language

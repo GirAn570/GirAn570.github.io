@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Styleguide - black/white + yellow accent theme">
+  <title>Styleguide | Andrea GIROTTO</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/css/bw-yellow.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="logo">Portfolio</a>
+
+        <div class="nav-links">
+          <a href="#tokens" class="active">Tokens</a>
+          <a href="#type">Typography</a>
+          <a href="#components">Components</a>
+          <a href="#layouts">Layouts</a>
+
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">◐</button>
+        </div>
+
+        <button class="mobile-menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          ☰
+        </button>
+      </nav>
+    </div>
+
+    <div class="mobile-nav" aria-hidden="true">
+      <div class="mobile-nav-overlay"></div>
+      <div class="mobile-nav-panel">
+        <div class="mobile-nav-links">
+          <a href="#tokens" class="active">Tokens</a>
+          <a href="#type">Typography</a>
+          <a href="#components">Components</a>
+          <a href="#layouts">Layouts</a>
+        </div>
+
+        <div class="mobile-nav-footer">
+          <div class="language-switcher" aria-label="Language">
+            <button type="button" class="active">EN</button>
+            <button type="button">FR</button>
+            <button type="button">DE</button>
+            <button type="button">LB</button>
+          </div>
+
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">◐</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero">
+          <div class="hero-image-container">
+            <img src="assets/images/Crossed-arms.jpg" alt="Portrait of Andrea Girotto" class="hero-image">
+          </div>
+
+          <div class="hero-content">
+            <h1>Black / White + Yellow</h1>
+            <h2>Sharp. Minimal. High-contrast.</h2>
+            <p>
+              This page is a styleguide to validate the new artistic direction.
+              It reuses the same class names as the website so the theme can be rolled out safely.
+            </p>
+
+            <div class="hero-badges">
+              <div class="badge-group">
+                <span class="badge-label">Languages</span>
+                <div class="badges">
+                  <span class="badge badge-lang" title="French">FR <span class="badge-level">Native</span></span>
+                  <span class="badge badge-lang" title="Luxembourgish">LB <span class="badge-level">Native</span></span>
+                  <span class="badge badge-lang" title="English">EN <span class="badge-level">C1</span></span>
+                  <span class="badge badge-lang" title="German">DE <span class="badge-level">B1</span></span>
+                </div>
+              </div>
+
+              <div class="badge-group">
+                <span class="badge-label">Tools</span>
+                <div class="badges">
+                  <span class="badge badge-tool">Linux</span>
+                  <span class="badge badge-tool">Windows Server</span>
+                  <span class="badge badge-tool">Office 365</span>
+                  <span class="badge badge-tool">Python</span>
+                  <span class="badge badge-tool">Regex</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-cta">
+              <a href="#components" class="btn btn-primary">Primary CTA</a>
+              <a href="#components" class="btn btn-secondary">Secondary</a>
+              <a href="#components" class="btn btn-ghost">Ghost</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tokens" class="section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <h2>Tokens</h2>
+          <a class="btn-text" href="#">Link style</a>
+        </div>
+
+        <div class="sg-grid">
+          <div class="sg-swatch">
+            <div class="sg-chip" style="background: #ffffff"></div>
+            <strong>White</strong>
+            <div>#ffffff</div>
+          </div>
+
+          <div class="sg-swatch">
+            <div class="sg-chip" style="background: #0b0b0b"></div>
+            <strong>Black</strong>
+            <div>#0b0b0b</div>
+          </div>
+
+          <div class="sg-swatch">
+            <div class="sg-chip" style="background: #ffd400"></div>
+            <strong>Yellow</strong>
+            <div>#ffd400</div>
+          </div>
+
+          <div class="sg-swatch">
+            <div class="sg-chip" style="background: #f2f2f2"></div>
+            <strong>Grey 1</strong>
+            <div>#f2f2f2</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="type" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Typography</h2>
+          <a class="btn-text" href="#components">Jump to components</a>
+        </div>
+
+        <div class="sg-type">
+          <div>
+            <h1>Heading 1</h1>
+            <p>
+              Paragraph text: minimal, high-contrast. Accent is used deliberately.
+              <a href="#">Inline link</a> becomes a yellow highlight on hover.
+            </p>
+          </div>
+
+          <div>
+            <h2>Heading 2</h2>
+            <p>
+              Muted text uses a darker grey in light mode, lighter grey in dark mode.
+            </p>
+          </div>
+
+          <div>
+            <h3>Heading 3</h3>
+            <blockquote>
+              Blockquote uses a hard yellow bar as a visual anchor.
+            </blockquote>
+          </div>
+
+          <div>
+            <h4>Lists</h4>
+            <ul>
+              <li>Sharp edges</li>
+              <li>Hard borders</li>
+              <li>Yellow used as signal</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Code</h4>
+            <pre><code>const theme = document.documentElement.dataset.theme;
+console.log('theme', theme);</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="components" class="section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <h2>Components</h2>
+          <a class="btn-text" href="#layouts">Layouts</a>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+            <h3>Card Title</h3>
+            <p>Cards invert to yellow on hover. Borders stay hard.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+            <h3>Another Card</h3>
+            <p>Minimal noise: no gradients, no blur, no rounded corners.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-circle-check" aria-hidden="true"></i></div>
+            <h3>Status / Badge</h3>
+            <p>Badges use border + optional yellow chip for level.</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+          <a class="btn btn-primary" href="#">Primary</a>
+          <a class="btn btn-secondary" href="#">Secondary</a>
+          <a class="btn btn-ghost" href="#">Ghost</a>
+          <a class="btn" href="#"><i class="fas fa-download" aria-hidden="true"></i> Icon Button</a>
+        </div>
+
+        <div style="margin-top: 2.25rem;">
+          <table class="table" aria-label="Example table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Value</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Contrast</td>
+                <td>High</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>Edges</td>
+                <td>Sharp</td>
+                <td>OK</td>
+              </tr>
+              <tr>
+                <td>Accent</td>
+                <td>Yellow</td>
+                <td>OK</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="layouts" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Layouts</h2>
+          <a class="btn-text" href="#">Back to top</a>
+        </div>
+
+        <div class="timeline-group">
+          <h3 class="timeline-group-title">Timeline</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>Entry Title</h3>
+                <h4>Organization</h4>
+                <p class="timeline-date">2025 - Present</p>
+                <p>Timeline uses hard line + yellow node + boxed date.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>Another Entry</h3>
+                <h4>Organization</h4>
+                <p class="timeline-date">2024 - 2025</p>
+                <p>Works for both light and dark without changing structure.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-container" style="margin-top: 2.5rem;">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <div>
+                <h3>Email</h3>
+                <a href="mailto:andrea.girotto.2005@gmail.com">andrea.girotto.2005@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <div>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/andrea-girotto-47861231b" target="_blank" rel="noopener noreferrer">linkedin.com/in/andrea-girotto-47861231b</a>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option>General</option>
+                <option>Projects</option>
+                <option>Opportunities</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Write a message..."></textarea>
+            </div>
+
+            <button type="button" class="btn btn-primary">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="#main">Andrea GIROTTO</a>
+          <p>BTS Cloud Computing student</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#tokens">Tokens</a></li>
+            <li><a href="#type">Typography</a></li>
+            <li><a href="#components">Components</a></li>
+            <li><a href="#layouts">Layouts</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <h3>Connect</h3>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/andrea-girotto-47861231b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> Andrea GIROTTO. All rights reserved.</p>
+
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <span>|</span>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    function syncThemeButtons(theme) {
+      document.querySelectorAll('.theme-toggle').forEach(btn => {
+        btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      });
+    }
+
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      syncThemeButtons(theme);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      setTheme(savedTheme);
+
+      document.querySelectorAll('.theme-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const current = document.documentElement.getAttribute('data-theme') || 'light';
+          setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+      });
+
+      const backToTopButton = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.add('show');
+        } else {
+          backToTopButton.classList.remove('show');
+        }
+      });
+
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      const mobileToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileNav = document.querySelector('.mobile-nav');
+      const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+      const mobilePanel = document.querySelector('.mobile-nav-panel');
+
+      function setMobileNavOpen(isOpen) {
+        if (!mobileNav || !mobileToggle) return;
+        mobileNav.classList.toggle('open', isOpen);
+        mobileNav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+        mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      }
+
+      if (mobileToggle && mobileNav) {
+        mobileToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isOpen = mobileNav.classList.contains('open');
+          setMobileNavOpen(!isOpen);
+        });
+
+        if (mobileOverlay) {
+          mobileOverlay.addEventListener('click', () => setMobileNavOpen(false));
+        }
+
+        document.addEventListener('click', (e) => {
+          if (!mobileNav.classList.contains('open')) return;
+          if (mobilePanel && !mobilePanel.contains(e.target) && !mobileToggle.contains(e.target)) {
+            setMobileNavOpen(false);
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
