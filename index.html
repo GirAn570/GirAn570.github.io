@@ -302,7 +302,9 @@
           </div>
         </div>
 
-        <form id="contact-form" class="contact-form">
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xvzzowjn" method="POST">
+          <input type="hidden" name="_subject" value="New message from portfolio">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
           <div class="form-group">
             <label for="name" data-i18n="form.name">Name</label>
             <input type="text" id="name" name="name" required>
@@ -399,14 +401,64 @@
     // Form submission handling
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
+      contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        // Get translated success message
+
         const lang = localStorage.getItem('preferredLanguage') || 'en';
-        const successMsg = window.languageSwitcher?.translations?.[lang]?.form?.successAlert 
-          || 'Thank you for your message! I will get back to you soon.';
-        alert(successMsg);
-        contactForm.reset();
+        const formTranslations = window.languageSwitcher?.translations?.[lang]?.form;
+        const successMsg = formTranslations?.successAlert || 'Thank you for your message! I will get back to you soon.';
+        const errorMsg = formTranslations?.errorAlert || 'Sorry, something went wrong. Please try again later or email me directly.';
+        const configMsg = formTranslations?.configAlert || 'Contact form is not configured yet. Opening your email client instead.';
+        const sendingMsg = formTranslations?.sending || '';
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn ? submitBtn.textContent : '';
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          if (sendingMsg) submitBtn.textContent = sendingMsg;
+        }
+        contactForm.setAttribute('aria-busy', 'true');
+
+        try {
+          const action = contactForm.getAttribute('action') || '';
+
+          if (!action || action.includes('REPLACE_ME')) {
+            const name = contactForm.querySelector('#name')?.value || '';
+            const email = contactForm.querySelector('#email')?.value || '';
+            const subject = contactForm.querySelector('#subject')?.value || '';
+            const message = contactForm.querySelector('#message')?.value || '';
+
+            alert(configMsg);
+            const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+            const mailtoUrl = `mailto:andrea.girotto.2005@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoUrl;
+            return;
+          }
+
+          const formData = new FormData(contactForm);
+          const res = await fetch(action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              Accept: 'application/json'
+            }
+          });
+
+          if (!res.ok) {
+            throw new Error('Form submission failed');
+          }
+
+          alert(successMsg);
+          contactForm.reset();
+        } catch (err) {
+          alert(errorMsg);
+        } finally {
+          contactForm.removeAttribute('aria-busy');
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            if (originalBtnText) submitBtn.textContent = originalBtnText;
+          }
+        }
       });
     }
   </script>
