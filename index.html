@@ -435,6 +435,12 @@
             return;
           }
 
+          const subjectValue = contactForm.querySelector('#subject')?.value?.trim() || '';
+          const subjectHiddenInput = contactForm.querySelector('input[name="_subject"]');
+          if (subjectHiddenInput) {
+            subjectHiddenInput.value = subjectValue ? `New message from portfolio: ${subjectValue}` : 'New message from portfolio';
+          }
+
           const formData = new FormData(contactForm);
           const res = await fetch(action, {
             method: 'POST',
