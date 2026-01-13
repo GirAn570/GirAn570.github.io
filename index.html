@@ -438,7 +438,7 @@
           const subjectValue = contactForm.querySelector('#subject')?.value?.trim() || '';
           const subjectHiddenInput = contactForm.querySelector('input[name="_subject"]');
           if (subjectHiddenInput) {
-            subjectHiddenInput.value = subjectValue ? `New message from portfolio: ${subjectValue}` : 'New message from portfolio';
+            subjectHiddenInput.value = subjectValue;
           }
 
           const formData = new FormData(contactForm);
