@@ -831,6 +831,16 @@ select:focus-visible,
   color: var(--muted-text-color);
 }
 
+.cert-card .badges {
+  margin-top: 0.9rem;
+}
+
+.cert-card .badge {
+  border: 2px solid var(--border-color);
+  background: transparent;
+  display: inline-flex;
+}
+
 .cert-modal {
   position: fixed;
   inset: 0;
