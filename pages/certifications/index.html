@@ -75,11 +75,45 @@
   <main id="main">
     <section class="section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header section-header-stack">
           <h1 data-i18n-nav="certifications">Certifications</h1>
+          <p data-i18n="certificationsPage.intro">A curated list of certifications, formations and courses.</p>
+        </div>
+
+        <div class="certifications-layout">
+          <aside class="certifications-sidebar" aria-label="Certifications filters">
+            <h2 class="certifications-sidebar-title" data-i18n="certificationsPage.filterTitle">Filter by tag</h2>
+            <div id="certifications-tag-filters" class="certifications-tag-filters"></div>
+          </aside>
+
+          <div class="certifications-content">
+            <div id="certifications-grid" class="cards"></div>
+            <p id="certifications-empty" class="certifications-empty" data-i18n="certificationsPage.noResults" hidden>No certifications match this tag.</p>
+          </div>
         </div>
       </div>
     </section>
+
+    <div id="cert-modal" class="cert-modal" aria-hidden="true">
+      <div class="cert-modal-overlay" data-cert-modal-close></div>
+      <div class="cert-modal-panel" role="dialog" aria-modal="true" aria-labelledby="cert-modal-title">
+        <div class="cert-modal-header">
+          <h2 id="cert-modal-title"></h2>
+          <button type="button" class="cert-modal-close" aria-label="Close" data-cert-modal-close>
+            <i class="fas fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="cert-modal-body">
+          <iframe id="cert-modal-frame" title="" loading="lazy"></iframe>
+        </div>
+
+        <div class="cert-modal-footer">
+          <a id="cert-modal-link" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer" data-i18n="certificationsPage.openNewTab">Open in new tab</a>
+          <button type="button" class="btn btn-ghost" data-cert-modal-close data-i18n="certificationsPage.close">Close</button>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="footer">
@@ -119,6 +153,7 @@
 
   <script src="../../assets/js/main.js?v=20260105"></script>
   <script src="../../assets/js/language-switcher.js"></script>
+  <script src="../../assets/js/certifications.js?v=20260122"></script>
 
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();

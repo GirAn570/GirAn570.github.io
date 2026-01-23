@@ -26,6 +26,15 @@ const translations = {
       viewDetails: 'View Details',
       sendMessage: 'Send Message'
     },
+    certificationsPage: {
+      intro: 'A curated list of certifications, formations and courses.',
+      filterTitle: 'Filter by tag',
+      allTags: 'All tags',
+      acquiredLabel: 'Acquired',
+      noResults: 'No certifications match this tag.',
+      openNewTab: 'Open in new tab',
+      close: 'Close'
+    },
     skills: {
       sysAdminTitle: 'System Administration',
       sysAdminTech: 'Linux & Windows Server 2022',
@@ -114,6 +123,15 @@ const translations = {
       viewAll: 'Tout voir',
       viewDetails: 'Voir les détails',
       sendMessage: 'Envoyer le message'
+    },
+    certificationsPage: {
+      intro: 'Une sélection de certifications, formations et cours.',
+      filterTitle: 'Filtrer par tag',
+      allTags: 'Tous les tags',
+      acquiredLabel: 'Obtenu',
+      noResults: 'Aucune certification ne correspond à ce tag.',
+      openNewTab: 'Ouvrir dans un nouvel onglet',
+      close: 'Fermer'
     },
     skills: {
       sysAdminTitle: 'Administration système',
@@ -204,6 +222,15 @@ const translations = {
       viewDetails: 'Details anzeigen',
       sendMessage: 'Nachricht senden'
     },
+    certificationsPage: {
+      intro: 'Eine Auswahl an Zertifizierungen, Weiterbildungen und Kursen.',
+      filterTitle: 'Nach Tag filtern',
+      allTags: 'Alle Tags',
+      acquiredLabel: 'Erworben',
+      noResults: 'Keine Zertifizierungen passen zu diesem Tag.',
+      openNewTab: 'In neuem Tab öffnen',
+      close: 'Schließen'
+    },
     skills: {
       sysAdminTitle: 'Systemadministration',
       sysAdminTech: 'Linux & Windows Server 2022',
@@ -292,6 +319,15 @@ const translations = {
       viewAll: 'Alles gesinn',
       viewDetails: 'Detailer kucken',
       sendMessage: 'Noriicht schécken'
+    },
+    certificationsPage: {
+      intro: 'Eng Auswiel u Zertifizéierungen, Formatiounen a Coursen.',
+      filterTitle: 'No Tag filteren',
+      allTags: 'All Tags',
+      acquiredLabel: 'Kritt',
+      noResults: 'Keng Zertifizéierung passt zu dësem Tag.',
+      openNewTab: 'An engem neien Tab opmaachen',
+      close: 'Zoumaachen'
     },
     skills: {
       sysAdminTitle: 'Systemadministratioun',
@@ -454,6 +490,15 @@ function updateContent(lang) {
     const key = fullKey.split('.')[1];
     if (translations[lang]?.projects?.[key]) {
       el.textContent = translations[lang].projects[key];
+    }
+  });
+
+  const certificationsPageEls = document.querySelectorAll('[data-i18n^="certificationsPage."]');
+  certificationsPageEls.forEach(el => {
+    const fullKey = el.getAttribute('data-i18n');
+    const key = fullKey.split('.')[1];
+    if (translations[lang]?.certificationsPage?.[key]) {
+      el.textContent = translations[lang].certificationsPage[key];
     }
   });
 
