@@ -29,7 +29,7 @@
           <a href="../certifications/" data-i18n-nav="certifications">Certifications</a>
           <a href="../work-school/" data-i18n-nav="workSchool">Work/School</a>
           <a href="../projects/" class="active" data-i18n-nav="projects">Projects</a>
-          <a href="../contact/" data-i18n-nav="contact">Contact</a>
+          <a href="../../index.html#contact" data-i18n-nav="contact">Contact</a>
 
           <div class="language-switcher">
             <button data-lang="en" title="English">EN</button>
@@ -55,7 +55,7 @@
           <a href="../certifications/" data-i18n-nav="certifications">Certifications</a>
           <a href="../work-school/" data-i18n-nav="workSchool">Work/School</a>
           <a href="../projects/" class="active" data-i18n-nav="projects">Projects</a>
-          <a href="../contact/" data-i18n-nav="contact">Contact</a>
+          <a href="../../index.html#contact" data-i18n-nav="contact">Contact</a>
         </div>
 
         <div class="mobile-nav-footer">
@@ -75,11 +75,70 @@
   <main id="main">
     <section class="section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header section-header-stack">
           <h1 data-i18n-nav="projects">Projects</h1>
+          <p data-i18n="projects.pageIntro">A chronological list of projects (most recent first).</p>
         </div>
+
+        <div class="projects-toolbar" aria-label="Project filters">
+          <div class="projects-filter" role="group" aria-label="Filter projects">
+            <button type="button" class="projects-filter-btn" data-project-filter="all" aria-pressed="true" data-i18n="projects.filterAll">All</button>
+            <button type="button" class="projects-filter-btn" data-project-filter="school" aria-pressed="false" data-i18n="projects.filterSchool">School</button>
+            <button type="button" class="projects-filter-btn" data-project-filter="personal" aria-pressed="false" data-i18n="projects.filterPersonal">Personal</button>
+          </div>
+        </div>
+
+        <div id="projects-list" class="projects-list"></div>
+        <p id="projects-empty" class="projects-empty" data-i18n="projects.noResults" hidden>No projects match this filter.</p>
       </div>
     </section>
+
+    <div id="project-modal" class="proj-modal" aria-hidden="true">
+      <div class="proj-modal-overlay" data-project-modal-close></div>
+      <div class="proj-modal-panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+        <div class="proj-modal-header">
+          <h2 id="project-modal-title"></h2>
+          <button type="button" class="proj-modal-close" aria-label="Close" data-project-modal-close>
+            <i class="fas fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="proj-modal-body">
+          <p class="proj-modal-meta">
+            <span class="proj-modal-meta-label" data-i18n="projects.modalTypeLabel">Type</span>
+            <span class="proj-modal-meta-sep">: </span>
+            <span id="project-modal-type" class="proj-modal-meta-value"></span>
+          </p>
+
+          <p class="proj-modal-meta">
+            <span class="proj-modal-meta-label" data-i18n="projects.modalDateLabel">Date</span>
+            <span class="proj-modal-meta-sep">: </span>
+            <span id="project-modal-date" class="proj-modal-meta-value"></span>
+          </p>
+
+          <p id="project-modal-description" class="proj-modal-description"></p>
+
+          <div class="proj-modal-section">
+            <div class="proj-modal-section-title" data-i18n="projects.modalPdf">PDF</div>
+            <a id="project-modal-pdf" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer" data-i18n="projects.openPdf">Open PDF</a>
+          </div>
+
+          <div class="proj-modal-section">
+            <div class="proj-modal-section-title" data-i18n="projects.modalVideo">Video demo</div>
+            <div id="project-modal-video" class="proj-modal-video"></div>
+          </div>
+
+          <div class="proj-modal-section">
+            <div class="proj-modal-section-title" data-i18n="projects.modalBadges">Related badges</div>
+            <div id="project-modal-badges" class="badges"></div>
+          </div>
+        </div>
+
+        <div class="proj-modal-footer">
+          <button type="button" class="btn btn-ghost" data-project-modal-close data-i18n="projects.modalClose">Close</button>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="footer">
@@ -97,7 +156,7 @@
             <li><a href="../certifications/" data-i18n-nav="certifications">Certifications</a></li>
             <li><a href="../work-school/" data-i18n-nav="workSchool">Work/School</a></li>
             <li><a href="../projects/" data-i18n-nav="projects">Projects</a></li>
-            <li><a href="../contact/" data-i18n-nav="contact">Contact</a></li>
+            <li><a href="../../index.html#contact" data-i18n-nav="contact">Contact</a></li>
           </ul>
         </div>
 
@@ -119,6 +178,7 @@
 
   <script src="../../assets/js/main.js?v=20260105"></script>
   <script src="../../assets/js/language-switcher.js"></script>
+  <script src="../../assets/js/projects.js?v=20260202"></script>
 
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
