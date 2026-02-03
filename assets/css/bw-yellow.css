@@ -15,9 +15,11 @@
   --muted-text-color: #3a3a3a;
 
   --bg-color: var(--color-white);
-  --bg-elevated: var(--color-white);
-  --card-bg: var(--color-white);
+  --bg-elevated: #ffffff;
+  --card-bg: #f0f0e8;
   --border-color: var(--color-black);
+
+  --border-width: 3px;
 
   --transition: 140ms ease;
 
@@ -61,8 +63,8 @@
   --muted-text-color: #cfcfcf;
 
   --bg-color: #0a0a0a;
-  --bg-elevated: #141414;
-  --card-bg: #141414;
+  --bg-elevated: #1a1a1a;
+  --card-bg: #242424;
   --border-color: #f2f2f2;
 
   --header-background: rgba(0, 0, 0, 0.92);
@@ -106,6 +108,52 @@ body {
   background: var(--bg-color);
   min-height: 100vh;
   transition: background-color var(--transition), color var(--transition);
+}
+
+.header {
+  border-bottom-width: var(--border-width);
+}
+
+.card,
+.btn,
+.mobile-menu-toggle,
+.mobile-nav-panel,
+.theme-toggle,
+.language-switcher button,
+.certifications-sidebar,
+.certifications-toolbar,
+.cert-view-btn,
+.cert-tag-btn,
+.cert-modal-panel,
+.cert-modal-header,
+.cert-modal-footer,
+.cert-list-item,
+.cert-list-badge,
+.projects-toolbar,
+.projects-filter-btn,
+.project-item,
+.proj-modal-panel,
+.proj-modal-header,
+.proj-modal-footer,
+.proj-modal-video,
+.ws-item,
+.ws-media,
+.timeline-content,
+.contact-form,
+.form-group input,
+.form-group textarea,
+.form-group select,
+.table,
+.table th,
+.table td,
+pre,
+.social-links a,
+#back-to-top {
+  border-width: var(--border-width);
+}
+
+.timeline::before {
+  width: var(--border-width);
 }
 
 html {
