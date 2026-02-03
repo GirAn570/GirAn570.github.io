@@ -468,6 +468,7 @@ select:focus-visible,
   gap: 0.35rem;
   border: 2px solid var(--border-color);
   background: transparent;
+  color: var(--text-color);
   white-space: nowrap;
 }
 
@@ -492,6 +493,11 @@ select:focus-visible,
 
 .badge-tool {
   background: transparent;
+}
+
+.card:hover .badge {
+  color: var(--ink-black);
+  border-color: var(--ink-black);
 }
 
 .section {
@@ -907,6 +913,7 @@ select:focus-visible,
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
+  color: var(--text-color);
 }
 
 .cert-view-btn:hover {
@@ -951,6 +958,7 @@ select:focus-visible,
   font-weight: 850;
   font-size: 0.82rem;
   letter-spacing: 0.08em;
+  color: var(--text-color);
   cursor: pointer;
   transition: background-color var(--transition), color var(--transition), transform var(--transition);
 }
@@ -1257,6 +1265,7 @@ select:focus-visible,
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
+  color: var(--text-color);
 }
 
 .projects-filter-btn:hover {
@@ -1290,6 +1299,11 @@ select:focus-visible,
 
 .project-item:hover p {
   color: var(--ink-black);
+}
+
+.project-item:hover .badge {
+  color: var(--ink-black);
+  border-color: var(--ink-black);
 }
 
 .project-meta {
