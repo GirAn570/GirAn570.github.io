@@ -976,6 +976,14 @@ select:focus-visible,
 
 .certifications-content .cards {
   margin-top: 0;
+  grid-template-columns: repeat(auto-fill, 260px);
+  justify-content: start;
+}
+
+@media (max-width: 600px) {
+  .certifications-content .cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 .certifications-empty {
