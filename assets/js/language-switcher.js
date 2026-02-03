@@ -3,7 +3,7 @@ const translations = {
   en: {
     nav: {
       home: 'Home',
-      certifications: 'Certifications',
+      certifications: 'Skills',
       workSchool: 'Work/School',
       projects: 'Projects',
       contact: 'Contact'
@@ -43,7 +43,7 @@ const translations = {
       sortDateAsc: 'Date (oldest)',
       sortNameAsc: 'Name (A–Z)',
       sortCategoryAsc: 'Category (A–Z)',
-      noResults: 'No certifications match this tag.',
+      noResults: 'No skills match this tag.',
       openNewTab: 'Open in new tab',
       openPdf: 'Open PDF',
       close: 'Close'
@@ -129,7 +129,7 @@ const translations = {
   fr: {
     nav: {
       home: 'Accueil',
-      certifications: 'Certifications',
+      certifications: 'Compétences',
       workSchool: 'Travail/Études',
       projects: 'Projets',
       contact: 'Contact'
@@ -169,7 +169,7 @@ const translations = {
       sortDateAsc: 'Date (ancien)',
       sortNameAsc: 'Nom (A–Z)',
       sortCategoryAsc: 'Catégorie (A–Z)',
-      noResults: 'Aucune certification ne correspond à ce tag.',
+      noResults: 'Aucune compétence ne correspond à ce tag.',
       openNewTab: 'Ouvrir dans un nouvel onglet',
       openPdf: 'Ouvrir le PDF',
       close: 'Fermer'
@@ -255,7 +255,7 @@ const translations = {
   de: {
     nav: {
       home: 'Startseite',
-      certifications: 'Zertifizierungen',
+      certifications: 'Fähigkeiten',
       workSchool: 'Beruf/Ausbildung',
       projects: 'Projekte',
       contact: 'Kontakt'
@@ -295,7 +295,7 @@ const translations = {
       sortDateAsc: 'Datum (älteste)',
       sortNameAsc: 'Name (A–Z)',
       sortCategoryAsc: 'Kategorie (A–Z)',
-      noResults: 'Keine Zertifizierungen passen zu diesem Tag.',
+      noResults: 'Keine Fähigkeiten passen zu diesem Tag.',
       openNewTab: 'In neuem Tab öffnen',
       openPdf: 'PDF öffnen',
       close: 'Schließen'
@@ -381,7 +381,7 @@ const translations = {
   lb: {
     nav: {
       home: 'Haaptsäit',
-      certifications: 'Zertifizéierungen',
+      certifications: 'Fäegkeeten',
       workSchool: 'Aarbecht/Schoul',
       projects: 'Projeten',
       contact: 'Kontakt'
@@ -421,7 +421,7 @@ const translations = {
       sortDateAsc: 'Datum (eelst)',
       sortNameAsc: 'Numm (A–Z)',
       sortCategoryAsc: 'Kategorie (A–Z)',
-      noResults: 'Keng Zertifizéierung passt zu dësem Tag.',
+      noResults: 'Keng Fäegkeet passt zu dësem Tag.',
       openNewTab: 'An engem neien Tab opmaachen',
       openPdf: 'PDF opmaachen',
       close: 'Zoumaachen'

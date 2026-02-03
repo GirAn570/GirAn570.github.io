@@ -1022,6 +1022,125 @@ select:focus-visible,
   color: var(--bg-color);
 }
 
+.cert-tag-btn[data-category] {
+  border-color: currentColor;
+}
+
+.cert-tag-btn[data-category="Certification"] {
+  background: rgba(199, 154, 0, 0.15);
+  color: var(--accent-color);
+}
+
+.cert-tag-btn[data-category="Courses"] {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+}
+
+.cert-tag-btn[data-category="Formation"] {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+}
+
+.cert-tag-btn[data-category="Visits"] {
+  background: rgba(168, 85, 247, 0.12);
+  color: #a855f7;
+}
+
+[data-theme="dark"] .cert-tag-btn[data-category="Certification"] {
+  background: rgba(199, 154, 0, 0.18);
+  color: #fbbf24;
+}
+
+[data-theme="dark"] .cert-tag-btn[data-category="Courses"] {
+  background: rgba(59, 130, 246, 0.18);
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .cert-tag-btn[data-category="Formation"] {
+  background: rgba(34, 197, 94, 0.18);
+  color: #86efac;
+}
+
+[data-theme="dark"] .cert-tag-btn[data-category="Visits"] {
+  background: rgba(168, 85, 247, 0.18);
+  color: #d8b4fe;
+}
+
+.cert-tag-btn[data-category]:hover {
+  background: var(--bg-elevated);
+  border-color: currentColor;
+}
+
+.cert-tag-btn[data-category="Certification"]:hover {
+  background: rgba(199, 154, 0, 0.25);
+}
+
+.cert-tag-btn[data-category="Courses"]:hover {
+  background: rgba(59, 130, 246, 0.22);
+}
+
+.cert-tag-btn[data-category="Formation"]:hover {
+  background: rgba(34, 197, 94, 0.22);
+}
+
+.cert-tag-btn[data-category="Visits"]:hover {
+  background: rgba(168, 85, 247, 0.22);
+}
+
+[data-theme="dark"] .cert-tag-btn[data-category="Certification"]:hover {
+  background: rgba(199, 154, 0, 0.28);
+}
+
+[data-theme="dark"] .cert-tag-btn[data-category="Courses"]:hover {
+  background: rgba(59, 130, 246, 0.28);
+}
+
+[data-theme="dark"] .cert-tag-btn[data-category="Formation"]:hover {
+  background: rgba(34, 197, 94, 0.28);
+}
+
+[data-theme="dark"] .cert-tag-btn[data-category="Visits"]:hover {
+  background: rgba(168, 85, 247, 0.28);
+}
+
+.cert-tag-btn[data-category].active {
+  background: var(--bg-elevated);
+  border-color: currentColor;
+  color: inherit;
+}
+
+.cert-tag-btn[data-category="Certification"].active {
+  background: rgba(199, 154, 0, 0.32);
+}
+
+.cert-tag-btn[data-category="Courses"].active {
+  background: rgba(59, 130, 246, 0.3);
+}
+
+.cert-tag-btn[data-category="Formation"].active {
+  background: rgba(34, 197, 94, 0.3);
+}
+
+.cert-tag-btn[data-category="Visits"].active {
+  background: rgba(168, 85, 247, 0.3);
+}
+
+[data-theme="dark"] .cert-tag-btn[data-category="Certification"].active {
+  background: rgba(199, 154, 0, 0.34);
+}
+
+[data-theme="dark"] .cert-tag-btn[data-category="Courses"].active {
+  background: rgba(59, 130, 246, 0.34);
+}
+
+[data-theme="dark"] .cert-tag-btn[data-category="Formation"].active {
+  background: rgba(34, 197, 94, 0.34);
+}
+
+[data-theme="dark"] .cert-tag-btn[data-category="Visits"].active {
+  background: rgba(168, 85, 247, 0.34);
+}
+
 .certifications-content .cards {
   margin-top: 0;
   grid-template-columns: repeat(auto-fill, 260px);
@@ -1070,14 +1189,54 @@ select:focus-visible,
   width: fit-content;
   padding: 0.2rem 0.4rem;
   border: 2px solid var(--border-color);
-  border-color: var(--ink-black);
-  background: var(--accent-color);
-  color: var(--ink-black);
+  border-color: currentColor;
+  background: transparent;
+  color: var(--text-color);
   font-size: 0.7rem;
   font-weight: 900;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   margin-bottom: 0.6rem;
+}
+
+.cert-card-category[data-category="Certification"] {
+  background: rgba(199, 154, 0, 0.15);
+  color: var(--accent-color);
+}
+
+.cert-card-category[data-category="Courses"] {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+}
+
+.cert-card-category[data-category="Formation"] {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+}
+
+.cert-card-category[data-category="Visits"] {
+  background: rgba(168, 85, 247, 0.12);
+  color: #a855f7;
+}
+
+[data-theme="dark"] .cert-card-category[data-category="Certification"] {
+  background: rgba(199, 154, 0, 0.18);
+  color: #fbbf24;
+}
+
+[data-theme="dark"] .cert-card-category[data-category="Courses"] {
+  background: rgba(59, 130, 246, 0.18);
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .cert-card-category[data-category="Formation"] {
+  background: rgba(34, 197, 94, 0.18);
+  color: #86efac;
+}
+
+[data-theme="dark"] .cert-card-category[data-category="Visits"] {
+  background: rgba(168, 85, 247, 0.18);
+  color: #d8b4fe;
 }
 
 .cert-card .badge {
@@ -1136,11 +1295,65 @@ select:focus-visible,
   font-size: 0.72rem;
   padding: 0.15rem 0.35rem;
   border: 2px solid var(--border-color);
-  background: var(--accent-color);
-  color: var(--ink-black);
+  background: transparent;
+  color: var(--text-color);
   font-weight: 850;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+}
+
+.cert-list-meta-pill.cert-list-category {
+  border-color: currentColor;
+}
+
+.cert-list-meta-pill.cert-list-category[data-category="Certification"] {
+  background: rgba(199, 154, 0, 0.15);
+  color: var(--accent-color);
+}
+
+.cert-list-meta-pill.cert-list-category[data-category="Courses"] {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+}
+
+.cert-list-meta-pill.cert-list-category[data-category="Formation"] {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+}
+
+.cert-list-meta-pill.cert-list-category[data-category="Visits"] {
+  background: rgba(168, 85, 247, 0.12);
+  color: #a855f7;
+}
+
+[data-theme="dark"] .cert-list-meta-pill.cert-list-category[data-category="Certification"] {
+  background: rgba(199, 154, 0, 0.18);
+  color: #fbbf24;
+}
+
+[data-theme="dark"] .cert-list-meta-pill.cert-list-category[data-category="Courses"] {
+  background: rgba(59, 130, 246, 0.18);
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .cert-list-meta-pill.cert-list-category[data-category="Formation"] {
+  background: rgba(34, 197, 94, 0.18);
+  color: #86efac;
+}
+
+[data-theme="dark"] .cert-list-meta-pill.cert-list-category[data-category="Visits"] {
+  background: rgba(168, 85, 247, 0.18);
+  color: #d8b4fe;
+}
+
+.cert-list-meta-pill.cert-list-date {
+  background: rgba(138, 138, 138, 0.12);
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .cert-list-meta-pill.cert-list-date {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-color);
 }
 
 .cert-list-description {
@@ -1270,6 +1483,58 @@ select:focus-visible,
   font-size: 0.85rem;
   color: var(--muted-text-color);
   margin-bottom: 0.9rem;
+}
+
+.cert-modal-meta-value#cert-modal-category {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.35rem;
+  border: 2px solid currentColor;
+  background: transparent;
+  color: var(--text-color);
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cert-modal-meta-value#cert-modal-category[data-category="Certification"] {
+  background: rgba(199, 154, 0, 0.15);
+  color: var(--accent-color);
+}
+
+.cert-modal-meta-value#cert-modal-category[data-category="Courses"] {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+}
+
+.cert-modal-meta-value#cert-modal-category[data-category="Formation"] {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+}
+
+.cert-modal-meta-value#cert-modal-category[data-category="Visits"] {
+  background: rgba(168, 85, 247, 0.12);
+  color: #a855f7;
+}
+
+[data-theme="dark"] .cert-modal-meta-value#cert-modal-category[data-category="Certification"] {
+  background: rgba(199, 154, 0, 0.18);
+  color: #fbbf24;
+}
+
+[data-theme="dark"] .cert-modal-meta-value#cert-modal-category[data-category="Courses"] {
+  background: rgba(59, 130, 246, 0.18);
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .cert-modal-meta-value#cert-modal-category[data-category="Formation"] {
+  background: rgba(34, 197, 94, 0.18);
+  color: #86efac;
+}
+
+[data-theme="dark"] .cert-modal-meta-value#cert-modal-category[data-category="Visits"] {
+  background: rgba(168, 85, 247, 0.18);
+  color: #d8b4fe;
 }
 
 .cert-modal-description {

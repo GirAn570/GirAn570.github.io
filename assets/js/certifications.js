@@ -260,6 +260,7 @@
 
     const category = document.createElement('span');
     category.className = 'cert-card-category';
+    category.dataset.category = item.category || '';
     category.textContent = item.category || '';
 
     const meta = document.createElement('p');
@@ -325,11 +326,12 @@
     meta.className = 'cert-list-meta';
 
     const catPill = document.createElement('span');
-    catPill.className = 'cert-list-meta-pill';
+    catPill.className = 'cert-list-meta-pill cert-list-category';
+    catPill.dataset.category = item.category || '';
     catPill.textContent = item.category || '';
 
     const datePill = document.createElement('span');
-    datePill.className = 'cert-list-meta-pill';
+    datePill.className = 'cert-list-meta-pill cert-list-date';
     datePill.textContent = item.delivered || '';
 
     meta.appendChild(catPill);
@@ -448,6 +450,7 @@
 
     title.textContent = item.name;
     categoryEl.textContent = item.category || '';
+    categoryEl.dataset.category = item.category || '';
     dateEl.textContent = item.delivered || '';
     descEl.textContent = item.description || '';
     tagsEl.innerHTML = '';
