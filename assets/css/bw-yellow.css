@@ -1170,13 +1170,13 @@ select:focus-visible,
 }
 
 .cert-card.no-certificate:hover {
-  background: var(--card-bg);
-  color: var(--text-color);
-  border-color: var(--border-color);
+  background: var(--accent-color);
+  color: var(--ink-black);
+  border-color: var(--ink-black);
 }
 
 .cert-card.no-certificate:hover p {
-  color: var(--muted-text-color);
+  color: var(--ink-black);
 }
 
 .cert-card .badges {
