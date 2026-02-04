@@ -14,7 +14,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="stylesheet" href="../../assets/css/bw-yellow.css?v=20260203_2">
+  <link rel="stylesheet" href="../../assets/css/bw-yellow.css?v=20260204_4">
 </head>
 <body>
   <header class="header">
@@ -88,6 +88,11 @@
             </div>
 
             <div class="certifications-filter-group">
+              <h3 class="certifications-filter-title" data-i18n="certificationsPage.statusTitle">Status</h3>
+              <div id="certifications-status-filters" class="certifications-tag-filters"></div>
+            </div>
+
+            <div class="certifications-filter-group">
               <h3 class="certifications-filter-title" data-i18n="certificationsPage.tagTitle">Tags</h3>
               <div id="certifications-tag-filters" class="certifications-tag-filters"></div>
             </div>
@@ -137,6 +142,12 @@
                 <span class="cert-modal-meta-label" data-i18n="certificationsPage.categoryLabel">Category</span>
                 <span class="cert-modal-meta-sep">: </span>
                 <span id="cert-modal-category" class="cert-modal-meta-value"></span>
+              </p>
+
+              <p class="cert-modal-meta">
+                <span class="cert-modal-meta-label" data-i18n="certificationsPage.statusTitle">Status</span>
+                <span class="cert-modal-meta-sep">: </span>
+                <span id="cert-modal-status" class="cert-modal-meta-value"></span>
               </p>
 
               <p class="cert-modal-meta">
@@ -200,7 +211,7 @@
 
   <script src="../../assets/js/main.js?v=20260105"></script>
   <script src="../../assets/js/language-switcher.js"></script>
-  <script src="../../assets/js/certifications.js?v=20260203"></script>
+  <script src="../../assets/js/certifications.js?v=20260204_4"></script>
 
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();

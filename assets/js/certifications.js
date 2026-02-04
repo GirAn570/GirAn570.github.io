@@ -1,5 +1,6 @@
 (function () {
   const CATEGORIES = ['Certification', 'Courses', 'Formation', 'Visits'];
+  const STATUSES = ['Completed', 'In Progress'];
 
   const certifications = [
     {
@@ -67,6 +68,7 @@
   const state = {
     activeTag: 'all',
     activeCategory: 'all',
+    activeStatus: 'all',
     view: 'grid',
     sort: 'date-desc',
     lastFocusedEl: null
@@ -88,6 +90,22 @@
 
   function normaliseCategory(category) {
     return String(category || '').trim();
+  }
+
+  function normaliseStatus(status) {
+    return String(status || '').trim();
+  }
+
+  function getItemStatus(item) {
+    const explicit = normaliseStatus(item?.status);
+    if (explicit) return explicit;
+    return item?.pdf ? 'Completed' : 'In Progress';
+  }
+
+  function getStatusLabel(status) {
+    if (status === 'Completed') return t('statusCompleted', 'Completed');
+    if (status === 'In Progress') return t('statusInProgress', 'In Progress');
+    return status;
   }
 
   function getUniqueTags(items) {
@@ -115,15 +133,32 @@
     return ordered;
   }
 
+  function getUniqueStatuses(items) {
+    const set = new Set();
+    items.forEach(item => {
+      const norm = normaliseStatus(getItemStatus(item));
+      if (norm) set.add(norm);
+    });
+
+    const ordered = STATUSES.filter(status => set.has(status));
+    Array.from(set).forEach(status => {
+      if (!ordered.includes(status)) ordered.push(status);
+    });
+    return ordered;
+  }
+
   function getVisibleItems() {
     return certifications.filter(item => {
       const matchesCategory =
         state.activeCategory === 'all' || normaliseCategory(item.category) === state.activeCategory;
 
+      const matchesStatus =
+        state.activeStatus === 'all' || getItemStatus(item) === state.activeStatus;
+
       const matchesTag =
         state.activeTag === 'all' || (item.tags || []).some(tag => normaliseTag(tag) === state.activeTag);
 
-      return matchesCategory && matchesTag;
+      return matchesCategory && matchesStatus && matchesTag;
     });
   }
 
@@ -181,6 +216,21 @@
     return btn;
   }
 
+  function createStatusButton(status, label, isActive) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = `cert-tag-btn${isActive ? ' active' : ''}`;
+    btn.dataset.status = status;
+    btn.textContent = label;
+
+    btn.addEventListener('click', () => {
+      state.activeStatus = status;
+      render();
+    });
+
+    return btn;
+  }
+
   function createCategoryButton(category, label, isActive) {
     const btn = document.createElement('button');
     btn.type = 'button';
@@ -199,6 +249,7 @@
   function renderFilters() {
     const container = document.getElementById('certifications-tag-filters');
     const categoryContainer = document.getElementById('certifications-category-filters');
+    const statusContainer = document.getElementById('certifications-status-filters');
     if (!container) return;
 
     container.innerHTML = '';
@@ -215,6 +266,22 @@
       );
       getUniqueCategories(certifications).forEach(cat => {
         categoryContainer.appendChild(createCategoryButton(cat, cat, state.activeCategory === cat));
+      });
+    }
+
+    if (statusContainer) {
+      statusContainer.innerHTML = '';
+      statusContainer.appendChild(
+        createStatusButton('all', t('allStatuses', 'All statuses'), state.activeStatus === 'all')
+      );
+      getUniqueStatuses(certifications).forEach(status => {
+        const label =
+          status === 'Completed'
+            ? t('statusCompleted', 'Completed')
+            : status === 'In Progress'
+              ? t('statusInProgress', 'In Progress')
+              : status;
+        statusContainer.appendChild(createStatusButton(status, label, state.activeStatus === status));
       });
     }
   }
@@ -247,6 +314,8 @@
 
   function createCard(item) {
     const hasCertificate = Boolean(item.pdf);
+    const status = getItemStatus(item);
+    const statusLabel = getStatusLabel(status);
 
     const card = document.createElement('div');
     card.className = `card cert-card${hasCertificate ? ' has-certificate' : ' no-certificate'}`;
@@ -262,6 +331,19 @@
     category.className = 'cert-card-category';
     category.dataset.category = item.category || '';
     category.textContent = item.category || '';
+
+    const statusPill = document.createElement('span');
+    statusPill.className = 'cert-status-pill cert-card-status';
+    statusPill.dataset.status = status;
+    statusPill.textContent = '';
+    statusPill.title = statusLabel;
+    statusPill.setAttribute('role', 'img');
+    statusPill.setAttribute('aria-label', statusLabel);
+
+    const pillsRow = document.createElement('div');
+    pillsRow.className = 'cert-card-pills';
+    pillsRow.appendChild(category);
+    pillsRow.appendChild(statusPill);
 
     const meta = document.createElement('p');
     meta.className = 'cert-meta';
@@ -291,7 +373,7 @@
     });
 
     card.appendChild(badge);
-    card.appendChild(category);
+    card.appendChild(pillsRow);
     card.appendChild(title);
     card.appendChild(meta);
     card.appendChild(badges);
@@ -310,6 +392,8 @@
 
   function createListItem(item) {
     const hasCertificate = Boolean(item.pdf);
+    const status = getItemStatus(item);
+    const statusLabel = getStatusLabel(status);
 
     const row = document.createElement('div');
     row.className = 'cert-list-item';
@@ -334,8 +418,17 @@
     datePill.className = 'cert-list-meta-pill cert-list-date';
     datePill.textContent = item.delivered || '';
 
+    const statusPill = document.createElement('span');
+    statusPill.className = 'cert-list-meta-pill cert-list-status';
+    statusPill.dataset.status = status;
+    statusPill.textContent = '';
+    statusPill.title = statusLabel;
+    statusPill.setAttribute('role', 'img');
+    statusPill.setAttribute('aria-label', statusLabel);
+
     meta.appendChild(catPill);
     meta.appendChild(datePill);
+    meta.appendChild(statusPill);
 
     const desc = document.createElement('p');
     desc.className = 'cert-list-description';
@@ -439,18 +532,26 @@
     const modal = document.getElementById('cert-modal');
     const title = document.getElementById('cert-modal-title');
     const categoryEl = document.getElementById('cert-modal-category');
+    const statusEl = document.getElementById('cert-modal-status');
     const dateEl = document.getElementById('cert-modal-date');
     const descEl = document.getElementById('cert-modal-description');
     const tagsEl = document.getElementById('cert-modal-tags');
     const link = document.getElementById('cert-modal-link');
 
-    if (!modal || !title || !categoryEl || !dateEl || !descEl || !tagsEl || !link) return;
+    if (!modal || !title || !categoryEl || !statusEl || !dateEl || !descEl || !tagsEl || !link) return;
 
     state.lastFocusedEl = triggerEl || document.activeElement;
 
     title.textContent = item.name;
     categoryEl.textContent = item.category || '';
     categoryEl.dataset.category = item.category || '';
+    const status = getItemStatus(item);
+    const statusLabel = getStatusLabel(status);
+    statusEl.textContent = '';
+    statusEl.dataset.status = status;
+    statusEl.title = statusLabel;
+    statusEl.setAttribute('role', 'img');
+    statusEl.setAttribute('aria-label', statusLabel);
     dateEl.textContent = item.delivered || '';
     descEl.textContent = item.description || '';
     tagsEl.innerHTML = '';
