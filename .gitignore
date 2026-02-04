@@ -1,1 +1,8 @@
-context/
+context/**
+!context/
+!context/images/
+!context/images/skills/
+!context/images/skills/**
+!context/docs/
+!context/docs/cerifications/
+!context/docs/cerifications/**

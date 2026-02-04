@@ -337,9 +337,19 @@
     if (imageUrl) {
       const img = document.createElement('img');
       img.className = className;
-      img.src = imageUrl;
+      try {
+        img.src = new URL(String(imageUrl), document.baseURI).toString();
+      } catch (_) {
+        img.src = String(imageUrl);
+      }
       img.alt = alt || '';
       img.loading = 'lazy';
+      img.addEventListener('error', () => {
+        const placeholder = document.createElement('div');
+        placeholder.className = className;
+        placeholder.setAttribute('aria-label', alt || 'Badge');
+        img.replaceWith(placeholder);
+      });
       return img;
     }
 
