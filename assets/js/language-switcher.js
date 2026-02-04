@@ -50,6 +50,7 @@ const translations = {
       noResults: 'No skills match this tag.',
       openNewTab: 'Open in new tab',
       openPdf: 'Open PDF',
+      openResult: 'Open result',
       close: 'Close'
     },
     skills: {
@@ -180,6 +181,7 @@ const translations = {
       noResults: 'Aucune compétence ne correspond à ce tag.',
       openNewTab: 'Ouvrir dans un nouvel onglet',
       openPdf: 'Ouvrir le PDF',
+      openResult: 'Ouvrir le résultat',
       close: 'Fermer'
     },
     skills: {
@@ -297,7 +299,7 @@ const translations = {
       allTags: 'Alle Tags',
       statusCompleted: 'Abgeschlossen',
       statusInProgress: 'In Bearbeitung',
-      deliveredLabel: 'Ausgestellt',
+      deliveredLabel: 'Erhalten',
       categoryLabel: 'Kategorie',
       tagsLabel: 'Tags',
       viewGrid: 'Raster',
@@ -310,6 +312,7 @@ const translations = {
       noResults: 'Keine Fähigkeiten passen zu diesem Tag.',
       openNewTab: 'In neuem Tab öffnen',
       openPdf: 'PDF öffnen',
+      openResult: 'Ergebnis öffnen',
       close: 'Schließen'
     },
     skills: {
@@ -425,21 +428,22 @@ const translations = {
       allCategories: 'All Kategorien',
       allStatuses: 'All Status',
       allTags: 'All Tags',
-      statusCompleted: 'Ofgeschloss',
+      statusCompleted: 'Fäerdeg',
       statusInProgress: 'Amgaang',
-      deliveredLabel: 'Ausgestallt',
+      deliveredLabel: 'Délivréiert',
       categoryLabel: 'Kategorie',
       tagsLabel: 'Tags',
       viewGrid: 'Gitter',
       viewList: 'Lëscht',
       sortLabel: 'Sortéieren',
-      sortDateDesc: 'Datum (neescht)',
-      sortDateAsc: 'Datum (eelst)',
+      sortDateDesc: 'Datum (neisten)',
+      sortDateAsc: 'Datum (eelsten)',
       sortNameAsc: 'Numm (A–Z)',
       sortCategoryAsc: 'Kategorie (A–Z)',
       noResults: 'Keng Fäegkeet passt zu dësem Tag.',
       openNewTab: 'An engem neien Tab opmaachen',
       openPdf: 'PDF opmaachen',
+      openResult: 'Resultat opmaachen',
       close: 'Zoumaachen'
     },
     skills: {

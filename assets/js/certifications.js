@@ -4,14 +4,25 @@
 
   const certifications = [
     {
-      id: 'word-associate',
-      name: 'Word Associate',
-      delivered: '2024-06-01',
+      id: 'microsoft-word',
+      name: 'Microsoft Word',
+      delivered: '17-11-2025',
       category: 'Certification',
       description: 'Microsoft Office certification focused on Word skills.',
       tags: ['Microsoft', 'Office', 'Word'],
       pdf: '../../context/docs/cerifications/word/Word Associate.pdf',
-      badgeImage: ''
+      badgeImage: '../../context/images/skills/docx-associate.png'
+    },
+    {
+      id: 'microsoft-word-expert',
+      name: 'Microsoft Word Expert',
+      delivered: '19-01-2026',
+      category: 'Certification',
+      description: 'Microsoft Office expert-level certification focused on advanced Word skills.',
+      tags: ['Microsoft', 'Office', 'Word', 'Expert'],
+      pdf: '../../context/docs/cerifications/word_expert/Cert70292725488.pdf',
+      resultPdf: '../../context/docs/cerifications/word_expert/Result95892732144.pdf',
+      badgeImage: '../../context/images/skills/docx-expert.png'
     },
     {
       id: 'word-m365-apps',
@@ -24,24 +35,26 @@
       badgeImage: ''
     },
     {
-      id: 'powerpoint-cert',
-      name: 'PowerPoint Certification',
-      delivered: '2024-06-01',
+      id: 'az-900',
+      name: 'Microsoft Azure Fundamentals (AZ-900)',
+      delivered: '26-01-2026',
+      category: 'Certification',
+      description: 'Microsoft Azure fundamentals certification covering core cloud concepts and Azure services.',
+      tags: ['Microsoft', 'Azure', 'Cloud', 'AZ-900'],
+      pdf: '../../context/docs/cerifications/az900/Cert62492918172.pdf',
+      resultPdf: '../../context/docs/cerifications/az900/Result63692737128.pdf',
+      badgeImage: '../../context/images/skills/az-900.png'
+    },
+    {
+      id: 'microsoft-powerpoint',
+      name: 'Microsoft PowerPoint',
+      delivered: '20-10-2025',
       category: 'Certification',
       description: 'Microsoft Office certification focused on PowerPoint skills.',
       tags: ['Microsoft', 'Office', 'PowerPoint'],
       pdf: '../../context/docs/cerifications/powerpoint/Cert90564745565.pdf',
-      badgeImage: ''
-    },
-    {
-      id: 'powerpoint-result',
-      name: 'PowerPoint Result',
-      delivered: '2024-06-01',
-      category: 'Courses',
-      description: 'Result report for the PowerPoint assessment.',
-      tags: ['Microsoft', 'Office', 'PowerPoint'],
-      pdf: '../../context/docs/cerifications/powerpoint/Result41564732340.pdf',
-      badgeImage: ''
+      resultPdf: '../../context/docs/cerifications/powerpoint/Result41564732340.pdf',
+      badgeImage: '../../context/images/skills/ppt-associate.png'
     },
     {
       id: 'formation-cloud-basics',
@@ -162,9 +175,33 @@
     });
   }
 
+  function parseDateMs(value) {
+    const str = String(value || '').trim();
+
+    const iso = str.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (iso) {
+      const year = Number(iso[1]);
+      const month = Number(iso[2]) - 1;
+      const day = Number(iso[3]);
+      return Date.UTC(year, month, day);
+    }
+
+    const dmy = str.match(/^(\d{2})-(\d{2})-(\d{4})$/);
+    if (dmy) {
+      const day = Number(dmy[1]);
+      const month = Number(dmy[2]) - 1;
+      const year = Number(dmy[3]);
+      return Date.UTC(year, month, day);
+    }
+
+    const parsed = new Date(str).getTime();
+    if (Number.isFinite(parsed)) return parsed;
+    return Date.UTC(1970, 0, 1);
+  }
+
   function compareDates(a, b) {
-    const aDate = new Date(a || '1970-01-01').getTime();
-    const bDate = new Date(b || '1970-01-01').getTime();
+    const aDate = parseDateMs(a);
+    const bDate = parseDateMs(b);
     return aDate - bDate;
   }
 
@@ -392,6 +429,7 @@
 
   function createListItem(item) {
     const hasCertificate = Boolean(item.pdf);
+    const hasResult = Boolean(item.resultPdf);
     const status = getItemStatus(item);
     const statusLabel = getStatusLabel(status);
 
@@ -446,13 +484,17 @@
     const actions = document.createElement('div');
     actions.className = 'cert-list-actions';
 
-    if (hasCertificate) {
+    if (hasCertificate || hasResult) {
       const openBtn = document.createElement('button');
       openBtn.type = 'button';
       openBtn.className = 'btn btn-primary';
       openBtn.textContent = t('openPdf', 'Open PDF');
       openBtn.addEventListener('click', () => openModal(item, openBtn));
 
+      actions.appendChild(openBtn);
+    }
+
+    if (hasCertificate) {
       const openNewTab = document.createElement('a');
       openNewTab.className = 'btn btn-ghost';
       openNewTab.textContent = t('openNewTab', 'Open in new tab');
@@ -460,15 +502,25 @@
       openNewTab.target = '_blank';
       openNewTab.rel = 'noopener noreferrer';
 
-      actions.appendChild(openBtn);
       actions.appendChild(openNewTab);
+    }
+
+    if (hasResult) {
+      const openResult = document.createElement('a');
+      openResult.className = 'btn btn-ghost';
+      openResult.textContent = t('openResult', 'Open result');
+      openResult.href = encodeURI(item.resultPdf);
+      openResult.target = '_blank';
+      openResult.rel = 'noopener noreferrer';
+
+      actions.appendChild(openResult);
     }
 
     content.appendChild(title);
     content.appendChild(meta);
     content.appendChild(desc);
     content.appendChild(tags);
-    if (hasCertificate) content.appendChild(actions);
+    if (hasCertificate || hasResult) content.appendChild(actions);
 
     row.appendChild(badge);
     row.appendChild(content);
@@ -537,8 +589,9 @@
     const descEl = document.getElementById('cert-modal-description');
     const tagsEl = document.getElementById('cert-modal-tags');
     const link = document.getElementById('cert-modal-link');
+    const resultLink = document.getElementById('cert-modal-result-link');
 
-    if (!modal || !title || !categoryEl || !statusEl || !dateEl || !descEl || !tagsEl || !link) return;
+    if (!modal || !title || !categoryEl || !statusEl || !dateEl || !descEl || !tagsEl || !link || !resultLink) return;
 
     state.lastFocusedEl = triggerEl || document.activeElement;
 
@@ -577,6 +630,17 @@
       link.href = '#';
       link.hidden = true;
       link.setAttribute('aria-disabled', 'true');
+    }
+
+    if (item.resultPdf) {
+      const href = encodeURI(item.resultPdf);
+      resultLink.href = href;
+      resultLink.hidden = false;
+      resultLink.setAttribute('aria-disabled', 'false');
+    } else {
+      resultLink.href = '#';
+      resultLink.hidden = true;
+      resultLink.setAttribute('aria-disabled', 'true');
     }
 
     modal.classList.add('open');
