@@ -53,7 +53,7 @@
       title: 'RedM Project',
       date: '',
       type: 'personal',
-      shortDescription: 'Personal project built around RedM.',
+      shortDescription: 'Online multiplayer gaming server basen on RedM.',
       longDescription:
         'Online multiplayer gaming server basen on RedM',
       pdf: null,
