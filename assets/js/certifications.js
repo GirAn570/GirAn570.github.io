@@ -25,16 +25,6 @@
       badgeImage: '../../context/images/skills/docx-expert.png'
     },
     {
-      id: 'word-m365-apps',
-      name: 'Microsoft Word Microsoft 365 Apps',
-      delivered: '2024-06-01',
-      category: 'Courses',
-      description: 'Course covering Word features and workflows in Microsoft 365 Apps.',
-      tags: ['Microsoft', 'Office', 'Word', 'Microsoft 365'],
-      pdf: '../../context/docs/cerifications/word/Microsoft Word Microsoft 365 Apps.pdf',
-      badgeImage: ''
-    },
-    {
       id: 'az-900',
       name: 'Microsoft Azure Fundamentals (AZ-900)',
       delivered: '26-01-2026',
@@ -55,26 +45,6 @@
       pdf: '../../context/docs/cerifications/powerpoint/Cert90564745565.pdf',
       resultPdf: '../../context/docs/cerifications/powerpoint/Result41564732340.pdf',
       badgeImage: '../../context/images/skills/ppt-associate.png'
-    },
-    {
-      id: 'formation-cloud-basics',
-      name: 'Formation: Cloud Basics',
-      delivered: '2025-01-01',
-      category: 'Formation',
-      description: 'Introductory formation covering cloud concepts and terminology.',
-      tags: ['Cloud', 'Fundamentals'],
-      pdf: null,
-      badgeImage: ''
-    },
-    {
-      id: 'visit-example',
-      name: 'Company Visit: Data Center Tour',
-      delivered: '2024-11-15',
-      category: 'Visits',
-      description: 'Visit of a data center to understand infrastructure, operations, and security.',
-      tags: ['Visit', 'Infrastructure', 'Data Center'],
-      pdf: null,
-      badgeImage: ''
     }
   ];
 
@@ -301,7 +271,7 @@
       categoryContainer.appendChild(
         createCategoryButton('all', t('allCategories', 'All categories'), state.activeCategory === 'all')
       );
-      getUniqueCategories(certifications).forEach(cat => {
+      CATEGORIES.forEach(cat => {
         categoryContainer.appendChild(createCategoryButton(cat, cat, state.activeCategory === cat));
       });
     }
@@ -311,7 +281,7 @@
       statusContainer.appendChild(
         createStatusButton('all', t('allStatuses', 'All statuses'), state.activeStatus === 'all')
       );
-      getUniqueStatuses(certifications).forEach(status => {
+      STATUSES.forEach(status => {
         const label =
           status === 'Completed'
             ? t('statusCompleted', 'Completed')
