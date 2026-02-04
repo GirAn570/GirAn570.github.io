@@ -1,40 +1,64 @@
 (function () {
   const projects = [
     {
-      id: 'portfolio-guide',
-      title: 'Online Portfolio Guide (Template)',
-      date: '2026-01-20',
+      id: 'power-automate-workflow',
+      title: 'Power Automate Workflow',
+      date: '2025-11-21',
       type: 'school',
-      shortDescription: 'Short description (edit this).',
+      shortDescription: 'Built an automated workflow using Microsoft Power Automate.',
       longDescription:
-        'Long description (edit this). Explain goals, tools, what you built, and what you learned. This is the text shown in the popup.',
-      pdf: '../../context/projects/work_school/portfolio/Online Portfolio Guide.pdf',
+        'Built an automated workflow using Microsoft Power Automate. This project focused on designing a reliable flow, handling triggers/actions, and validating the automation end-to-end.',
+      pdf: null,
       video: null,
-      relatedBadges: ['Word Associate', 'PowerPoint Certification']
+      relatedBadges: ['Power Automate', 'Automation']
     },
     {
-      id: 'personal-automation',
-      title: 'Personal Automation Script (Template)',
-      date: '2025-11-10',
+      id: 'publication-manager-powerapps',
+      title: 'Publication Manager (Power Apps)',
+      date: '2025-11-23',
+      type: 'school',
+      shortDescription: 'Created a Power Apps solution to manage publications and related data.',
+      longDescription:
+        'Created a Power Apps solution to manage publications and related data. This project focused on building the app UI, structuring data, and implementing a usable management workflow.',
+      pdf: null,
+      video: null,
+      relatedBadges: ['Power Apps', 'Low-code']
+    },
+    {
+      id: 'food-event-project-management',
+      title: 'Food Event Project Management',
+      date: '2025-10-13',
+      type: 'school',
+      shortDescription: 'Planned and managed a food event project with clear deliverables and timelines.',
+      longDescription:
+        'Planned and managed a food event project with clear deliverables and timelines. This project focused on organizing tasks, coordinating roles, tracking progress, and ensuring objectives were met.',
+      pdf: null,
+      video: null,
+      relatedBadges: ['Project Management']
+    },
+    {
+      id: 'grading-management-system',
+      title: 'Grading Management System',
+      date: '2025-11-17',
+      type: 'school',
+      shortDescription: 'Designed a system to manage grading data and workflows.',
+      longDescription:
+        'Designed a system to manage grading data and workflows. This project focused on data organization, handling typical use cases, and building a clear user workflow for managing grades.',
+      pdf: null,
+      video: null,
+      relatedBadges: ['System Design']
+    },
+    {
+      id: 'redm-project',
+      title: 'RedM Project',
+      date: '',
       type: 'personal',
-      shortDescription: 'Short description (edit this).',
+      shortDescription: 'Personal project built around RedM.',
       longDescription:
-        'Long description (edit this). Add a longer explanation of the project and how it works.',
+        'Personal project built around RedM. This entry is a placeholder for the detailed description; the content can be expanded with goals, features, and technical choices.',
       pdf: null,
       video: null,
-      relatedBadges: ['Python', 'Regex']
-    },
-    {
-      id: 'school-lab',
-      title: 'School Lab Project (Template)',
-      date: '2025-05-05',
-      type: 'school',
-      shortDescription: 'Short description (edit this).',
-      longDescription:
-        'Long description (edit this). Add context about the assignment, constraints, and deliverables.',
-      pdf: null,
-      video: null,
-      relatedBadges: ['Cloud', 'Infrastructure']
+      relatedBadges: []
     }
   ];
 
@@ -104,6 +128,8 @@
     title.textContent = project.title || '';
     typeEl.textContent = formatType(project.type);
     dateEl.textContent = project.date || '';
+    const dateRow = dateEl.closest('.proj-modal-meta');
+    if (dateRow) dateRow.hidden = !project.date;
     descEl.textContent = project.longDescription || '';
 
     const pdfSection = pdfLink.closest('.proj-modal-section');
@@ -200,7 +226,9 @@
       const meta = document.createElement('div');
       meta.className = 'project-meta';
       meta.appendChild(createPill(formatType(project.type)));
-      meta.appendChild(createPill(project.date || ''));
+      if (project.date) {
+        meta.appendChild(createPill(project.date));
+      }
 
       const title = document.createElement('h3');
       title.className = 'project-title';
