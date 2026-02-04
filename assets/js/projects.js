@@ -55,7 +55,7 @@
       type: 'personal',
       shortDescription: 'Personal project built around RedM.',
       longDescription:
-        'Personal project built around RedM. This entry is a placeholder for the detailed description; the content can be expanded with goals, features, and technical choices.',
+        'Online multiplayer gaming server basen on RedM',
       pdf: null,
       video: null,
       relatedBadges: []
