@@ -3,6 +3,8 @@ context/**
 !context/images/
 !context/images/skills/
 !context/images/skills/**
+!context/images/work-school/
+!context/images/work-school/**
 !context/docs/
 !context/docs/cerifications/
 !context/docs/cerifications/**
