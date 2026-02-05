@@ -9,7 +9,7 @@
       delivered: '17-11-2025',
       category: 'Certification',
       description: 'Microsoft Office certification focused on Word skills.',
-      tags: ['Microsoft', 'Office', 'Word'],
+      tags: ['Microsoft'],
       pdf: '../../context/docs/cerifications/word/Word Associate.pdf',
       badgeImage: '../../context/images/skills/docx-associate.png'
     },
@@ -19,7 +19,7 @@
       delivered: '19-01-2026',
       category: 'Certification',
       description: 'Microsoft Office expert-level certification focused on advanced Word skills.',
-      tags: ['Microsoft', 'Office', 'Word', 'Expert'],
+      tags: ['Microsoft', 'Expert'],
       pdf: '../../context/docs/cerifications/word_expert/Cert70292725488.pdf',
       resultPdf: '../../context/docs/cerifications/word_expert/Result95892732144.pdf',
       badgeImage: '../../context/images/skills/docx-expert.png'
@@ -30,10 +30,32 @@
       delivered: '26-01-2026',
       category: 'Certification',
       description: 'Microsoft Azure fundamentals certification covering core cloud concepts and Azure services.',
-      tags: ['Microsoft', 'Azure', 'Cloud', 'AZ-900'],
+      tags: ['Microsoft', 'Azure', 'Cloud'],
       pdf: '../../context/docs/cerifications/az900/Cert62492918172.pdf',
       resultPdf: '../../context/docs/cerifications/az900/Result63692737128.pdf',
       badgeImage: '../../context/images/skills/az-900.png'
+    },
+    {
+      id: 'course-az-900-pluralsight',
+      name: 'AZ-900 Pluralsight',
+      delivered: '',
+      category: 'Courses',
+      description: 'AZ-900 course completed on Pluralsight.',
+      tags: ['Azure', 'Cloud', 'Pluralsight'],
+      status: 'Completed',
+      pdf: null,
+      badgeImage: ''
+    },
+    {
+      id: 'course-ccna-introduction-to-networks',
+      name: 'CCNA: Introduction to Networks',
+      delivered: '',
+      category: 'Courses',
+      description: 'CCNA course: Introduction to Networks completed via Cisco Networking Academy.',
+      tags: ['Cisco'],
+      status: 'Completed',
+      pdf: null,
+      badgeImage: ''
     },
     {
       id: 'microsoft-powerpoint',
@@ -41,10 +63,65 @@
       delivered: '20-10-2025',
       category: 'Certification',
       description: 'Microsoft Office certification focused on PowerPoint skills.',
-      tags: ['Microsoft', 'Office', 'PowerPoint'],
+      tags: ['Microsoft'],
       pdf: '../../context/docs/cerifications/powerpoint/Cert90564745565.pdf',
       resultPdf: '../../context/docs/cerifications/powerpoint/Result41564732340.pdf',
       badgeImage: '../../context/images/skills/ppt-associate.png'
+    },
+    {
+      id: 'formation-az-900-deep',
+      name: 'Formation AZ-900 by Deep',
+      delivered: '27-11-2025',
+      category: 'Formation',
+      description: 'Formation session preparing for the Microsoft Azure Fundamentals (AZ-900) exam.',
+      tags: ['Azure', 'Cloud'],
+      status: 'Completed',
+      pdf: null,
+      badgeImage: ''
+    },
+    {
+      id: 'formation-pl-900-deep',
+      name: 'Formation PL-900 by Deep',
+      delivered: '05-12-2025',
+      category: 'Formation',
+      description: 'Formation session preparing for the Microsoft Power Platform Fundamentals (PL-900) exam.',
+      tags: ['Microsoft'],
+      status: 'Completed',
+      pdf: null,
+      badgeImage: ''
+    },
+    {
+      id: 'formation-sustainable-cloud-arhs',
+      name: 'Formation Sustainable Cloud by Arhs',
+      delivered: '06-01-2026',
+      category: 'Formation',
+      description: 'Formation focused on sustainable cloud concepts and best practices.',
+      tags: ['Cloud'],
+      status: 'Completed',
+      pdf: null,
+      badgeImage: ''
+    },
+    {
+      id: 'visit-luxconnect',
+      name: 'Visit Luxconnect',
+      delivered: '09-01-2026',
+      category: 'Visits',
+      description: 'Visit to Luxconnect.',
+      tags: ['Datacenter'],
+      status: 'Completed',
+      pdf: null,
+      badgeImage: ''
+    },
+    {
+      id: 'microsoft-excel',
+      name: 'Microsoft Excel',
+      delivered: '03-02-2026',
+      category: 'Certification',
+      description: 'Microsoft Office certification focused on Excel skills. Passed for the first time on the 3rd of feruary 2026 and failed with a score of 665/1000',
+      tags: ['Microsoft'],
+      status: 'In Progress',
+      pdf: null,
+      badgeImage: ''
     }
   ];
 
@@ -367,7 +444,8 @@
 
     const metaLabel = document.createElement('span');
     metaLabel.className = 'cert-meta-label';
-    metaLabel.textContent = t('deliveredLabel', 'Delivered');
+    metaLabel.textContent =
+      item.category === 'Certification' ? t('deliveredLabel', 'Delivered') : t('dateLabel', 'Date');
 
     const metaSep = document.createTextNode(': ');
 
@@ -468,7 +546,8 @@
       const openBtn = document.createElement('button');
       openBtn.type = 'button';
       openBtn.className = 'btn btn-primary';
-      openBtn.textContent = t('openPdf', 'Open PDF');
+      openBtn.textContent =
+        item.category === 'Certification' ? t('openCertificate', 'Open certificate') : t('openPdf', 'Open PDF');
       openBtn.addEventListener('click', () => openModal(item, openBtn));
 
       actions.appendChild(openBtn);
@@ -566,12 +645,13 @@
     const categoryEl = document.getElementById('cert-modal-category');
     const statusEl = document.getElementById('cert-modal-status');
     const dateEl = document.getElementById('cert-modal-date');
+    const dateLabelEl = document.getElementById('cert-modal-date-label');
     const descEl = document.getElementById('cert-modal-description');
     const tagsEl = document.getElementById('cert-modal-tags');
     const link = document.getElementById('cert-modal-link');
     const resultLink = document.getElementById('cert-modal-result-link');
 
-    if (!modal || !title || !categoryEl || !statusEl || !dateEl || !descEl || !tagsEl || !link || !resultLink) return;
+    if (!modal || !title || !categoryEl || !statusEl || !dateEl || !dateLabelEl || !descEl || !tagsEl || !link || !resultLink) return;
 
     state.lastFocusedEl = triggerEl || document.activeElement;
 
@@ -585,6 +665,8 @@
     statusEl.title = statusLabel;
     statusEl.setAttribute('role', 'img');
     statusEl.setAttribute('aria-label', statusLabel);
+    dateLabelEl.textContent =
+      item.category === 'Certification' ? t('deliveredLabel', 'Delivered') : t('dateLabel', 'Date');
     dateEl.textContent = item.delivered || '';
     descEl.textContent = item.description || '';
     tagsEl.innerHTML = '';
@@ -606,6 +688,10 @@
       link.href = href;
       link.hidden = false;
       link.setAttribute('aria-disabled', 'false');
+      const labelKey = item.category === 'Certification' ? 'openCertificate' : 'openPdf';
+      link.textContent =
+        item.category === 'Certification' ? t('openCertificate', 'Open certificate') : t('openPdf', 'Open PDF');
+      link.setAttribute('data-i18n', `certificationsPage.${labelKey}`);
     } else {
       link.href = '#';
       link.hidden = true;

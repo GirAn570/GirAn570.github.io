@@ -38,6 +38,7 @@ const translations = {
       statusCompleted: 'Completed',
       statusInProgress: 'In Progress',
       deliveredLabel: 'Delivered',
+      dateLabel: 'Date',
       categoryLabel: 'Category',
       tagsLabel: 'Tags',
       viewGrid: 'Grid',
@@ -50,6 +51,7 @@ const translations = {
       noResults: 'No skills match this tag.',
       openNewTab: 'Open in new tab',
       openPdf: 'Open PDF',
+      openCertificate: 'Open certificate',
       openResult: 'Open result',
       close: 'Close'
     },
@@ -169,6 +171,7 @@ const translations = {
       statusCompleted: 'Terminé',
       statusInProgress: 'En cours',
       deliveredLabel: 'Délivré',
+      dateLabel: 'Date',
       categoryLabel: 'Catégorie',
       tagsLabel: 'Tags',
       viewGrid: 'Grille',
@@ -181,6 +184,7 @@ const translations = {
       noResults: 'Aucune compétence ne correspond à ce tag.',
       openNewTab: 'Ouvrir dans un nouvel onglet',
       openPdf: 'Ouvrir le PDF',
+      openCertificate: 'Ouvrir le certificat',
       openResult: 'Ouvrir le résultat',
       close: 'Fermer'
     },
@@ -300,6 +304,7 @@ const translations = {
       statusCompleted: 'Abgeschlossen',
       statusInProgress: 'In Bearbeitung',
       deliveredLabel: 'Erhalten',
+      dateLabel: 'Datum',
       categoryLabel: 'Kategorie',
       tagsLabel: 'Tags',
       viewGrid: 'Raster',
@@ -312,6 +317,7 @@ const translations = {
       noResults: 'Keine Fähigkeiten passen zu diesem Tag.',
       openNewTab: 'In neuem Tab öffnen',
       openPdf: 'PDF öffnen',
+      openCertificate: 'Zertifikat öffnen',
       openResult: 'Ergebnis öffnen',
       close: 'Schließen'
     },
@@ -431,6 +437,7 @@ const translations = {
       statusCompleted: 'Fäerdeg',
       statusInProgress: 'Amgaang',
       deliveredLabel: 'Délivréiert',
+      dateLabel: 'Datum',
       categoryLabel: 'Kategorie',
       tagsLabel: 'Tags',
       viewGrid: 'Gitter',
@@ -443,6 +450,7 @@ const translations = {
       noResults: 'Keng Fäegkeet passt zu dësem Tag.',
       openNewTab: 'An engem neien Tab opmaachen',
       openPdf: 'PDF opmaachen',
+      openCertificate: 'Zertifikat opmaachen',
       openResult: 'Resultat opmaachen',
       close: 'Zoumaachen'
     },
