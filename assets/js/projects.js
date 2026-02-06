@@ -1,64 +1,64 @@
 (function () {
   const projects = [
     {
-      id: 'power-automate-workflow',
-      title: 'Power Automate Workflow',
-      date: '2025-11-21',
-      type: 'school',
-      shortDescription: 'Built an automated workflow using Microsoft Power Automate.',
-      longDescription:
-        'Built an automated workflow using Microsoft Power Automate. This project focused on designing a reliable flow, handling triggers/actions, and validating the automation end-to-end.',
-      pdf: null,
-      video: null,
-      relatedBadges: ['Power Automate', 'Automation']
-    },
-    {
-      id: 'publication-manager-powerapps',
-      title: 'Publication Manager (Power Apps)',
-      date: '2025-11-23',
-      type: 'school',
-      shortDescription: 'Created a Power Apps solution to manage publications and related data.',
-      longDescription:
-        'Created a Power Apps solution to manage publications and related data. This project focused on building the app UI, structuring data, and implementing a usable management workflow.',
-      pdf: null,
-      video: null,
-      relatedBadges: ['Power Apps', 'Low-code']
-    },
-    {
       id: 'food-event-project-management',
       title: 'Food Event Project Management',
-      date: '2025-10-13',
+      date: '2025-10-05',
       type: 'school',
-      shortDescription: 'Planned and managed a food event project with clear deliverables and timelines.',
+      shortDescription: 'Planned logistics, prep schedule, and budgeting for a two-day food sale during a sports festival.',
       longDescription:
-        'Planned and managed a food event project with clear deliverables and timelines. This project focused on organizing tasks, coordinating roles, tracking progress, and ensuring objectives were met.',
+        'Planned the logistics, preparation schedule, and budgeting for a two-day food sale (Pulled Chicken / Pulled Jackfruit sandwiches) during a sports festival. Work included building an MS Planner board (Backlog → Finished), calculating quantities (vegetarian ratio, free meals for referees), defining smoker load scheduling and wood consumption, estimating manpower and setup/cleanup timing, and preparing a clear Excel cost sheet to estimate pricing and profitability. Personas were created to model different visitor needs and service constraints.',
       pdf: null,
       video: null,
-      relatedBadges: ['Project Management']
+      relatedBadges: ['Project Management', 'MS Planner', 'Excel']
+    },
+    {
+      id: 'power-platform',
+      title: 'Power Platform',
+      date: '',
+      type: 'school',
+      shortDescription: 'Built some projects using Microsoft Power Platform to design a low-code workflow.',
+      longDescription:
+        'Built some projects using Microsoft Power Platform. The focus was on designing an end-to-end low-code workflow: data structure, app/flow logic, and a usable interface that supports a clear process from input to output. Using Power automate, I created a workflow that sets me a reminder when to buy new medication and keeps trac of the current number I have. Using power apps I created a Publication Manager app, that helps me trach the monthly orders, inventory, and special orders.',
+      pdf: null,
+      video: null,
+      relatedBadges: ['Power Platform', 'Low-code', 'Automation']
     },
     {
       id: 'grading-management-system',
       title: 'Grading Management System',
       date: '2025-11-17',
       type: 'school',
-      shortDescription: 'Designed a system to manage grading data and workflows.',
+      shortDescription: 'Planned a grade management web app (Python + SQL + Docker) with personas, user stories, and MoSCoW prioritization.',
       longDescription:
-        'Designed a system to manage grading data and workflows. This project focused on data organization, handling typical use cases, and building a clear user workflow for managing grades.',
+        'Planned a grade management web application where Students can view grades and Professors can create/update grades. The project emphasizes structured planning before coding: personas, at least 12 user stories with acceptance criteria, MoSCoW prioritization, a Planner board workflow, and research on Python frameworks, database integration, secure password hashing, and Docker/Docker Compose. Deliverables include planning and research documents plus a team reflection on collaboration and time management. In the end this project main ojective was not the grading sytem, but to make us realize how important project management is.',
       pdf: null,
       video: null,
-      relatedBadges: ['System Design']
+      relatedBadges: ['Python', 'Docker', 'SQL', 'System Design']
     },
     {
-      id: 'redm-project',
-      title: 'RedM Project',
+      id: 'remote-desktop-services-rds',
+      title: 'Remote Desktop Services (RDS) Implementation',
+      date: '',
+      type: 'school',
+      shortDescription: 'Implemented a Windows Server 2022 lab with AD DS, DNS, and Remote Desktop Services for centralized student access.',
+      longDescription:
+        'Implemented a Remote Desktop Services (RDS) lab environment using Windows Server 2022 with Active Directory Domain Services (AD DS) and DNS. The goal was to provide secure, centralized desktop access for students via a session-based RDS deployment. The documentation covers prerequisites, VM/server build steps, domain setup, user/group creation, RDS deployment and collection validation, certificate configuration for RD Web Access, client configuration, and troubleshooting notes.',
+      pdf: '../../context/projects/work_school/rds/Lab08_RDS_Implementation_Guilherme_Andrea.pdf',
+      video: null,
+      relatedBadges: ['Windows Server', 'Microsoft']
+    },
+    {
+      id: 'redm',
+      title: 'RedM',
       date: '',
       type: 'personal',
-      shortDescription: 'Online multiplayer gaming server basen on RedM.',
+      shortDescription: 'In progress: building and managing an online multiplayer server based on RedM.',
       longDescription:
-        'Online multiplayer gaming server basen on RedM',
+        'In progress: building and managing an online multiplayer server based on RedM. Work includes server configuration, maintaining resources, and iterating on gameplay and stability based on testing and player feedback. Currently at the early developpement state',
       pdf: null,
       video: null,
-      relatedBadges: []
+      relatedBadges: ['Cloud', 'Project Management']
     }
   ];
 

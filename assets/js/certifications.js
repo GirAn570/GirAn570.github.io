@@ -44,7 +44,7 @@
       tags: ['Azure', 'Cloud', 'Pluralsight'],
       status: 'Completed',
       pdf: null,
-      badgeImage: ''
+      badgeImage: '../../context/images/skills/Azure.jpg'
     },
     {
       id: 'course-ccna-introduction-to-networks',
@@ -55,7 +55,7 @@
       tags: ['Cisco'],
       status: 'Completed',
       pdf: null,
-      badgeImage: ''
+      badgeImage: '../../context/images/skills/cisco.jpg'
     },
     {
       id: 'microsoft-powerpoint',
@@ -70,36 +70,36 @@
     },
     {
       id: 'formation-az-900-deep',
-      name: 'Formation AZ-900 by Deep',
+      name: 'AZ-900 - Deep',
       delivered: '27-11-2025',
       category: 'Formation',
       description: 'Formation session preparing for the Microsoft Azure Fundamentals (AZ-900) exam.',
       tags: ['Azure', 'Cloud'],
       status: 'Completed',
       pdf: null,
-      badgeImage: ''
+      badgeImage: '../../context/images/skills/deep.png'
     },
     {
       id: 'formation-pl-900-deep',
-      name: 'Formation PL-900 by Deep',
+      name: 'PL-900 - Deep',
       delivered: '05-12-2025',
       category: 'Formation',
       description: 'Formation session preparing for the Microsoft Power Platform Fundamentals (PL-900) exam.',
       tags: ['Microsoft'],
       status: 'Completed',
       pdf: null,
-      badgeImage: ''
+      badgeImage: '../../context/images/skills/deep.png'
     },
     {
       id: 'formation-sustainable-cloud-arhs',
-      name: 'Formation Sustainable Cloud by Arhs',
+      name: 'Sustainable Cloud - Arhs',
       delivered: '06-01-2026',
       category: 'Formation',
       description: 'Formation focused on sustainable cloud concepts and best practices.',
       tags: ['Cloud'],
       status: 'Completed',
       pdf: null,
-      badgeImage: ''
+      badgeImage: '../../context/images/skills/arhs_group_logo.jpg'
     },
     {
       id: 'visit-luxconnect',
@@ -110,7 +110,7 @@
       tags: ['Datacenter'],
       status: 'Completed',
       pdf: null,
-      badgeImage: ''
+      badgeImage: '../../context/images/skills/luxconnect.jpg'
     },
     {
       id: 'microsoft-excel',
@@ -121,7 +121,7 @@
       tags: ['Microsoft'],
       status: 'In Progress',
       pdf: null,
-      badgeImage: ''
+      badgeImage: '../../context/images/skills/excel.jpg'
     }
   ];
 
@@ -693,7 +693,7 @@
         item.category === 'Certification' ? t('openCertificate', 'Open certificate') : t('openPdf', 'Open PDF');
       link.setAttribute('data-i18n', `certificationsPage.${labelKey}`);
     } else {
-      link.href = '#';
+      link.removeAttribute('href');
       link.hidden = true;
       link.setAttribute('aria-disabled', 'true');
     }
@@ -704,7 +704,7 @@
       resultLink.hidden = false;
       resultLink.setAttribute('aria-disabled', 'false');
     } else {
-      resultLink.href = '#';
+      resultLink.removeAttribute('href');
       resultLink.hidden = true;
       resultLink.setAttribute('aria-disabled', 'true');
     }
