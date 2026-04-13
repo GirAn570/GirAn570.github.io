@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"favicon\" /c/Users/andre/GirAn570.github.io/*.html)",
+      "Bash(ls -la /c/Users/andre/GirAn570.github.io/assets/images/favicon*)",
+      "Bash(ls -la /c/Users/andre/GirAn570.github.io/*.json)",
+      "Bash(grep -r \"href=\\\\\"#\\\\\"\" /c/Users/andre/GirAn570.github.io/*.html /c/Users/andre/GirAn570.github.io/pages/**/*.html)"
+    ]
+  }
+}
