@@ -21,7 +21,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="stylesheet" href="../../assets/css/bw-yellow.css?v=20260204_4">
+  <link rel="stylesheet" href="../../assets/css/bw-yellow.css?v=20260413">
 </head>
 <body>
   <header class="header">
@@ -82,25 +82,42 @@
       <div class="container">
         <div class="section-header section-header-stack">
           <h1 data-i18n-nav="projects">Projects</h1>
-          <p data-i18n="projects.pageIntro">A chronological list of projects (most recent first).</p>
+          <p data-i18n="projects.pageIntro">A collection of school and personal projects.</p>
         </div>
 
+        <!-- Filters -->
         <div class="projects-toolbar" aria-label="Project filters">
-          <div class="projects-filter" role="group" aria-label="Filter projects">
-            <button type="button" class="projects-filter-btn" data-project-filter="all" aria-pressed="true" data-i18n="projects.filterAll">All</button>
-            <button type="button" class="projects-filter-btn" data-project-filter="school" aria-pressed="false" data-i18n="projects.filterSchool">School</button>
+          <!-- Type filter -->
+          <div class="projects-filter" role="group" aria-label="Filter by type">
+            <button type="button" class="projects-filter-btn" data-project-filter="all"      aria-pressed="true"  data-i18n="projects.filterAll">All</button>
+            <button type="button" class="projects-filter-btn" data-project-filter="school"   aria-pressed="false" data-i18n="projects.filterSchool">School</button>
             <button type="button" class="projects-filter-btn" data-project-filter="personal" aria-pressed="false" data-i18n="projects.filterPersonal">Personal</button>
+          </div>
+
+          <!-- Status filter -->
+          <div class="projects-status-filter" role="group" aria-label="Filter by status">
+            <button type="button" class="projects-filter-btn projects-status-filter-btn" data-project-status="all"         aria-pressed="true">All statuses</button>
+            <button type="button" class="projects-filter-btn projects-status-filter-btn" data-project-status="completed"   aria-pressed="false">Completed</button>
+            <button type="button" class="projects-filter-btn projects-status-filter-btn" data-project-status="in-progress" aria-pressed="false">In Progress</button>
           </div>
         </div>
 
-        <div id="projects-list" class="projects-list"></div>
+        <!-- Card grid -->
+        <div id="projects-list" class="projects-grid"></div>
         <p id="projects-empty" class="projects-empty" data-i18n="projects.noResults" hidden>No projects match this filter.</p>
       </div>
     </section>
 
+    <!-- Modal -->
     <div id="project-modal" class="proj-modal" aria-hidden="true">
       <div class="proj-modal-overlay" data-project-modal-close></div>
       <div class="proj-modal-panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+
+        <!-- Hero image (hidden when project has no image) -->
+        <div id="project-modal-hero" class="proj-modal-image" hidden>
+          <img id="project-modal-hero-img" src="" alt="">
+        </div>
+
         <div class="proj-modal-header">
           <h2 id="project-modal-title"></h2>
           <button type="button" class="proj-modal-close" aria-label="Close" data-project-modal-close>
@@ -109,32 +126,40 @@
         </div>
 
         <div class="proj-modal-body">
+          <!-- Type + status -->
           <p class="proj-modal-meta">
             <span class="proj-modal-meta-label" data-i18n="projects.modalTypeLabel">Type</span>
             <span class="proj-modal-meta-sep">: </span>
             <span id="project-modal-type" class="proj-modal-meta-value"></span>
+            &nbsp;
+            <span id="project-modal-status" class="badge"></span>
           </p>
 
+          <!-- Date (hidden if empty) -->
           <p class="proj-modal-meta">
             <span class="proj-modal-meta-label" data-i18n="projects.modalDateLabel">Date</span>
             <span class="proj-modal-meta-sep">: </span>
             <span id="project-modal-date" class="proj-modal-meta-value"></span>
           </p>
 
+          <!-- Long description -->
           <p id="project-modal-description" class="proj-modal-description"></p>
 
+          <!-- Documents -->
           <div class="proj-modal-section">
-            <div class="proj-modal-section-title" data-i18n="projects.modalPdf">PDF</div>
-            <a id="project-modal-pdf" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer" data-i18n="projects.openPdf">Open PDF</a>
+            <div class="proj-modal-section-title" data-i18n="projects.modalDocuments">Documents</div>
+            <div id="project-modal-documents" class="proj-modal-documents"></div>
           </div>
 
+          <!-- Video demo -->
           <div class="proj-modal-section">
             <div class="proj-modal-section-title" data-i18n="projects.modalVideo">Video demo</div>
             <div id="project-modal-video" class="proj-modal-video"></div>
           </div>
 
+          <!-- Tags -->
           <div class="proj-modal-section">
-            <div class="proj-modal-section-title" data-i18n="projects.modalBadges">Related badges</div>
+            <div class="proj-modal-section-title" data-i18n="projects.modalBadges">Technologies &amp; Skills</div>
             <div id="project-modal-badges" class="badges"></div>
           </div>
         </div>
@@ -179,14 +204,15 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; <span id="current-year">2023</span> Andrea GIROTTO. <span data-i18n="footer.allRights">All rights reserved.</span></p>
+        <p>&copy; <span id="current-year">2025</span> Andrea GIROTTO. <span data-i18n="footer.allRights">All rights reserved.</span></p>
       </div>
     </div>
   </footer>
 
   <script src="../../assets/js/main.js?v=20260105"></script>
   <script src="../../assets/js/language-switcher.js"></script>
-  <script src="../../assets/js/projects.js?v=20260206_4"></script>
+  <script src="../../assets/js/projects-data.js"></script>
+  <script src="../../assets/js/projects.js?v=20260413"></script>
 
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();

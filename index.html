@@ -268,34 +268,7 @@
         <a href="/pages/projects/" class="btn-text" data-i18n-btn="viewAll">View All</a>
       </div>
 
-      <div class="cards">
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-tasks" aria-hidden="true"></i>
-          </div>
-          <h3>Food Event Project Management</h3>
-          <p><span class="badge badge-tool">School</span></p>
-          <p>Planned logistics, prep schedule, and budgeting for a two-day food sale during a sports festival.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-laptop-code" aria-hidden="true"></i>
-          </div>
-          <h3>Grading Management System</h3>
-          <p><span class="badge badge-tool">School</span></p>
-          <p>Planned a grade management web app (Python + SQL + Docker) with personas, user stories, and MoSCoW prioritization.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-server" aria-hidden="true"></i>
-          </div>
-          <h3>RedM Server</h3>
-          <p><span class="badge badge-tool">Personal</span></p>
-          <p>Building and managing an online multiplayer server — configuration, resources, and gameplay iteration.</p>
-        </div>
-      </div>
+      <div id="projects-preview-grid" class="cards"></div>
     </div>
   </section>
 
@@ -406,12 +379,34 @@
   <!-- JavaScript -->
   <script src="assets/js/main.js?v=20260105"></script>
   <script src="assets/js/language-switcher.js"></script>
+  <script src="assets/js/projects-data.js"></script>
   
   <script>
     const CONTACT_EMAIL = 'andrea.girotto.2005@gmail.com';
 
     // Set current year in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Render projects preview from shared data file (top 3 most recent)
+    (function renderProjectsPreview() {
+      const grid = document.getElementById('projects-preview-grid');
+      if (!grid || !window.PROJECTS_DATA) return;
+
+      const sorted = [...window.PROJECTS_DATA].sort((a, b) => {
+        return new Date(b.date || '1970-01-01') - new Date(a.date || '1970-01-01');
+      }).slice(0, 3);
+
+      sorted.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML =
+          '<div class="card-icon"><i class="fas fa-folder" aria-hidden="true"></i></div>' +
+          '<h3>' + (p.title || '') + '</h3>' +
+          '<p><span class="badge badge-tool">' + (p.type === 'school' ? 'School' : 'Personal') + '</span></p>' +
+          '<p>' + (p.shortDescription || '') + '</p>';
+        grid.appendChild(card);
+      });
+    })();
     
     // Back to top button
     const backToTopButton = document.getElementById('back-to-top');

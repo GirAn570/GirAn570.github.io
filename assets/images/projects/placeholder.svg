@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#1e1e1e"/>
+  <rect x="1" y="1" width="798" height="448" fill="none" stroke="#c79a00" stroke-width="2"/>
+  <!-- Camera body -->
+  <rect x="320" y="185" width="160" height="110" rx="8" fill="none" stroke="#c79a00" stroke-width="3"/>
+  <!-- Lens circle -->
+  <circle cx="400" cy="240" r="35" fill="none" stroke="#c79a00" stroke-width="3"/>
+  <circle cx="400" cy="240" r="18" fill="#c79a00" opacity="0.15"/>
+  <!-- Viewfinder bump -->
+  <rect x="355" y="172" width="40" height="18" rx="4" fill="none" stroke="#c79a00" stroke-width="2"/>
+  <!-- Label -->
+  <text x="400" y="335" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600"
+        fill="#c79a00" text-anchor="middle" letter-spacing="3" opacity="0.7">NO IMAGE YET</text>
+</svg>
