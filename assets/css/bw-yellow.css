@@ -2381,3 +2381,19 @@ code {
     display: flex;
   }
 }
+
+
+/* Form validation */
+.form-error {
+  display: block;
+  color: #c0392b;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  min-height: 1.1em;
+}
+
+input.input-invalid,
+textarea.input-invalid {
+  border-color: #c0392b;
+  outline-color: #c0392b;
+}

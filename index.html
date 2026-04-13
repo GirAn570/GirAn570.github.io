@@ -3,8 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Andrea GIROTTO, BTS Cloud Computing student in Luxembourg.">
+  <meta name="description" content="Portfolio of Andrea GIROTTO, BTS Cloud Computing student in Luxembourg. Skills in Linux, Windows Server, Python, Power Automate, and cloud infrastructure.">
   <title>Andrea GIROTTO | BTS Cloud Computing Student</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://giran570.github.io/">
+  <meta property="og:title" content="Andrea GIROTTO | BTS Cloud Computing Student">
+  <meta property="og:description" content="Portfolio of Andrea GIROTTO, BTS Cloud Computing student in Luxembourg. Skills in Linux, Windows Server, Python, Power Automate, and cloud infrastructure.">
+  <meta property="og:image" content="https://giran570.github.io/assets/images/Crossed-arms.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
@@ -324,22 +331,26 @@
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
           <div class="form-group">
             <label for="name" data-i18n="form.name">Name</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required aria-describedby="name-error">
+            <span class="form-error" id="name-error" aria-live="polite"></span>
           </div>
 
           <div class="form-group">
             <label for="email" data-i18n="form.email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required aria-describedby="email-error">
+            <span class="form-error" id="email-error" aria-live="polite"></span>
           </div>
 
           <div class="form-group">
             <label for="subject" data-i18n="form.subject">Subject</label>
-            <input type="text" id="subject" name="subject" required>
+            <input type="text" id="subject" name="subject" required aria-describedby="subject-error">
+            <span class="form-error" id="subject-error" aria-live="polite"></span>
           </div>
 
           <div class="form-group">
             <label for="message" data-i18n="form.message">Message</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+            <span class="form-error" id="message-error" aria-live="polite"></span>
           </div>
 
           <button type="submit" class="btn btn-primary" data-i18n-btn="sendMessage">Send Message</button>
@@ -374,6 +385,9 @@
             <a href="https://www.linkedin.com/in/andrea-girotto-47861231b" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <i class="fab fa-linkedin" aria-hidden="true"></i>
             </a>
+            <a href="https://github.com/GirAn570" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -394,6 +408,8 @@
   <script src="assets/js/language-switcher.js"></script>
   
   <script>
+    const CONTACT_EMAIL = 'andrea.girotto.2005@gmail.com';
+
     // Set current year in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
     
@@ -415,11 +431,51 @@
       });
     });
     
+    // Form validation helpers
+    function setFieldError(inputEl, msg) {
+      const errorEl = document.getElementById(inputEl.id + '-error');
+      if (errorEl) errorEl.textContent = msg;
+      if (msg) inputEl.classList.add('input-invalid');
+      else inputEl.classList.remove('input-invalid');
+    }
+
+    function validateForm(form) {
+      let valid = true;
+      const name = form.querySelector('#name');
+      const email = form.querySelector('#email');
+      const subject = form.querySelector('#subject');
+      const message = form.querySelector('#message');
+
+      if (!name.value.trim()) { setFieldError(name, 'Please enter your name.'); valid = false; }
+      else setFieldError(name, '');
+
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim()) { setFieldError(email, 'Please enter your email.'); valid = false; }
+      else if (!emailRe.test(email.value.trim())) { setFieldError(email, 'Please enter a valid email address.'); valid = false; }
+      else setFieldError(email, '');
+
+      if (!subject.value.trim()) { setFieldError(subject, 'Please enter a subject.'); valid = false; }
+      else setFieldError(subject, '');
+
+      if (!message.value.trim()) { setFieldError(message, 'Please enter a message.'); valid = false; }
+      else setFieldError(message, '');
+
+      return valid;
+    }
+
+    // Clear field error on input
+    ['name', 'email', 'subject', 'message'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', () => setFieldError(el, ''));
+    });
+
     // Form submission handling
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
       contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        if (!validateForm(contactForm)) return;
 
         const lang = localStorage.getItem('preferredLanguage') || 'en';
         const formTranslations = window.languageSwitcher?.translations?.[lang]?.form;
@@ -447,7 +503,7 @@
 
             alert(configMsg);
             const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-            const mailtoUrl = `mailto:andrea.girotto.2005@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             window.location.href = mailtoUrl;
             return;
           }

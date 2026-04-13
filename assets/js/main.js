@@ -27,43 +27,19 @@ function updateThemeToggleButtons(theme) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize dark mode if preference is set
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-  
-  // Update theme toggle button
-  updateThemeToggleButtons(savedTheme);
-  
-  // Set active language in language switcher
-  const currentLang = document.documentElement.lang || 'en';
-  const activeLangBtn = document.querySelector(`.language-switcher button[data-lang="${currentLang}"]`);
-  if (activeLangBtn) {
-    activeLangBtn.classList.add('active');
-  }
-});
-
 // Function to toggle dark mode
 function toggleDarkMode() {
   const html = document.documentElement;
   const currentTheme = html.getAttribute('data-theme');
   const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  
-  // Update the theme
+
   html.setAttribute('data-theme', newTheme);
   localStorage.setItem('theme', newTheme);
-  
-  // Update the toggle button
   updateThemeToggleButtons(newTheme);
 }
 
 // Function to change language
 function changeLanguage(lang) {
-  // This will be handled by the language-switcher.js
-  // The actual implementation will depend on how you handle translations
-  console.log(`Language changed to: ${lang}`);
-  
-  // Update active state of language buttons
   document.querySelectorAll('.language-switcher button').forEach(btn => {
     btn.classList.remove('active');
     if (btn.dataset.lang === lang) {
@@ -72,22 +48,26 @@ function changeLanguage(lang) {
   });
 }
 
-// Add event listeners when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-  // Dark mode toggle
-  const themeToggles = document.querySelectorAll('.theme-toggle');
-  if (themeToggles.length) {
-    themeToggles.forEach(btn => {
-      btn.addEventListener('click', toggleDarkMode);
-    });
-  }
-  
-  // Language switcher
-  const langButtons = document.querySelectorAll('.language-switcher button');
-  langButtons.forEach(button => {
+  // Restore saved theme
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateThemeToggleButtons(savedTheme);
+
+  // Mark active language button
+  const currentLang = document.documentElement.lang || 'en';
+  const activeLangBtn = document.querySelector(`.language-switcher button[data-lang="${currentLang}"]`);
+  if (activeLangBtn) activeLangBtn.classList.add('active');
+
+  // Dark mode toggles
+  document.querySelectorAll('.theme-toggle').forEach(btn => {
+    btn.addEventListener('click', toggleDarkMode);
+  });
+
+  // Language switcher buttons
+  document.querySelectorAll('.language-switcher button').forEach(button => {
     button.addEventListener('click', (e) => {
-      const lang = e.target.dataset.lang;
-      changeLanguage(lang);
+      changeLanguage(e.target.dataset.lang);
     });
   });
 
@@ -109,19 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileToggle && mobileNav) {
     mobileToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isOpen = mobileNav.classList.contains('open');
-      setMobileNavOpen(!isOpen);
+      setMobileNavOpen(!mobileNav.classList.contains('open'));
     });
 
-    if (mobileOverlay) {
-      mobileOverlay.addEventListener('click', () => setMobileNavOpen(false));
-    }
+    if (mobileOverlay) mobileOverlay.addEventListener('click', () => setMobileNavOpen(false));
 
-    if (mobileLinks.length) {
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', () => setMobileNavOpen(false));
-      });
-    }
+    mobileLinks.forEach(link => link.addEventListener('click', () => setMobileNavOpen(false)));
 
     document.addEventListener('click', (e) => {
       if (!mobileNav.classList.contains('open')) return;
