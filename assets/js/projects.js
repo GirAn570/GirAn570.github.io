@@ -153,7 +153,7 @@
     if (heroSection && heroImg) {
       if (project.image) {
         heroImg.src = project.image;
-        heroImg.alt = project.title + ' image';
+        heroImg.alt = (project.title || 'Project') + ' hero image';
         heroSection.hidden = false;
       } else {
         heroSection.hidden = true;
@@ -264,27 +264,27 @@
   // ── Filters ───────────────────────────────────────────────────
 
   function syncFilters() {
-    document.querySelectorAll('.projects-filter-btn').forEach(btn => {
-      const val = btn.getAttribute('data-project-filter') || 'all';
+    document.querySelectorAll('[data-project-filter]').forEach(btn => {
+      const val = btn.getAttribute('data-project-filter');
       btn.setAttribute('aria-pressed', val === state.typeFilter ? 'true' : 'false');
     });
-    document.querySelectorAll('.projects-status-filter-btn').forEach(btn => {
-      const val = btn.getAttribute('data-project-status') || 'all';
+    document.querySelectorAll('[data-project-status]').forEach(btn => {
+      const val = btn.getAttribute('data-project-status');
       btn.setAttribute('aria-pressed', val === state.statusFilter ? 'true' : 'false');
     });
   }
 
   function initFilters() {
-    document.querySelectorAll('.projects-filter-btn').forEach(btn => {
+    document.querySelectorAll('[data-project-filter]').forEach(btn => {
       btn.addEventListener('click', () => {
-        state.typeFilter = btn.getAttribute('data-project-filter') || 'all';
+        state.typeFilter = btn.getAttribute('data-project-filter');
         syncFilters();
         renderGrid();
       });
     });
-    document.querySelectorAll('.projects-status-filter-btn').forEach(btn => {
+    document.querySelectorAll('[data-project-status]').forEach(btn => {
       btn.addEventListener('click', () => {
-        state.statusFilter = btn.getAttribute('data-project-status') || 'all';
+        state.statusFilter = btn.getAttribute('data-project-status');
         syncFilters();
         renderGrid();
       });

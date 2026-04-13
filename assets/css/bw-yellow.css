@@ -1776,6 +1776,7 @@ select:focus-visible,
   text-transform: uppercase;
   cursor: pointer;
   color: var(--text-color);
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
 .projects-filter-btn:hover {
