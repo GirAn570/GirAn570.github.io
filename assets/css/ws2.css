@@ -1,0 +1,201 @@
+/* ================================================================
+   Work/School v2 — vertical timeline layout
+   Depends on bw-yellow.css for variables and base styles.
+   ================================================================ */
+
+/* ── Group (Education / Work Experience) ─────────────────────── */
+
+.ws2-group {
+  margin-bottom: 3.5rem;
+}
+
+.ws2-group:last-of-type {
+  margin-bottom: 0;
+}
+
+.ws2-group-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted-text-color);
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 1.75rem;
+}
+
+.ws2-group-title i {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  width: 1rem;
+  text-align: center;
+}
+
+/* ── Timeline container ───────────────────────────────────────── */
+
+.ws2-timeline {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--border-color);
+}
+
+/* ── Entry ────────────────────────────────────────────────────── */
+
+.ws2-entry {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.ws2-entry:last-child {
+  margin-bottom: 0;
+}
+
+/* Node dot — centred on the border-left line.
+   Entry left edge = border (2px) + padding (1.5rem) = 1.5rem+2px from
+   timeline's outer left. Border centre = 1px from outer left.
+   Distance = 1.5rem+1px. Node half-width = 5px.
+   So: left = -(1.5rem + 1px + 5px) = calc(-1.5rem - 6px) */
+.ws2-entry::before {
+  content: '';
+  position: absolute;
+  left: calc(-1.5rem - 6px);
+  top: 1.3rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background: var(--bg-color);
+  z-index: 1;
+}
+
+.ws2-entry--current::before {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Small year label floated above the card */
+.ws2-year-tag {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted-text-color);
+  margin-bottom: 0.45rem;
+  line-height: 1;
+}
+
+.ws2-entry--current .ws2-year-tag {
+  color: var(--accent-color);
+}
+
+/* ── Card ─────────────────────────────────────────────────────── */
+
+.ws2-card {
+  background: var(--bg-elevated);
+  border: 2px solid var(--border-color);
+  border-left-width: 4px;
+  padding: 1.25rem 1.5rem;
+}
+
+.ws2-entry--current .ws2-card {
+  border-left-color: var(--accent-color);
+}
+
+/* Top row: title block + thumbnail */
+.ws2-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ws2-card-titles {
+  flex: 1;
+  min-width: 0;
+}
+
+.ws2-card-titles h3 {
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.ws2-card-titles h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--muted-text-color);
+  margin-top: 0.2rem;
+  line-height: 1.3;
+}
+
+.ws2-card-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+/* Meta row: date + optional badge */
+.ws2-card-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.ws2-date {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-color);
+}
+
+.ws2-badge--current {
+  font-size: 0.62rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.15rem 0.5rem;
+  border: 2px solid var(--accent-color);
+  background: var(--accent-color);
+  color: var(--ink-black);
+  line-height: 1.4;
+}
+
+/* Description */
+.ws2-desc {
+  font-size: 0.9rem;
+  color: var(--muted-text-color);
+  line-height: 1.65;
+  margin-top: 0.75rem;
+}
+
+/* ── Mobile ───────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .ws2-timeline {
+    padding-left: 1rem;
+  }
+
+  /* Recalculate: padding 1rem (16px), border 2px, dist = 17px, node half = 5px
+     left = -(17+5)px = -22px = calc(-1rem - 6px) */
+  .ws2-entry::before {
+    left: calc(-1rem - 6px);
+  }
+
+  .ws2-card {
+    padding: 1rem;
+  }
+
+  .ws2-card-img {
+    width: 44px;
+    height: 44px;
+  }
+}

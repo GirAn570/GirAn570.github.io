@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <link rel="stylesheet" href="../../assets/css/bw-yellow.css?v=20260204_4">
+  <link rel="stylesheet" href="../../assets/css/ws2.css">
 </head>
 <body>
   <header class="header">
@@ -81,85 +82,134 @@
     <section class="section">
       <div class="container">
         <div class="section-header section-header-stack">
-          <h1 data-i18n-nav="workSchool">Work/School</h1>
+          <h1 data-i18n-nav="workSchool">Work &amp; Education</h1>
         </div>
 
-        <div class="ws-group">
-          <h2 class="ws-group-title" data-i18n="timeline.educationHeading">Education</h2>
+        <!-- ── Education ─────────────────────────────────────────── -->
+        <div class="ws2-group">
+          <h2 class="ws2-group-title">
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+            <span data-i18n="timeline.educationHeading">Education</span>
+          </h2>
 
-          <div class="ws-items">
-            <article class="ws-item">
-              <div class="ws-item-text">
-                <h3 data-i18n="timeline.btsTitle">BTS Cloud Computing</h3>
-                <h4 data-i18n="timeline.btsOrg">Lycée Guillaume Kroll</h4>
-                <p class="timeline-date" data-i18n="timeline.btsDate">2025 - Present</p>
-                <p data-i18n="timeline.btsDesc">Currently pursuing a degree in Cloud Computing with focus on cloud infrastructure and services.</p>
-              </div>
+          <div class="ws2-timeline">
 
-              <div class="ws-item-media">
-                <div class="ws-media"><img src="../../context/images/work-school/lgk.jpg" alt="Lycée Guillaume Kroll"></div>
-              </div>
-            </article>
+            <!-- BTS Cloud Computing — current -->
+            <div class="ws2-entry ws2-entry--current">
+              <span class="ws2-year-tag">2025 – Now</span>
+              <article class="ws2-card">
+                <div class="ws2-card-top">
+                  <div class="ws2-card-titles">
+                    <h3 data-i18n="timeline.btsTitle">BTS Cloud Computing</h3>
+                    <h4 data-i18n="timeline.btsOrg">Lycée Guillaume Kroll</h4>
+                  </div>
+                  <img class="ws2-card-img"
+                       src="../../context/images/work-school/lgk.jpg"
+                       alt="Lycée Guillaume Kroll">
+                </div>
+                <div class="ws2-card-meta">
+                  <span class="ws2-date" data-i18n="timeline.btsDate">2025 – Present</span>
+                  <span class="ws2-badge--current">Current</span>
+                </div>
+                <p class="ws2-desc" data-i18n="timeline.btsDesc">Currently pursuing a degree in Cloud Computing with focus on cloud infrastructure and services.</p>
+              </article>
+            </div>
 
-            <article class="ws-item ws-item--flip">
-              <div class="ws-item-text">
-                <h3 data-i18n="timeline.physicsTitle">Bachelor in Physics</h3>
-                <h4 data-i18n="timeline.physicsOrg">Université de Luxembourg</h4>
-                <p class="timeline-date" data-i18n="timeline.physicsDate">2024 - 2025</p>
-                <p data-i18n="timeline.physicsDesc">Studied Physics, developing strong analytical and problem-solving skills.</p>
-              </div>
+            <!-- Bachelor in Physics -->
+            <div class="ws2-entry">
+              <span class="ws2-year-tag">2024 – 2025</span>
+              <article class="ws2-card">
+                <div class="ws2-card-top">
+                  <div class="ws2-card-titles">
+                    <h3 data-i18n="timeline.physicsTitle">Bachelor in Physics</h3>
+                    <h4 data-i18n="timeline.physicsOrg">Université de Luxembourg</h4>
+                  </div>
+                  <img class="ws2-card-img"
+                       src="../../context/images/work-school/unilu.jpg"
+                       alt="Université de Luxembourg">
+                </div>
+                <div class="ws2-card-meta">
+                  <span class="ws2-date" data-i18n="timeline.physicsDate">2024 – 2025</span>
+                </div>
+                <p class="ws2-desc" data-i18n="timeline.physicsDesc">Studied Physics, developing strong analytical and problem-solving skills.</p>
+              </article>
+            </div>
 
-              <div class="ws-item-media">
-                <div class="ws-media"><img src="../../context/images/work-school/unilu.jpg" alt="Université de Luxembourg"></div>
-              </div>
-            </article>
+            <!-- European Baccalaureate -->
+            <div class="ws2-entry">
+              <span class="ws2-year-tag">2017 – 2024</span>
+              <article class="ws2-card">
+                <div class="ws2-card-top">
+                  <div class="ws2-card-titles">
+                    <h3 data-i18n="timeline.baccalaureateTitle">European Baccalaureate</h3>
+                    <h4 data-i18n="timeline.baccalaureateOrg">Ecole Internationale de Differdange</h4>
+                  </div>
+                  <img class="ws2-card-img"
+                       src="../../context/images/work-school/eide.jpg"
+                       alt="Ecole Internationale de Differdange">
+                </div>
+                <div class="ws2-card-meta">
+                  <span class="ws2-date" data-i18n="timeline.baccalaureateDate">2017 – 2024</span>
+                </div>
+                <p class="ws2-desc" data-i18n="timeline.baccalaureateDesc">Completed the European Baccalaureate with an overall grade of 72/100.</p>
+              </article>
+            </div>
 
-            <article class="ws-item">
-              <div class="ws-item-text">
-                <h3 data-i18n="timeline.baccalaureateTitle">European Baccalaureate</h3>
-                <h4 data-i18n="timeline.baccalaureateOrg">Ecole Internationale de Differdange</h4>
-                <p class="timeline-date" data-i18n="timeline.baccalaureateDate">2017 - 2024</p>
-                <p data-i18n="timeline.baccalaureateDesc">Completed the European Baccalaureate with an overall grade of 72/100.</p>
-              </div>
-
-              <div class="ws-item-media">
-                <div class="ws-media"><img src="../../context/images/work-school/eide.jpg" alt="Ecole Internationale de Differdange"></div>
-              </div>
-            </article>
           </div>
         </div>
 
-        <div class="ws-group">
-          <h2 class="ws-group-title" data-i18n="timeline.workHeading">Work Experience</h2>
+        <!-- ── Work Experience ────────────────────────────────────── -->
+        <div class="ws2-group">
+          <h2 class="ws2-group-title">
+            <i class="fas fa-briefcase" aria-hidden="true"></i>
+            <span data-i18n="timeline.workHeading">Work Experience</span>
+          </h2>
 
-          <div class="ws-items">
-            <article class="ws-item">
-              <div class="ws-item-text">
-                <h3 data-i18n="timeline.cgpoTitle">Summer Job - Quality Control</h3>
-                <h4 data-i18n="timeline.cgpoOrg">CGPO (State Personnel and Organization Management Center)</h4>
-                <p class="timeline-date" data-i18n="timeline.cgpoDate">2x One month in 2022 &amp; 2023</p>
-                <p data-i18n="timeline.cgpoDesc">Quality control of digitized documents and systematic filing of physical archives.</p>
-              </div>
+          <div class="ws2-timeline">
 
-              <div class="ws-item-media">
-                <div class="ws-media"><img src="../../context/images/work-school/cgpo.jpg" alt="CGPO"></div>
-              </div>
-            </article>
+            <!-- CGPO -->
+            <div class="ws2-entry">
+              <span class="ws2-year-tag">2022 – 2023</span>
+              <article class="ws2-card">
+                <div class="ws2-card-top">
+                  <div class="ws2-card-titles">
+                    <h3 data-i18n="timeline.cgpoTitle">Summer Job – Quality Control</h3>
+                    <h4 data-i18n="timeline.cgpoOrg">CGPO (State Personnel and Organization Management Center)</h4>
+                  </div>
+                  <img class="ws2-card-img"
+                       src="../../context/images/work-school/cgpo.jpg"
+                       alt="CGPO">
+                </div>
+                <div class="ws2-card-meta">
+                  <span class="ws2-date" data-i18n="timeline.cgpoDate">2× one month in 2022 &amp; 2023</span>
+                </div>
+                <p class="ws2-desc" data-i18n="timeline.cgpoDesc">Quality control of digitized documents and systematic filing of physical archives.</p>
+              </article>
+            </div>
 
-            <article class="ws-item ws-item--flip">
-              <div class="ws-item-text">
-                <h3 data-i18n="timeline.klepperTitle">Internship - Order Processing</h3>
-                <h4 data-i18n="timeline.klepperOrg">Klepper S.A. (Household appliance distributor)</h4>
-                <p class="timeline-date" data-i18n="timeline.klepperDate">2x One week in 2021 &amp; 2022</p>
-                <p data-i18n="timeline.klepperDesc">Quality control, order preparation, and administrative document management.</p>
-              </div>
+            <!-- Klepper -->
+            <div class="ws2-entry">
+              <span class="ws2-year-tag">2021 – 2022</span>
+              <article class="ws2-card">
+                <div class="ws2-card-top">
+                  <div class="ws2-card-titles">
+                    <h3 data-i18n="timeline.klepperTitle">Internship – Order Processing</h3>
+                    <h4 data-i18n="timeline.klepperOrg">Klepper S.A. (Household appliance distributor)</h4>
+                  </div>
+                  <img class="ws2-card-img"
+                       src="../../context/images/work-school/klepper.jpg"
+                       alt="Klepper S.A.">
+                </div>
+                <div class="ws2-card-meta">
+                  <span class="ws2-date" data-i18n="timeline.klepperDate">2× one week in 2021 &amp; 2022</span>
+                </div>
+                <p class="ws2-desc" data-i18n="timeline.klepperDesc">Quality control, order preparation, and administrative document management.</p>
+              </article>
+            </div>
 
-              <div class="ws-item-media">
-                <div class="ws-media"><img src="../../context/images/work-school/klepper.jpg" alt="Klepper S.A."></div>
-              </div>
-            </article>
           </div>
         </div>
+
       </div>
     </section>
   </main>
