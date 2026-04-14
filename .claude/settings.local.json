@@ -8,7 +8,10 @@
       "Bash(find /c/Users/andre/GirAn570.github.io/context/projects -type f -exec ls -lh {} \\\\;)",
       "Bash(awk '{print $9, $5}')",
       "Bash(git status:*)",
-      "Bash(git check-ignore:*)"
+      "Bash(git check-ignore:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)"
     ]
   }
 }
