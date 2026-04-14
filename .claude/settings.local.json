@@ -6,7 +6,9 @@
       "Bash(ls -la /c/Users/andre/GirAn570.github.io/*.json)",
       "Bash(grep -r \"href=\\\\\"#\\\\\"\" /c/Users/andre/GirAn570.github.io/*.html /c/Users/andre/GirAn570.github.io/pages/**/*.html)",
       "Bash(find /c/Users/andre/GirAn570.github.io/context/projects -type f -exec ls -lh {} \\\\;)",
-      "Bash(awk '{print $9, $5}')"
+      "Bash(awk '{print $9, $5}')",
+      "Bash(git status:*)",
+      "Bash(git check-ignore:*)"
     ]
   }
 }

@@ -11,7 +11,8 @@
 //        assets/images/projects/YOUR-PROJECT-ID.jpg
 //   5. (Optional) Add a PDF:
 //        assets/docs/projects/YOUR-PROJECT-ID.pdf
-//      Then reference it in the documents array below.
+//      Then reference it in the documents array below, with ../../ prefix:
+//        { label: 'Report', path: '../../assets/docs/projects/YOUR-PROJECT-ID.pdf' }
 //
 // TEMPLATE — copy from here:
 // ─────────────────────────────────────────────────────────────────
@@ -26,7 +27,7 @@
 //   shortDescription: 'One sentence shown on the card.',
 //   longDescription: 'Full description shown in the modal. Can be as long as needed.',
 //   documents: [
-//     { label: 'Report', path: 'assets/docs/projects/my-project.pdf' }
+//     { label: 'Report', path: '../../assets/docs/projects/my-project.pdf' }
 //   ],
 //   video: null,                 // or { type: 'embed', src: 'https://youtube.com/embed/...' }
 //                                // or { type: 'file',  src: 'assets/docs/projects/demo.mp4' }
@@ -45,9 +46,9 @@ window.PROJECTS_DATA = [
     shortDescription: 'Planned a grade management web app (Python + SQL + Docker) with personas, user stories, and MoSCoW prioritization.',
     longDescription: 'Planned a grade management web application where Students can view grades and Professors can create/update grades. The project emphasises structured planning before coding: personas, at least 12 user stories with acceptance criteria, MoSCoW prioritisation, a Planner board workflow, and research on Python frameworks, database integration, secure password hashing, and Docker/Docker Compose. Deliverables include planning and research documents plus a team reflection on collaboration and time management. The main objective was not the grading system itself, but to understand how important project management is.',
     documents: [
-      { label: 'Planning Document', path: 'assets/docs/projects/grading-management-system-planning.pdf' },
-      { label: 'Research Document', path: 'assets/docs/projects/grading-management-system-research.pdf' },
-      { label: 'Reflection',        path: 'assets/docs/projects/grading-management-system-reflection.pdf' }
+      { label: 'Planning Document', path: '../../assets/docs/projects/grading-management-system-planning.pdf' },
+      { label: 'Research Document', path: '../../assets/docs/projects/grading-management-system-research.pdf' },
+      { label: 'Reflection',        path: '../../assets/docs/projects/grading-management-system-reflection.pdf' }
     ],
     video: null,
     tags: ['Python', 'Docker', 'SQL', 'System Design']
@@ -75,7 +76,7 @@ window.PROJECTS_DATA = [
     shortDescription: 'Implemented a Windows Server 2022 lab with AD DS, DNS, and Remote Desktop Services for centralised student access.',
     longDescription: 'Implemented a Remote Desktop Services (RDS) lab environment using Windows Server 2022 with Active Directory Domain Services (AD DS) and DNS. The goal was to provide secure, centralised desktop access for students via a session-based RDS deployment. The documentation covers prerequisites, VM/server build steps, domain setup, user/group creation, RDS deployment and collection validation, certificate configuration for RD Web Access, client configuration, and troubleshooting notes.',
     documents: [
-      { label: 'Lab Report', path: 'assets/docs/projects/rds-implementation.pdf' }
+      { label: 'Lab Report', path: '../../assets/docs/projects/rds-implementation.pdf' }
     ],
     video: null,
     tags: ['Windows Server', 'Active Directory', 'Microsoft']
