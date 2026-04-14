@@ -2496,7 +2496,7 @@ textarea.input-invalid {
 
 .project-card:hover .btn-primary {
   background: var(--ink-black, #141414);
-  color: var(--color-white, #f6f2f2);
+  color: #f6f6f2;
   border-color: var(--ink-black, #141414);
 }
 
