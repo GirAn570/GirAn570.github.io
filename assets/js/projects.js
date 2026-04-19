@@ -41,10 +41,6 @@
       const typeOk   = state.typeFilter   === 'all' || norm(p.type)   === state.typeFilter;
       const statusOk = state.statusFilter === 'all' || norm(p.status) === state.statusFilter;
       return typeOk && statusOk;
-    }).sort((a, b) => {
-      const aT = new Date(a.date || '1970-01-01').getTime();
-      const bT = new Date(b.date || '1970-01-01').getTime();
-      return bT - aT;
     });
   }
 
@@ -137,7 +133,6 @@
     const titleEl = document.getElementById('project-modal-title');
     const typeEl  = document.getElementById('project-modal-type');
     const statusEl= document.getElementById('project-modal-status');
-    const dateEl  = document.getElementById('project-modal-date');
     const descEl  = document.getElementById('project-modal-description');
     const docsEl  = document.getElementById('project-modal-documents');
     const videoWrap = document.getElementById('project-modal-video');
@@ -171,13 +166,6 @@
       statusEl.textContent = formatStatus(project.status);
       const statusClass = norm(project.status) === 'completed' ? 'badge-completed' : 'badge-in-progress';
       statusEl.className = 'badge ' + statusClass;
-    }
-
-    // Date
-    if (dateEl) {
-      dateEl.textContent = project.date || '';
-      const dateRow = dateEl.closest('.proj-modal-meta');
-      if (dateRow) dateRow.hidden = !project.date;
     }
 
     // Description
