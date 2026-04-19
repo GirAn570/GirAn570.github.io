@@ -1,6 +1,4 @@
 (function () {
-  const PLACEHOLDER = '/assets/images/projects/placeholder.svg';
-
   const state = {
     typeFilter: 'all',
     statusFilter: 'all',
@@ -67,15 +65,6 @@
       const card = document.createElement('div');
       card.className = 'project-card';
 
-      // Image
-      const imgWrap = document.createElement('div');
-      imgWrap.className = 'project-card-image';
-      const img = document.createElement('img');
-      img.src = project.image || PLACEHOLDER;
-      img.alt = project.title ? project.title + ' thumbnail' : 'Project thumbnail';
-      img.loading = 'lazy';
-      imgWrap.appendChild(img);
-
       // Body
       const body = document.createElement('div');
       body.className = 'project-card-body';
@@ -120,7 +109,6 @@
       body.appendChild(tags);
       body.appendChild(actions);
 
-      card.appendChild(imgWrap);
       card.appendChild(body);
       grid.appendChild(card);
     });
@@ -137,23 +125,9 @@
     const docsEl  = document.getElementById('project-modal-documents');
     const videoWrap = document.getElementById('project-modal-video');
     const tagsEl  = document.getElementById('project-modal-badges');
-    const heroImg = document.getElementById('project-modal-hero-img');
-
     if (!modal) return;
 
     state.lastFocusedEl = triggerEl || document.activeElement;
-
-    // Hero image
-    const heroSection = document.getElementById('project-modal-hero');
-    if (heroSection && heroImg) {
-      if (project.image) {
-        heroImg.src = project.image;
-        heroImg.alt = (project.title || 'Project') + ' hero image';
-        heroSection.hidden = false;
-      } else {
-        heroSection.hidden = true;
-      }
-    }
 
     // Title
     if (titleEl) titleEl.textContent = project.title || '';
