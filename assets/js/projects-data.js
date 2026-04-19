@@ -40,7 +40,7 @@ window.PROJECTS_DATA = [
     title: 'Grading Management System',
     type: 'school',
     status: 'completed',
-    image: null,
+    image: '/assets/docs/projects/grading-management-system/UntisWeb Logo on White Background.png',
     shortDescription: 'Applied structured project management — personas, user stories, MoSCoW — to plan a grade management web app using Python, SQL, and Docker.',
     longDescription: 'The primary goal of this project was not to build the application, but to practise rigorous planning before writing a single line of code. Working as a team, we defined personas for Students and Professors, wrote more than 12 user stories with acceptance criteria, and applied MoSCoW prioritisation to scope the work realistically. We also researched the technology stack: Python web frameworks, database integration, secure password hashing, and Docker Compose. Deliverables included a planning document, a research document, and a team reflection on collaboration and time management.',
     documents: [
@@ -69,7 +69,7 @@ window.PROJECTS_DATA = [
     title: 'Remote Desktop Services (RDS) Implementation',
     type: 'school',
     status: 'completed',
-    image: null,
+    image: '/assets/docs/projects/remote-desktop-services-rds/download.jpg',
     shortDescription: 'Deployed a Windows Server 2022 lab with Active Directory and Remote Desktop Services for centralised student access.',
     longDescription: 'Set up a complete Remote Desktop Services environment using Windows Server 2022. The lab covered domain setup with Active Directory Domain Services and DNS, user and group creation, RDS deployment with session collection configuration, RD Web Access with certificate setup, and client connection testing. The report documents each step from VM build to troubleshooting, and serves as a repeatable deployment guide.',
     documents: [
@@ -100,7 +100,7 @@ window.PROJECTS_DATA = [
     title: 'UnRAID Server Setup',
     type: 'school',
     status: 'completed',
-    image: null,
+    image: '/assets/docs/projects/unraid/download.jpg',
     shortDescription: 'Prepared and implemented a server running UnRAID OS, covering hardware setup, configuration, and documentation.',
     longDescription: 'Planned and implemented a server using UnRAID OS as part of the cloud infrastructure course. The work covered hardware preparation, OS installation, storage pool configuration, and service setup. The project was carried out as a team and produced both a full technical documentation and a presentation summarising the implementation.',
     documents: [
