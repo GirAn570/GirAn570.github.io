@@ -2366,6 +2366,12 @@ textarea.input-invalid {
   color: var(--ink-black, #141414);
 }
 
+.project-card:hover .badge {
+  color: var(--ink-black, #141414);
+  border-color: var(--ink-black, #141414);
+  background: transparent;
+}
+
 .project-card-image {
   aspect-ratio: 16 / 9;
   overflow: hidden;
