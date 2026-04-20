@@ -62,7 +62,7 @@
   content: '';
   position: absolute;
   left: calc(-1.5rem - 6px);
-  top: 1.3rem;
+  top: calc(var(--fs-xs) / 2 - 5px);
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -96,8 +96,6 @@
 
 .ws2-card {
   background: var(--bg-elevated);
-  border: 2px solid var(--border-color);
-  border-left-width: 4px;
   padding: 1.25rem 1.5rem;
 }
 

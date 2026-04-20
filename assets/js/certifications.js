@@ -58,6 +58,28 @@
       badgeImage: '../../context/images/skills/cisco.jpg'
     },
     {
+      id: 'course-ccna-switching-routing-wireless',
+      name: 'CCNA: Switching, Routing, and Wireless Essentials',
+      delivered: '',
+      category: 'Courses',
+      description: 'CCNA course: Switching, Routing, and Wireless Essentials — the second module of the Cisco Networking Academy curriculum, covering VLANs, inter-VLAN routing, STP, EtherChannel, DHCPv4/v6, HSRP, and wireless LAN concepts.',
+      tags: ['Cisco'],
+      status: 'In Progress',
+      pdf: null,
+      badgeImage: '../../context/images/skills/cisco.jpg'
+    },
+    {
+      id: 'course-btclc25-python-essentials-1',
+      name: 'BTCLC25 - Python Essentials 1',
+      delivered: '',
+      category: 'Courses',
+      description: 'Python Essentials 1 — an introductory Python course covering core programming concepts including data types, control flow, functions, and basic object-oriented programming.',
+      tags: ['Python', 'Cisco'],
+      status: 'In Progress',
+      pdf: null,
+      badgeImage: '../../context/images/skills/cisco.jpg'
+    },
+    {
       id: 'microsoft-powerpoint',
       name: 'Microsoft PowerPoint',
       delivered: '20-10-2025',

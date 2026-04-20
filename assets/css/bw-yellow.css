@@ -652,7 +652,6 @@ select:focus-visible,
   background: var(--card-bg);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
-  border: 2px solid var(--border-color);
   overflow: hidden;
   transition: background-color var(--transition), color var(--transition);
 }
@@ -785,7 +784,6 @@ select:focus-visible,
   background: var(--timeline-bg);
   border-radius: var(--radius-md);
   padding: var(--sp-5);
-  border: 2px solid var(--border-color);
   position: relative;
 }
 
@@ -1978,7 +1976,6 @@ select:focus-visible,
   background: var(--contact-form-bg);
   border-radius: var(--radius-lg);
   padding: var(--sp-6);
-  border: 2px solid var(--border-color);
 }
 
 .form-group {
