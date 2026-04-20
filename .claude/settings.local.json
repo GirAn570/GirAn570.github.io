@@ -15,7 +15,19 @@
       "Bash(git -C \"c:/Users/andre/GirAn570.github.io\" status)",
       "Bash(git -C \"c:/Users/andre/GirAn570.github.io\" diff)",
       "Bash(git rm *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(sed -i 's/bw-yellow\\\\.css?v=20260204_4/bw-yellow.css?v=20260420/g' index.html 404.html styleguide.html pages/work-school/index.html pages/certifications/index.html)",
+      "Bash(sed -i 's/bw-yellow\\\\.css?v=20260413/bw-yellow.css?v=20260420/g' pages/projects/index.html)",
+      "Bash(git -C \"c:/Users/andre/GirAn570.github.io\" diff --stat)",
+      "Bash(git -C \"c:/Users/andre/GirAn570.github.io\" log --oneline -5)",
+      "Bash(git -C \"c:/Users/andre/GirAn570.github.io\" add assets/js/projects-data.js assets/js/projects.js pages/projects/index.html assets/css/bw-yellow.css)",
+      "Bash(git -C c:/Users/andre/GirAn570.github.io commit -m ' *)",
+      "Bash(git -C \"c:/Users/andre/GirAn570.github.io\" add assets/js/projects-data.js)",
+      "Bash(sed -i 's/bw-yellow\\\\.css?v=20260420b/bw-yellow.css?v=20260420c/g' pages/projects/index.html)",
+      "Bash(sed -i 's/projects\\\\.js?v=20260420/projects.js?v=20260420b/g' pages/projects/index.html)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\andre\\GirAn570.github.io\\assets\\css"
     ]
   }
 }
