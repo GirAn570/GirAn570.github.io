@@ -742,7 +742,7 @@
       link.setAttribute('aria-disabled', 'true');
     }
 
-    if (item.resultPdf) {
+    if (item.resultPdf && item.category === 'Certification') {
       const href = encodeURI(item.resultPdf);
       resultLink.href = href;
       resultLink.hidden = false;

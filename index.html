@@ -127,7 +127,7 @@
 
           <div class="hero-cta">
             <a href="#contact" class="btn btn-primary" data-i18n-btn="contactCta">Contact Me</a>
-            <a href="/assets/docs/CV-English.pdf" class="btn btn-secondary" data-i18n="hero.cvButton" download>Download CV</a>
+            <a href="/assets/docs/CV-English.pdf" class="btn btn-secondary" data-i18n="hero.cvButton" target="_blank" rel="noopener noreferrer">Download CV</a>
           </div>
         </div>
       </div>
@@ -149,8 +149,8 @@
             <i class="fas fa-server" aria-hidden="true"></i>
           </div>
           <h3 data-i18n="skills.sysAdminTitle">System Administration</h3>
-          <p data-i18n="skills.sysAdminTech">Linux &amp; Windows Server 2022</p>
-          <p data-i18n="skills.sysAdminDesc">Configuration and management of server environments</p>
+          <p data-i18n="skills.sysAdminTech">Linux, Windows Server 2022, Active Directory, RDS, Docker, UnRAID</p>
+          <p data-i18n="skills.sysAdminDesc">Configuration and management of server environments, domain infrastructure, and containerised services</p>
         </div>
 
         <!-- Skill Card 2 (from Hard Skills in CV) -->
@@ -158,9 +158,9 @@
           <div class="card-icon">
             <i class="fas fa-code" aria-hidden="true"></i>
           </div>
-          <h3 data-i18n="skills.programmingTitle">Programming & Automation</h3>
-          <p data-i18n="skills.programmingTech">Python, Regex, Power Automate</p>
-          <p data-i18n="skills.programmingDesc">Automation and problem-solving</p>
+          <h3 data-i18n="skills.programmingTitle">Cloud & Automation</h3>
+          <p data-i18n="skills.programmingTech">Azure (AZ-900), Power Platform, Power Apps, Power Automate, Python, Regex</p>
+          <p data-i18n="skills.programmingDesc">Cloud infrastructure, low-code automation, and scripting</p>
         </div>
 
         <!-- Skill Card 3 (from Soft Skills in CV) -->
@@ -168,8 +168,8 @@
           <div class="card-icon">
             <i class="fas fa-cloud" aria-hidden="true"></i>
           </div>
-          <h3 data-i18n="skills.softTitle">Soft Skills</h3>
-          <p data-i18n="skills.softDesc">Problem solving, good listener, curious, fast learner, team work</p>
+          <h3 data-i18n="skills.softTitle">Project Management & Soft Skills</h3>
+          <p data-i18n="skills.softDesc">Scrum, Agile, MoSCoW prioritisation, project planning, team work, fast learner</p>
         </div>
       </div>
     </div>
@@ -387,16 +387,17 @@
     // Set current year in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
-    // Render projects preview from shared data file (top 3 most recent)
+    // Render projects preview from shared data file
     (function renderProjectsPreview() {
       const grid = document.getElementById('projects-preview-grid');
       if (!grid || !window.PROJECTS_DATA) return;
 
-      const sorted = [...window.PROJECTS_DATA].sort((a, b) => {
-        return new Date(b.date || '1970-01-01') - new Date(a.date || '1970-01-01');
-      }).slice(0, 3);
+      const featured = ['remote-desktop-services-rds', 'unraid', 'grading-management-system'];
+      const map = Object.fromEntries(window.PROJECTS_DATA.map(p => [p.id, p]));
 
-      sorted.forEach(p => {
+      featured.forEach(id => {
+        const p = map[id];
+        if (!p) return;
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML =

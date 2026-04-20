@@ -57,13 +57,13 @@ const translations = {
     },
     skills: {
       sysAdminTitle: 'System Administration',
-      sysAdminTech: 'Linux & Windows Server 2022',
-      sysAdminDesc: 'Configuration and management of server environments',
-      programmingTitle: 'Programming & Automation',
-      programmingTech: 'Python, Regex, Power Automate',
-      programmingDesc: 'Automation and problem-solving',
-      softTitle: 'Soft Skills',
-      softDesc: 'Problem solving, good listener, curious, fast learner, team work'
+      sysAdminTech: 'Linux, Windows Server 2022, Active Directory, RDS, Docker, UnRAID',
+      sysAdminDesc: 'Configuration and management of server environments, domain infrastructure, and containerised services',
+      programmingTitle: 'Cloud & Automation',
+      programmingTech: 'Azure (AZ-900), Power Platform, Power Apps, Power Automate, Python, Regex',
+      programmingDesc: 'Cloud infrastructure, low-code automation, and scripting',
+      softTitle: 'Project Management & Soft Skills',
+      softDesc: 'Scrum, Agile, MoSCoW prioritisation, project planning, team work, fast learner'
     },
     timeline: {
       educationHeading: 'Education',
@@ -196,13 +196,13 @@ const translations = {
     },
     skills: {
       sysAdminTitle: 'Administration système',
-      sysAdminTech: 'Linux & Windows Server 2022',
-      sysAdminDesc: 'Configuration et gestion d\'environnements serveur',
-      programmingTitle: 'Programmation & Automatisation',
-      programmingTech: 'Python, Regex, Power Automate',
-      programmingDesc: 'Automatisation et résolution de problèmes',
-      softTitle: 'Compétences interpersonnelles',
-      softDesc: 'Résolution de problèmes, bonne écoute, curieux, apprentissage rapide, travail en équipe'
+      sysAdminTech: 'Linux, Windows Server 2022, Active Directory, RDS, Docker, UnRAID',
+      sysAdminDesc: 'Configuration et gestion d\'environnements serveur, d\'infrastructures de domaine et de services conteneurisés',
+      programmingTitle: 'Cloud & Automatisation',
+      programmingTech: 'Azure (AZ-900), Power Platform, Power Apps, Power Automate, Python, Regex',
+      programmingDesc: 'Infrastructure cloud, automatisation low-code et scripting',
+      softTitle: 'Gestion de projet & Compétences interpersonnelles',
+      softDesc: 'Scrum, Agile, priorisation MoSCoW, planification de projet, travail en équipe, apprentissage rapide'
     },
     timeline: {
       educationHeading: 'Formation',
@@ -335,13 +335,13 @@ const translations = {
     },
     skills: {
       sysAdminTitle: 'Systemadministration',
-      sysAdminTech: 'Linux & Windows Server 2022',
-      sysAdminDesc: 'Konfiguration und Verwaltung von Serverumgebungen',
-      programmingTitle: 'Programmierung & Automatisierung',
-      programmingTech: 'Python, Regex, Power Automate',
-      programmingDesc: 'Automatisierung und Problemlösung',
-      softTitle: 'Soziale Kompetenzen',
-      softDesc: 'Problemlösung, gutes Zuhören, neugierig, schnelles Lernen, Teamarbeit'
+      sysAdminTech: 'Linux, Windows Server 2022, Active Directory, RDS, Docker, UnRAID',
+      sysAdminDesc: 'Konfiguration und Verwaltung von Serverumgebungen, Domäneninfrastruktur und containerisierten Diensten',
+      programmingTitle: 'Cloud & Automatisierung',
+      programmingTech: 'Azure (AZ-900), Power Platform, Power Apps, Power Automate, Python, Regex',
+      programmingDesc: 'Cloud-Infrastruktur, Low-Code-Automatisierung und Scripting',
+      softTitle: 'Projektmanagement & Soziale Kompetenzen',
+      softDesc: 'Scrum, Agile, MoSCoW-Priorisierung, Projektplanung, Teamarbeit, schnelles Lernen'
     },
     timeline: {
       educationHeading: 'Ausbildung',
@@ -474,13 +474,13 @@ const translations = {
     },
     skills: {
       sysAdminTitle: 'Systemadministratioun',
-      sysAdminTech: 'Linux & Windows Server 2022',
-      sysAdminDesc: 'Konfiguratioun a Gestioun vu Serverëmfeld',
-      programmingTitle: 'Programméierung & Automatiséierung',
-      programmingTech: 'Python, Regex, Power Automate',
-      programmingDesc: 'Automatiséierung a Problemléisung',
-      softTitle: 'Soft Skills',
-      softDesc: 'Problemléisung, gutt nolauschteren, virwëtzeg, séier léieren, Teamaarbecht'
+      sysAdminTech: 'Linux, Windows Server 2022, Active Directory, RDS, Docker, UnRAID',
+      sysAdminDesc: 'Konfiguratioun a Gestioun vu Serverëmfeld, Domänen-Infrastruktur a containeréierte Servicer',
+      programmingTitle: 'Cloud & Automatiséierung',
+      programmingTech: 'Azure (AZ-900), Power Platform, Power Apps, Power Automate, Python, Regex',
+      programmingDesc: 'Cloud-Infrastruktur, Low-Code-Automatiséierung a Scripting',
+      softTitle: 'Projektmanagement & Soft Skills',
+      softDesc: 'Scrum, Agile, MoSCoW-Priorisatioun, Projektplanung, Teamaarbecht, séier léieren'
     },
     timeline: {
       educationHeading: 'Ausbildung',
