@@ -15,7 +15,7 @@
   --muted-text-color: #6b6b6b;
 
   --bg-color: var(--color-white);
-  --bg-elevated: #ffffff;
+  --bg-elevated: #f0f0eb;
   --card-bg: #f0f0e8;
   --border-color: var(--color-black);
 
@@ -942,7 +942,6 @@ select:focus-visible,
   background: var(--bg-elevated);
   border-radius: var(--radius-lg);
   padding: 1.25rem;
-  border: 2px solid var(--border-color);
 }
 
 .certifications-sidebar-title {
@@ -980,7 +979,6 @@ select:focus-visible,
   flex-wrap: wrap;
   margin-bottom: 1.25rem;
   padding: 0.9rem 1rem;
-  border: 2px solid var(--border-color);
   background: var(--bg-elevated);
 }
 
@@ -1164,6 +1162,10 @@ select:focus-visible,
   border: 2px solid var(--border-color);
   padding: 0.75rem;
   background: var(--bg-elevated);
+}
+
+.cert-card {
+  border: none;
 }
 
 .cert-card.has-certificate {
@@ -1677,7 +1679,6 @@ select:focus-visible,
 .projects-toolbar {
   margin-top: 1.5rem;
   padding: 0.9rem 1rem;
-  border: 2px solid var(--border-color);
   background: var(--bg-elevated);
 }
 
@@ -2350,7 +2351,6 @@ textarea.input-invalid {
 .project-card {
   display: flex;
   flex-direction: column;
-  border: 2px solid var(--border-color, #141414);
   background: var(--card-bg, #f6f2f2);
   transition: background var(--transition), border-color var(--transition), color var(--transition);
 }
