@@ -149,6 +149,7 @@ window.PROJECTS_DATA = [
     title: 'RedM Server',
     type: 'personal',
     status: 'in-progress',
+    hidden: true,
     image: null,
     shortDescription: 'Building and running a multiplayer RedM server, handling configuration, resources, and community management.',
     longDescription: 'Setting up and operating a multiplayer server built on RedM. Responsibilities include server configuration, installing and maintaining resources (scripts, maps, game modes), iterating on gameplay features based on player feedback, and keeping the server stable under load. The project covers server administration, scripting, and community management, and is currently in active development.',

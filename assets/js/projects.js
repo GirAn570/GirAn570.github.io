@@ -36,6 +36,7 @@
 
   function getProjects() {
     return (window.PROJECTS_DATA || []).filter(p => {
+      if (p.hidden) return false;
       const typeOk   = state.typeFilter   === 'all' || norm(p.type)   === state.typeFilter;
       const statusOk = state.statusFilter === 'all' || norm(p.status) === state.statusFilter;
       return typeOk && statusOk;
