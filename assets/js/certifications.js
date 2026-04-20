@@ -122,6 +122,28 @@
       status: 'In Progress',
       pdf: null,
       badgeImage: '../../context/images/skills/excel.jpg'
+    },
+    {
+      id: 'visit-aws-reinvent-recap',
+      name: 'AWS re:Invent - re:Cap',
+      delivered: '04-03-2026',
+      category: 'Visits',
+      description: 'AWS re:Invent re:Cap 2026 recap hosted and presented by ARHS Group in Belval, Luxembourg. Their team shared takeaways and demos from the event, covering Amazon Connect, security topics, the Kiro coding IDE, Model Context Protocol (MCP), and AI models and demonstrations they are working on.',
+      tags: ['AWS', 'Cloud', 'AI'],
+      status: 'Completed',
+      pdf: null,
+      badgeImage: '../../context/images/skills/recap.png'
+    },
+    {
+      id: 'formation-az-040-powershell',
+      name: 'AZ-040 - PowerShell',
+      delivered: '27-03-2026',
+      category: 'Formation',
+      description: 'One week formation on PowerShell, from basics to script writing.',
+      tags: ['PowerShell', 'Microsoft', 'Automation'],
+      status: 'Completed',
+      pdf: null,
+      badgeImage: '../../context/images/skills/deep.png'
     }
   ];
 
