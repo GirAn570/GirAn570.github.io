@@ -2369,8 +2369,8 @@ textarea.input-invalid {
 .project-card-image {
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-bottom: 2px solid var(--border-color, #141414);
-  background: #1e1e1e;
+  border-bottom: 2px solid var(--border-color);
+  background: var(--card-bg);
   flex-shrink: 0;
 }
 
@@ -2459,8 +2459,8 @@ textarea.input-invalid {
   width: 100%;
   max-height: 260px;
   overflow: hidden;
-  border-bottom: 2px solid var(--border-color, #141414);
-  background: #1e1e1e;
+  border-bottom: 2px solid var(--border-color);
+  background: var(--card-bg);
   flex-shrink: 0;
 }
 

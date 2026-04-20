@@ -65,6 +65,18 @@
       const card = document.createElement('div');
       card.className = 'project-card';
 
+      // Image
+      if (project.image) {
+        const imgWrap = document.createElement('div');
+        imgWrap.className = 'project-card-image';
+        const img = document.createElement('img');
+        img.src = project.image;
+        img.alt = project.title || '';
+        img.loading = 'lazy';
+        imgWrap.appendChild(img);
+        card.appendChild(imgWrap);
+      }
+
       // Body
       const body = document.createElement('div');
       body.className = 'project-card-body';
@@ -128,6 +140,20 @@
     if (!modal) return;
 
     state.lastFocusedEl = triggerEl || document.activeElement;
+
+    // Image
+    const imgSection = document.getElementById('project-modal-image');
+    const imgEl      = document.getElementById('project-modal-image-el');
+    if (imgSection && imgEl) {
+      if (project.image) {
+        imgEl.src = project.image;
+        imgEl.alt = project.title || '';
+        imgSection.hidden = false;
+      } else {
+        imgEl.src = '';
+        imgSection.hidden = true;
+      }
+    }
 
     // Title
     if (titleEl) titleEl.textContent = project.title || '';
