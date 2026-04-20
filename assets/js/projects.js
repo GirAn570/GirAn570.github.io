@@ -145,6 +145,18 @@
     // Description
     if (descEl) descEl.textContent = project.longDescription || '';
 
+    // Reflection
+    const reflectionEl      = document.getElementById('project-modal-reflection');
+    const reflectionSection = document.getElementById('project-modal-reflection-section');
+    if (reflectionEl && reflectionSection) {
+      if (project.reflection) {
+        reflectionEl.textContent = project.reflection;
+        reflectionSection.hidden = false;
+      } else {
+        reflectionSection.hidden = true;
+      }
+    }
+
     // Documents
     if (docsEl) {
       docsEl.innerHTML = '';

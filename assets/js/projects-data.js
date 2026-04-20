@@ -25,6 +25,7 @@
 //                                // or 'assets/images/projects/my-project.jpg'
 //   shortDescription: 'One sentence shown on the card.',
 //   longDescription: 'Full description shown in the modal. Can be as long as needed.',
+//   reflection: 'Personal reflection shown in the modal. Leave null to hide the section.',
 //   documents: [
 //     { label: 'Report', path: '../../assets/docs/projects/my-project.pdf' }
 //   ],
@@ -43,6 +44,7 @@ window.PROJECTS_DATA = [
     image: '/assets/docs/projects/grading-management-system/UntisWeb Logo on White Background.png',
     shortDescription: 'Applied structured project management — personas, user stories, MoSCoW — to plan a grade management web app using Python, SQL, and Docker.',
     longDescription: 'The primary goal of this project was not to build the application, but to practise rigorous planning before writing a single line of code. Working as a team, we defined personas for Students and Professors, wrote more than 12 user stories with acceptance criteria, and applied MoSCoW prioritisation to scope the work realistically. We also researched the technology stack: Python web frameworks, database integration, secure password hashing, and Docker Compose. Deliverables included a planning document, a research document, and a team reflection on collaboration and time management.',
+    reflection: null,
     documents: [
       { label: 'Project Description', path: '../../assets/docs/projects/grading-management-system/PM-Project - Python and Docker.pdf' },
       { label: 'Planning Document',   path: '../../assets/docs/projects/grading-management-system/planning.pdf' },
@@ -60,6 +62,7 @@ window.PROJECTS_DATA = [
     image: null,
     shortDescription: 'Organised the full logistics, scheduling, and budgeting for a two-day food stand at a sports festival.',
     longDescription: 'Managed the complete logistics of a pulled chicken and pulled jackfruit sandwich stand over two days of a sports festival. Planning covered quantity estimation (including a vegetarian ratio and free meals for referees), smoker load scheduling and wood consumption, manpower allocation, and setup/cleanup timing. An Excel cost sheet was built to estimate pricing and break-even points. Personas were created to model visitor needs and service constraints. Task tracking was handled in MS Planner from Backlog to Finished.',
+    reflection: null,
     documents: [],
     video: null,
     tags: ['Project Management', 'MS Planner', 'Excel']
@@ -72,6 +75,7 @@ window.PROJECTS_DATA = [
     image: '/assets/docs/projects/remote-desktop-services-rds/download.jpg',
     shortDescription: 'Deployed a Windows Server 2022 lab with Active Directory and Remote Desktop Services for centralised student access.',
     longDescription: 'Set up a complete Remote Desktop Services environment using Windows Server 2022. The lab covered domain setup with Active Directory Domain Services and DNS, user and group creation, RDS deployment with session collection configuration, RD Web Access with certificate setup, and client connection testing. The report documents each step from VM build to troubleshooting, and serves as a repeatable deployment guide.',
+    reflection: null,
     documents: [
       { label: 'Lab Report',      path: '../../assets/docs/projects/remote-desktop-services-rds/rds-implementation.pdf' },
       { label: 'Windows RDS',     path: '../../assets/docs/projects/remote-desktop-services-rds/Windows RDS.pdf' },
@@ -88,6 +92,7 @@ window.PROJECTS_DATA = [
     image: null,
     shortDescription: 'Built a medication reminder workflow in Power Automate and a Publication Manager app in Power Apps.',
     longDescription: 'Designed and built two end-to-end low-code solutions on Microsoft Power Platform. In Power Automate, created a flow that tracks medication stock and sends a reminder when a refill is due. In Power Apps, built a Publication Manager app to handle monthly orders, inventory, and special orders. Both projects focused on the full design cycle: defining the data structure, implementing the business logic, and producing a usable interface that supports a clear process from input to output.',
+    reflection: null,
     documents: [
       { label: 'Power Apps Project',  path: '../../assets/docs/projects/power-platform/Powerapps_Project.pdf' },
       { label: 'Publication Manager', path: '../../assets/docs/projects/power-platform/Publication Manager.pdf' }
@@ -103,6 +108,7 @@ window.PROJECTS_DATA = [
     image: '/assets/docs/projects/unraid/download.jpg',
     shortDescription: 'Prepared and implemented a server running UnRAID OS, covering hardware setup, configuration, and documentation.',
     longDescription: 'Planned and implemented a server using UnRAID OS as part of the cloud infrastructure course. The work covered hardware preparation, OS installation, storage pool configuration, and service setup. The project was carried out as a team and produced both a full technical documentation and a presentation summarising the implementation.',
+    reflection: null,
     documents: [
       { label: 'Documentation',  path: '../../assets/docs/projects/unraid/Unraid_CLOIF2_Team6_MR3S04_Documentation.pdf' },
       { label: 'Presentation',   path: '../../assets/docs/projects/unraid/Unraid_CLOIF2_Team6_MR3S04_Presentation_2.pdf' }
@@ -118,6 +124,7 @@ window.PROJECTS_DATA = [
     image: null,
     shortDescription: 'Practised Scrum in a creative exercise: writing a constrained murder mystery story in timed sprints with a full Sprint Review.',
     longDescription: 'A hands-on introduction to Scrum through a creative team exercise. The class was split into two teams, each tasked with writing a murder mystery story under mandatory constraints: an IKEA advertisement had to appear somewhere, and the story had to include at least two bad puns. With only three minutes to prepare and five minutes to write, the first sprint forced rapid prioritisation and communication under pressure. Afterwards, the Sprint Review gave both teams time to reflect — what went well, what slowed us down, and what to change for the next sprint. The key takeaway: in project management, the process and the team dynamic matter as much as the end result.',
+    reflection: null,
     documents: [],
     video: null,
     tags: ['Scrum', 'Agile', 'Project Management', 'Teamwork']
@@ -130,6 +137,7 @@ window.PROJECTS_DATA = [
     image: null,
     shortDescription: 'Researched and presented battery technology as part of a cloud infrastructure hardware study.',
     longDescription: 'Prepared and delivered a hardware presentation on battery technology as part of the cloud infrastructure course. The presentation covered the underlying principles of battery operation, different battery chemistries and their trade-offs, and the relevance of battery technology in modern infrastructure (e.g. UPS systems, data centre power backup). The goal was to develop the ability to research a hardware topic independently and communicate it clearly to a technical audience.',
+    reflection: null,
     documents: [
       { label: 'Presentation', path: '../../assets/docs/projects/battery-technology/Battery Technology.pdf' }
     ],
@@ -144,6 +152,7 @@ window.PROJECTS_DATA = [
     image: null,
     shortDescription: 'Building and running a multiplayer RedM server, handling configuration, resources, and community management.',
     longDescription: 'Setting up and operating a multiplayer server built on RedM. Responsibilities include server configuration, installing and maintaining resources (scripts, maps, game modes), iterating on gameplay features based on player feedback, and keeping the server stable under load. The project covers server administration, scripting, and community management, and is currently in active development.',
+    reflection: null,
     documents: [],
     video: null,
     tags: ['Game Server', 'Server Administration', 'Community Management']

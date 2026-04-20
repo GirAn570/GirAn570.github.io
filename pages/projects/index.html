@@ -21,7 +21,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="stylesheet" href="../../assets/css/bw-yellow.css?v=20260420">
+  <link rel="stylesheet" href="../../assets/css/bw-yellow.css?v=20260420b">
 </head>
 <body>
   <header class="header">
@@ -133,6 +133,12 @@
           <!-- Long description -->
           <p id="project-modal-description" class="proj-modal-description"></p>
 
+          <!-- Personal reflection -->
+          <div class="proj-modal-section" id="project-modal-reflection-section">
+            <div class="proj-modal-section-title" data-i18n="projects.modalReflection">Personal Reflection</div>
+            <blockquote id="project-modal-reflection" class="proj-modal-reflection"></blockquote>
+          </div>
+
           <!-- Documents -->
           <div class="proj-modal-section">
             <div class="proj-modal-section-title" data-i18n="projects.modalDocuments">Documents</div>
@@ -200,7 +206,7 @@
   <script src="../../assets/js/main.js?v=20260105"></script>
   <script src="../../assets/js/language-switcher.js"></script>
   <script src="../../assets/js/projects-data.js"></script>
-  <script src="../../assets/js/projects.js?v=20260413"></script>
+  <script src="../../assets/js/projects.js?v=20260420"></script>
 
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();

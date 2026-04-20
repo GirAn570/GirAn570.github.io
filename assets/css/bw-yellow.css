@@ -1876,6 +1876,14 @@ select:focus-visible,
   margin: 1rem 0 1.25rem;
 }
 
+.proj-modal-reflection {
+  border-left: var(--border-width) solid var(--accent-color);
+  padding: 0.35rem 0 0.35rem 1rem;
+  color: var(--muted-text-color);
+  font-style: italic;
+  margin: 0;
+}
+
 .proj-modal-section {
   margin-top: 1.25rem;
   padding-top: 1.25rem;
