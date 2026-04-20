@@ -78,14 +78,7 @@
 
 /* Small year label floated above the card */
 .ws2-year-tag {
-  display: block;
-  font-size: var(--fs-xs);
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: var(--ls-ui);
-  color: var(--muted-text-color);
-  margin-bottom: 0.45rem;
-  line-height: 1;
+  display: none;
 }
 
 .ws2-entry--current .ws2-year-tag {
