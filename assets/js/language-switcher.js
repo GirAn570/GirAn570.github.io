@@ -92,7 +92,7 @@ const translations = {
     projects: {
       placeholderTitle: 'Projects',
       placeholderDesc: 'Detailed project descriptions will be added here as they are documented.',
-      pageIntro: 'A chronological list of projects (most recent first).',
+      pageIntro: 'A collection of school and personal projects.',
       filterAll: 'All',
       filterSchool: 'School',
       filterPersonal: 'Personal',
@@ -231,7 +231,7 @@ const translations = {
     projects: {
       placeholderTitle: 'Projets',
       placeholderDesc: 'Les descriptions détaillées des projets seront ajoutées ici au fur et à mesure.',
-      pageIntro: 'Une liste chronologique des projets (les plus récents en premier).',
+      pageIntro: 'Une collection de projets scolaires et personnels.',
       filterAll: 'Tous',
       filterSchool: 'École',
       filterPersonal: 'Personnel',
@@ -370,7 +370,7 @@ const translations = {
     projects: {
       placeholderTitle: 'Projekte',
       placeholderDesc: 'Detaillierte Projektbeschreibungen werden hier hinzugefügt, sobald sie dokumentiert sind.',
-      pageIntro: 'Eine chronologische Liste der Projekte (neueste zuerst).',
+      pageIntro: 'Eine Sammlung von Schul- und persönlichen Projekten.',
       filterAll: 'Alle',
       filterSchool: 'Schule',
       filterPersonal: 'Privat',
@@ -509,7 +509,7 @@ const translations = {
     projects: {
       placeholderTitle: 'Projeten',
       placeholderDesc: 'Detailléiert Projetbeschreiwunge ginn hei bäigefüügt wann se dokumentéiert sinn.',
-      pageIntro: 'Eng chronologesch Lëscht vun de Projeten (déi neisten als éischt).',
+      pageIntro: 'Eng Sammlung vu Schoul- a perséinleche Projeten.',
       filterAll: 'All',
       filterSchool: 'Schoul',
       filterPersonal: 'Perséinlech',
