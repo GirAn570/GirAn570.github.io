@@ -31,11 +31,57 @@
 //   ],
 //   video: null,                 // or { type: 'embed', src: 'https://youtube.com/embed/...' }
 //                                // or { type: 'file',  src: 'assets/docs/projects/demo.mp4' }
+//   videos: [],                  // optional array of videos with { label, type, src }
 //   tags: ['Python', 'Docker']
 // },
 // ─────────────────────────────────────────────────────────────────
 
 window.PROJECTS_DATA = [
+  {
+    id: 'vircl-esxi-proxmox',
+    title: 'VIRCL - ESXi & Proxmox',
+    type: 'school',
+    status: 'completed',
+    image: null,
+    shortDescription: 'Built and documented clustered virtualisation environments with VMware ESXi/vCenter and Proxmox VE, including tutorial videos for both platforms.',
+    longDescription: 'This project focused on comparing and implementing clustering in two virtualisation platforms: VMware ESXi with vCenter and Proxmox VE. The work covered host preparation, cluster configuration, VM management, backup-related considerations, and clear operational documentation. The final deliverables include a full documentation package, a presentation, and two tutorial videos showing the ESXi/vCenter and Proxmox workflows.',
+    reflection: 'Working across both ESXi/vCenter and Proxmox made the differences between enterprise virtualisation platforms much more concrete. It was useful to see how similar infrastructure goals can be reached through very different tooling, interfaces, and operational habits.',
+    documents: [
+      { label: 'Documentation', path: '../../assets/docs/projects/vircl-esxi-proxmox/VIRCL_Team4_Documentation.pdf' },
+      { label: 'Presentation',  path: '../../assets/docs/projects/vircl-esxi-proxmox/VIRCL_Team4_Presentation.pdf' }
+    ],
+    videos: [
+      { label: 'ESXi & vCenter Tutorial', type: 'file', src: '../../assets/docs/projects/vircl-esxi-proxmox/VIRCL_Team4_Clustering_ESXi_vCenter_Tutorial.mp4' },
+      { label: 'Proxmox VE Tutorial',     type: 'file', src: '../../assets/docs/projects/vircl-esxi-proxmox/VIRCL_Team4_Clustering_Proxmox_VE_Tutorial.mp4' }
+    ],
+    tags: ['VMware ESXi', 'vCenter', 'Proxmox VE', 'Clustering']
+  },
+  {
+    id: 'spinning-relais-pour-la-vie',
+    title: 'Relais pour la Vie - Spinning Backend',
+    type: 'school',
+    status: 'in-progress',
+    image: null,
+    shortDescription: 'Backend work for a class fundraising project where participants spin on bikes and raise money through timed sessions.',
+    longDescription: 'This class project supports a fundraising event based around spinning bikes. My work focused on the central backend used by the admin panel. I built a FastAPI service with a SQLite database, Docker Compose setup, health checks, login/logout with bearer tokens, bcrypt password hashing, role-based permissions, student and sponsor management, and bike session endpoints. The backend tracks one active session per bike, supports adding extra time, preserves stopped session history, and exposes the data needed by the admin interface.',
+    reflection: 'My part of the project was about making the operational side reliable: admins need to log in, manage students and sponsors, start or stop bike sessions, and trust that the data stays consistent during the event. It was a good exercise in keeping the backend simple while still covering authentication, permissions, persistence, and the workflow the team actually needs.',
+    documents: [],
+    video: null,
+    tags: ['FastAPI', 'SQLite', 'Docker', 'Backend']
+  },
+  {
+    id: 'az-104-meck',
+    title: 'AZ-104 - Meck',
+    type: 'school',
+    status: 'in-progress',
+    image: null,
+    shortDescription: 'Documentation will be added later.',
+    longDescription: '',
+    reflection: null,
+    documents: [],
+    video: null,
+    tags: []
+  },
   {
     id: 'grading-management-system',
     title: 'Grading Management System',
