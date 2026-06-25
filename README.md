@@ -11,7 +11,7 @@ Personal portfolio website for **Andrea GIROTTO**, BTS Cloud Computing student i
 - **Multilingual** — English, French, German, Luxembourgish
 - **Dark / Light mode** — persisted via localStorage
 - **Skills & Certifications** — filterable grid with modals and badge images
-- **Work & Education timeline** — chronological overview with organisation logos
+- **Work & Education timeline** — chronological overview with organisation logos, built into the homepage
 - **Projects showcase** — filterable list with detailed modals
 - **Contact form** — powered by Formspree
 - **Responsive** — mobile-first design
@@ -20,9 +20,8 @@ Personal portfolio website for **Andrea GIROTTO**, BTS Cloud Computing student i
 
 | Page | Path |
 |------|------|
-| Home | `/` |
+| Home (incl. Work & Education) | `/` |
 | Skills & Certifications | `/pages/certifications/` |
-| Work & Education | `/pages/work-school/` |
 | Projects | `/pages/projects/` |
 
 ## Tech Stack

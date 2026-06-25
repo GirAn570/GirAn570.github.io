@@ -173,7 +173,7 @@
     activeTag: 'all',
     activeCategory: 'all',
     activeStatus: 'all',
-    view: 'grid',
+    view: 'list',
     sort: 'date-desc',
     lastFocusedEl: null
   };
@@ -210,17 +210,6 @@
     if (status === 'Completed') return t('statusCompleted', 'Completed');
     if (status === 'In Progress') return t('statusInProgress', 'In Progress');
     return status;
-  }
-
-  function getUniqueTags(items) {
-    const set = new Set();
-    items.forEach(item => {
-      (item.tags || []).forEach(tag => {
-        const norm = normaliseTag(tag);
-        if (norm) set.add(norm);
-      });
-    });
-    return Array.from(set).sort((a, b) => a.localeCompare(b));
   }
 
   function getUniqueCategories(items) {
@@ -329,21 +318,6 @@
     return next;
   }
 
-  function createTagButton(tag, label, isActive) {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = `cert-tag-btn${isActive ? ' active' : ''}`;
-    btn.dataset.tag = tag;
-    btn.textContent = label;
-
-    btn.addEventListener('click', () => {
-      state.activeTag = tag;
-      render();
-    });
-
-    return btn;
-  }
-
   function createStatusButton(status, label, isActive) {
     const btn = document.createElement('button');
     btn.type = 'button';
@@ -375,17 +349,8 @@
   }
 
   function renderFilters() {
-    const container = document.getElementById('certifications-tag-filters');
     const categoryContainer = document.getElementById('certifications-category-filters');
     const statusContainer = document.getElementById('certifications-status-filters');
-    if (!container) return;
-
-    container.innerHTML = '';
-
-    container.appendChild(createTagButton('all', t('allTags', 'All tags'), state.activeTag === 'all'));
-    getUniqueTags(certifications).forEach(tag => {
-      container.appendChild(createTagButton(tag, tag, state.activeTag === tag));
-    });
 
     if (categoryContainer) {
       categoryContainer.innerHTML = '';
@@ -450,85 +415,6 @@
     return placeholder;
   }
 
-  function createCard(item) {
-    const hasCertificate = Boolean(item.pdf);
-    const status = getItemStatus(item);
-    const statusLabel = getStatusLabel(status);
-
-    const card = document.createElement('div');
-    card.className = `card cert-card${hasCertificate ? ' has-certificate' : ' no-certificate'}`;
-    card.setAttribute('role', 'button');
-    card.tabIndex = 0;
-
-    const badge = createBadgeEl('cert-badge', item.badgeImage, item.name);
-
-    const title = document.createElement('h3');
-    title.textContent = item.name;
-
-    const category = document.createElement('span');
-    category.className = 'cert-card-category';
-    category.dataset.category = item.category || '';
-    category.textContent = item.category || '';
-
-    const statusPill = document.createElement('span');
-    statusPill.className = 'cert-status-pill cert-card-status';
-    statusPill.dataset.status = status;
-    statusPill.textContent = '';
-    statusPill.title = statusLabel;
-    statusPill.setAttribute('role', 'img');
-    statusPill.setAttribute('aria-label', statusLabel);
-
-    const pillsRow = document.createElement('div');
-    pillsRow.className = 'cert-card-pills';
-    pillsRow.appendChild(category);
-    pillsRow.appendChild(statusPill);
-
-    const meta = document.createElement('p');
-    meta.className = 'cert-meta';
-
-    const metaLabel = document.createElement('span');
-    metaLabel.className = 'cert-meta-label';
-    metaLabel.textContent =
-      item.category === 'Certification' ? t('deliveredLabel', 'Delivered') : t('dateLabel', 'Date');
-
-    const metaSep = document.createTextNode(': ');
-
-    const metaDate = document.createElement('span');
-    metaDate.className = 'cert-date';
-    metaDate.textContent = item.delivered;
-
-    meta.appendChild(metaLabel);
-    meta.appendChild(metaSep);
-    meta.appendChild(metaDate);
-
-    const badges = document.createElement('div');
-    badges.className = 'badges';
-
-    (item.tags || []).forEach(tag => {
-      const badge = document.createElement('span');
-      badge.className = 'badge badge-tool';
-      badge.textContent = tag;
-      badges.appendChild(badge);
-    });
-
-    card.appendChild(badge);
-    card.appendChild(pillsRow);
-    card.appendChild(title);
-    card.appendChild(meta);
-    card.appendChild(badges);
-
-    const open = () => openModal(item, card);
-    card.addEventListener('click', open);
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        open();
-      }
-    });
-
-    return card;
-  }
-
   function createListItem(item) {
     const hasCertificate = Boolean(item.pdf);
     const hasResult = Boolean(item.resultPdf);
@@ -574,15 +460,6 @@
     desc.className = 'cert-list-description';
     desc.textContent = item.description || '';
 
-    const tags = document.createElement('div');
-    tags.className = 'badges';
-    (item.tags || []).forEach(tag => {
-      const badgeTag = document.createElement('span');
-      badgeTag.className = 'badge badge-tool';
-      badgeTag.textContent = tag;
-      tags.appendChild(badgeTag);
-    });
-
     const actions = document.createElement('div');
     actions.className = 'cert-list-actions';
 
@@ -622,7 +499,6 @@
     content.appendChild(title);
     content.appendChild(meta);
     content.appendChild(desc);
-    content.appendChild(tags);
     if (hasCertificate || hasResult) content.appendChild(actions);
 
     row.appendChild(badge);
@@ -631,15 +507,13 @@
     return row;
   }
 
-  function renderGrid() {
-    const grid = document.getElementById('certifications-grid');
+  function renderList() {
     const list = document.getElementById('certifications-list');
     const empty = document.getElementById('certifications-empty');
 
-    if (!grid) return;
+    if (!list) return;
 
-    grid.innerHTML = '';
-    if (list) list.innerHTML = '';
+    list.innerHTML = '';
 
     const items = sortItems(getVisibleItems());
 
@@ -647,36 +521,19 @@
       empty.hidden = items.length > 0;
     }
 
-    if (state.view === 'grid') {
-      grid.hidden = false;
-      if (list) list.hidden = true;
-      items.forEach(item => {
-        grid.appendChild(createCard(item));
-      });
-    } else {
-      grid.hidden = true;
-      if (list) list.hidden = false;
-      items.forEach(item => {
-        if (list) list.appendChild(createListItem(item));
-      });
-    }
+    items.forEach(item => {
+      list.appendChild(createListItem(item));
+    });
   }
 
   function render() {
     renderFilters();
-    renderGrid();
+    renderList();
     syncControls();
   }
 
   function syncControls() {
-    const gridBtn = document.getElementById('certifications-view-grid');
-    const listBtn = document.getElementById('certifications-view-list');
     const sortSelect = document.getElementById('certifications-sort');
-
-    if (gridBtn && listBtn) {
-      gridBtn.setAttribute('aria-pressed', state.view === 'grid' ? 'true' : 'false');
-      listBtn.setAttribute('aria-pressed', state.view === 'list' ? 'true' : 'false');
-    }
 
     if (sortSelect) {
       sortSelect.value = state.sort;
@@ -691,11 +548,10 @@
     const dateEl = document.getElementById('cert-modal-date');
     const dateLabelEl = document.getElementById('cert-modal-date-label');
     const descEl = document.getElementById('cert-modal-description');
-    const tagsEl = document.getElementById('cert-modal-tags');
     const link = document.getElementById('cert-modal-link');
     const resultLink = document.getElementById('cert-modal-result-link');
 
-    if (!modal || !title || !categoryEl || !statusEl || !dateEl || !dateLabelEl || !descEl || !tagsEl || !link || !resultLink) return;
+    if (!modal || !title || !categoryEl || !statusEl || !dateEl || !dateLabelEl || !descEl || !link || !resultLink) return;
 
     state.lastFocusedEl = triggerEl || document.activeElement;
 
@@ -713,13 +569,6 @@
       item.category === 'Certification' ? t('deliveredLabel', 'Delivered') : t('dateLabel', 'Date');
     dateEl.textContent = item.delivered || '';
     descEl.textContent = item.description || '';
-    tagsEl.innerHTML = '';
-    (item.tags || []).forEach(tag => {
-      const badge = document.createElement('span');
-      badge.className = 'badge badge-tool';
-      badge.textContent = tag;
-      tagsEl.appendChild(badge);
-    });
 
     const badgeBox = modal.querySelector('.cert-modal-badge');
     if (badgeBox) {
@@ -797,23 +646,7 @@
   }
 
   function initControls() {
-    const gridBtn = document.getElementById('certifications-view-grid');
-    const listBtn = document.getElementById('certifications-view-list');
     const sortSelect = document.getElementById('certifications-sort');
-
-    if (gridBtn) {
-      gridBtn.addEventListener('click', () => {
-        state.view = 'grid';
-        render();
-      });
-    }
-
-    if (listBtn) {
-      listBtn.addEventListener('click', () => {
-        state.view = 'list';
-        render();
-      });
-    }
 
     if (sortSelect) {
       sortSelect.addEventListener('change', e => {

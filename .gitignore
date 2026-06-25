@@ -1,3 +1,6 @@
+# AI assistant config — private, never deployed
+CLAUDE.md
+
 context/**
 !context/
 !context/images/

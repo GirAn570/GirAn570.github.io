@@ -142,20 +142,6 @@
 
     state.lastFocusedEl = triggerEl || document.activeElement;
 
-    // Image
-    const imgSection = document.getElementById('project-modal-image');
-    const imgEl      = document.getElementById('project-modal-image-el');
-    if (imgSection && imgEl) {
-      if (project.image) {
-        imgEl.src = project.image;
-        imgEl.alt = project.title || '';
-        imgSection.hidden = false;
-      } else {
-        imgEl.src = '';
-        imgSection.hidden = true;
-      }
-    }
-
     // Title
     if (titleEl) titleEl.textContent = project.title || '';
 

@@ -21,7 +21,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="stylesheet" href="../../assets/css/bw-yellow.css?v=20260420">
+  <link rel="stylesheet" href="../../assets/css/bw-yellow.css?v=20260625d">
 </head>
 <body>
   <header class="header">
@@ -32,7 +32,7 @@
         <div class="nav-links">
           <a href="../../index.html" data-i18n-nav="home">Home</a>
           <a href="../certifications/" class="active" data-i18n-nav="certifications">Skills</a>
-          <a href="../work-school/" data-i18n-nav="workSchool">Work/School</a>
+          <a href="../../index.html#work-school-preview" data-i18n-nav="workSchool">Work/School</a>
           <a href="../projects/" data-i18n-nav="projects">Projects</a>
           <a href="../../index.html#contact" data-i18n-nav="contact">Contact</a>
 
@@ -58,7 +58,7 @@
         <div class="mobile-nav-links">
           <a href="../../index.html" data-i18n-nav="home">Home</a>
           <a href="../certifications/" class="active" data-i18n-nav="certifications">Skills</a>
-          <a href="../work-school/" data-i18n-nav="workSchool">Work/School</a>
+          <a href="../../index.html#work-school-preview" data-i18n-nav="workSchool">Work/School</a>
           <a href="../projects/" data-i18n-nav="projects">Projects</a>
           <a href="../../index.html#contact" data-i18n-nav="contact">Contact</a>
         </div>
@@ -98,20 +98,10 @@
               <h3 class="certifications-filter-title" data-i18n="certificationsPage.statusTitle">Status</h3>
               <div id="certifications-status-filters" class="certifications-tag-filters"></div>
             </div>
-
-            <div class="certifications-filter-group">
-              <h3 class="certifications-filter-title" data-i18n="certificationsPage.tagTitle">Tags</h3>
-              <div id="certifications-tag-filters" class="certifications-tag-filters"></div>
-            </div>
           </aside>
 
           <div class="certifications-content">
             <div class="certifications-toolbar" aria-label="Skills view controls">
-              <div class="certifications-view-toggle" role="group" aria-label="Toggle view">
-                <button type="button" id="certifications-view-grid" class="cert-view-btn" data-view="grid" aria-pressed="true" data-i18n="certificationsPage.viewGrid">Grid</button>
-                <button type="button" id="certifications-view-list" class="cert-view-btn" data-view="list" aria-pressed="false" data-i18n="certificationsPage.viewList">List</button>
-              </div>
-
               <div class="certifications-sort">
                 <label class="certifications-sort-label" for="certifications-sort" data-i18n="certificationsPage.sortLabel">Sort</label>
                 <select id="certifications-sort" class="certifications-sort-select">
@@ -123,8 +113,7 @@
               </div>
             </div>
 
-            <div id="certifications-grid" class="cards"></div>
-            <div id="certifications-list" class="certifications-list" hidden></div>
+            <div id="certifications-list" class="certifications-list"></div>
             <p id="certifications-empty" class="certifications-empty" data-i18n="certificationsPage.noResults" hidden>No skills match this tag.</p>
           </div>
         </div>
@@ -164,11 +153,6 @@
               </p>
 
               <p id="cert-modal-description" class="cert-modal-description"></p>
-
-              <div class="cert-modal-tags">
-                <div class="cert-modal-tags-title" data-i18n="certificationsPage.tagsLabel">Tags</div>
-                <div id="cert-modal-tags" class="badges"></div>
-              </div>
             </div>
           </div>
         </div>
@@ -195,7 +179,7 @@
           <ul>
             <li><a href="../../index.html" data-i18n-nav="home">Home</a></li>
             <li><a href="../certifications/" data-i18n-nav="certifications">Skills</a></li>
-            <li><a href="../work-school/" data-i18n-nav="workSchool">Work/School</a></li>
+            <li><a href="../../index.html#work-school-preview" data-i18n-nav="workSchool">Work/School</a></li>
             <li><a href="../projects/" data-i18n-nav="projects">Projects</a></li>
             <li><a href="../../index.html#contact" data-i18n-nav="contact">Contact</a></li>
           </ul>
@@ -221,8 +205,8 @@
   </footer>
 
   <script src="../../assets/js/main.js?v=20260105"></script>
-  <script src="../../assets/js/language-switcher.js"></script>
-  <script src="../../assets/js/certifications.js?v=20260205_9"></script>
+  <script src="../../assets/js/language-switcher.js?v=20260625b"></script>
+  <script src="../../assets/js/certifications.js?v=20260625"></script>
 
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();

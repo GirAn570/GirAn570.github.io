@@ -21,7 +21,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <link rel="stylesheet" href="../../assets/css/bw-yellow.css?v=20260420c">
+  <link rel="stylesheet" href="../../assets/css/bw-yellow.css?v=20260625d">
 </head>
 <body>
   <header class="header">
@@ -32,7 +32,7 @@
         <div class="nav-links">
           <a href="../../index.html" data-i18n-nav="home">Home</a>
           <a href="../certifications/" data-i18n-nav="certifications">Skills</a>
-          <a href="../work-school/" data-i18n-nav="workSchool">Work/School</a>
+          <a href="../../index.html#work-school-preview" data-i18n-nav="workSchool">Work/School</a>
           <a href="../projects/" class="active" data-i18n-nav="projects">Projects</a>
           <a href="../../index.html#contact" data-i18n-nav="contact">Contact</a>
 
@@ -58,7 +58,7 @@
         <div class="mobile-nav-links">
           <a href="../../index.html" data-i18n-nav="home">Home</a>
           <a href="../certifications/" data-i18n-nav="certifications">Skills</a>
-          <a href="../work-school/" data-i18n-nav="workSchool">Work/School</a>
+          <a href="../../index.html#work-school-preview" data-i18n-nav="workSchool">Work/School</a>
           <a href="../projects/" class="active" data-i18n-nav="projects">Projects</a>
           <a href="../../index.html#contact" data-i18n-nav="contact">Contact</a>
         </div>
@@ -114,51 +114,53 @@
       <div class="proj-modal-panel" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
 
         <div class="proj-modal-header">
-          <h2 id="project-modal-title"></h2>
-          <button type="button" class="proj-modal-close" aria-label="Close" data-project-modal-close>
-            <i class="fas fa-xmark" aria-hidden="true"></i>
-          </button>
-        </div>
-
-        <div id="project-modal-image" class="proj-modal-image" hidden>
-          <img id="project-modal-image-el" src="" alt="">
+          <div class="proj-modal-header-main">
+            <h2 id="project-modal-title"></h2>
+            <span id="project-modal-type" class="proj-modal-type-pill"></span>
+          </div>
+          <div class="proj-modal-header-aside">
+            <span id="project-modal-status" class="badge"></span>
+            <button type="button" class="proj-modal-close" aria-label="Close" data-project-modal-close>
+              <i class="fas fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
 
         <div class="proj-modal-body">
-          <!-- Type + status -->
-          <p class="proj-modal-meta">
-            <span class="proj-modal-meta-label" data-i18n="projects.modalTypeLabel">Type</span>
-            <span class="proj-modal-meta-sep">: </span>
-            <span id="project-modal-type" class="proj-modal-meta-value"></span>
-            &nbsp;
-            <span id="project-modal-status" class="badge"></span>
-          </p>
+          <div class="proj-modal-grid">
+            <div class="proj-modal-col-main">
+              <!-- Long description -->
+              <div class="proj-modal-section">
+                <div class="proj-modal-section-title" data-i18n="projects.modalDescription">Description</div>
+                <p id="project-modal-description" class="proj-modal-description"></p>
+              </div>
 
-          <!-- Long description -->
-          <p id="project-modal-description" class="proj-modal-description"></p>
+              <!-- Personal reflection -->
+              <div class="proj-modal-section" id="project-modal-reflection-section">
+                <div class="proj-modal-section-title" data-i18n="projects.modalReflection">Personal Reflection</div>
+                <blockquote id="project-modal-reflection" class="proj-modal-reflection"></blockquote>
+              </div>
+            </div>
 
-          <!-- Personal reflection -->
-          <div class="proj-modal-section" id="project-modal-reflection-section">
-            <div class="proj-modal-section-title" data-i18n="projects.modalReflection">Personal Reflection</div>
-            <blockquote id="project-modal-reflection" class="proj-modal-reflection"></blockquote>
-          </div>
+            <div class="proj-modal-col-aside">
+              <!-- Tags -->
+              <div class="proj-modal-section">
+                <div class="proj-modal-section-title" data-i18n="projects.modalBadges">Technologies &amp; Skills</div>
+                <div id="project-modal-badges" class="badges"></div>
+              </div>
 
-          <!-- Documents -->
-          <div class="proj-modal-section">
-            <div class="proj-modal-section-title" data-i18n="projects.modalDocuments">Documents</div>
-            <div id="project-modal-documents" class="proj-modal-documents"></div>
+              <!-- Documents -->
+              <div class="proj-modal-section">
+                <div class="proj-modal-section-title" data-i18n="projects.modalDocuments">Documents</div>
+                <div id="project-modal-documents" class="proj-modal-documents"></div>
+              </div>
+            </div>
           </div>
 
           <!-- Video demo -->
-          <div class="proj-modal-section">
+          <div class="proj-modal-section proj-modal-section-video">
             <div class="proj-modal-section-title" data-i18n="projects.modalVideo">Video demo</div>
             <div id="project-modal-video" class="proj-modal-video"></div>
-          </div>
-
-          <!-- Tags -->
-          <div class="proj-modal-section">
-            <div class="proj-modal-section-title" data-i18n="projects.modalBadges">Technologies &amp; Skills</div>
-            <div id="project-modal-badges" class="badges"></div>
           </div>
         </div>
 
@@ -182,7 +184,7 @@
           <ul>
             <li><a href="../../index.html" data-i18n-nav="home">Home</a></li>
             <li><a href="../certifications/" data-i18n-nav="certifications">Skills</a></li>
-            <li><a href="../work-school/" data-i18n-nav="workSchool">Work/School</a></li>
+            <li><a href="../../index.html#work-school-preview" data-i18n-nav="workSchool">Work/School</a></li>
             <li><a href="../projects/" data-i18n-nav="projects">Projects</a></li>
             <li><a href="../../index.html#contact" data-i18n-nav="contact">Contact</a></li>
           </ul>
@@ -208,9 +210,9 @@
   </footer>
 
   <script src="../../assets/js/main.js?v=20260105"></script>
-  <script src="../../assets/js/language-switcher.js"></script>
+  <script src="../../assets/js/language-switcher.js?v=20260625b"></script>
   <script src="../../assets/js/projects-data.js"></script>
-  <script src="../../assets/js/projects.js?v=20260420b"></script>
+  <script src="../../assets/js/projects.js?v=20260625"></script>
 
   <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();

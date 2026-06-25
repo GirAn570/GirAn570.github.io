@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/bw-yellow.css?v=20260420">
+  <link rel="stylesheet" href="assets/css/bw-yellow.css?v=20260625d">
 </head>
 <body>
   <!-- Header & Navigation -->
@@ -36,9 +36,9 @@
 
         <div class="nav-links">
           <a href="/index.html" class="active" data-i18n-nav="home">Home</a>
-          <a href="/pages/certifications/" data-i18n-nav="certifications">Skills</a>
-          <a href="/pages/work-school/" data-i18n-nav="workSchool">Work/School</a>
-          <a href="/pages/projects/" data-i18n-nav="projects">Projects</a>
+          <a href="#certifications-preview" data-i18n-nav="certifications">Skills</a>
+          <a href="#work-school-preview" data-i18n-nav="workSchool">Work/School</a>
+          <a href="#projects-preview" data-i18n-nav="projects">Projects</a>
           <a href="#contact" data-i18n-nav="contact">Contact</a>
 
           <!-- Language Switcher -->
@@ -63,9 +63,9 @@
       <div class="mobile-nav-panel">
         <div class="mobile-nav-links">
           <a href="/index.html" class="active" data-i18n-nav="home">Home</a>
-          <a href="/pages/certifications/" data-i18n-nav="certifications">Skills</a>
-          <a href="/pages/work-school/" data-i18n-nav="workSchool">Work/School</a>
-          <a href="/pages/projects/" data-i18n-nav="projects">Projects</a>
+          <a href="#certifications-preview" data-i18n-nav="certifications">Skills</a>
+          <a href="#work-school-preview" data-i18n-nav="workSchool">Work/School</a>
+          <a href="#projects-preview" data-i18n-nav="projects">Projects</a>
           <a href="#contact" data-i18n-nav="contact">Contact</a>
         </div>
 
@@ -142,34 +142,122 @@
         <a href="/pages/certifications/" class="btn-text" data-i18n-btn="viewAll">View All</a>
       </div>
 
-      <div class="cards">
-        <!-- Skill Card 1 (from Hard Skills in CV) -->
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-server" aria-hidden="true"></i>
-          </div>
-          <h3 data-i18n="skills.sysAdminTitle">System Administration</h3>
-          <p data-i18n="skills.sysAdminTech">Linux, Windows Server 2022, Active Directory, RDS, Docker, UnRAID</p>
-          <p data-i18n="skills.sysAdminDesc">Configuration and management of server environments, domain infrastructure, and containerised services</p>
-        </div>
-
-        <!-- Skill Card 2 (from Hard Skills in CV) -->
-        <div class="card">
-          <div class="card-icon">
-            <i class="fas fa-code" aria-hidden="true"></i>
-          </div>
-          <h3 data-i18n="skills.programmingTitle">Cloud & Automation</h3>
-          <p data-i18n="skills.programmingTech">Azure (AZ-900), Power Platform, Power Apps, Power Automate, Python, Regex</p>
-          <p data-i18n="skills.programmingDesc">Cloud infrastructure, low-code automation, and scripting</p>
-        </div>
-
-        <!-- Skill Card 3 (from Soft Skills in CV) -->
-        <div class="card">
-          <div class="card-icon">
+      <div class="skills-overview">
+        <!-- Cloud -->
+        <div class="skill-group">
+          <h3 class="skill-group-title">
             <i class="fas fa-cloud" aria-hidden="true"></i>
-          </div>
-          <h3 data-i18n="skills.softTitle">Project Management & Soft Skills</h3>
-          <p data-i18n="skills.softDesc">Scrum, Agile, MoSCoW prioritisation, project planning, team work, fast learner</p>
+            <span data-i18n="skills.catCloud">Cloud</span>
+          </h3>
+          <ul class="skill-tags">
+            <li class="skill-tag">Microsoft Azure</li>
+            <li class="skill-tag">Docker / Compose</li>
+          </ul>
+        </div>
+
+        <!-- Virtualization -->
+        <div class="skill-group">
+          <h3 class="skill-group-title">
+            <i class="fas fa-layer-group" aria-hidden="true"></i>
+            <span data-i18n="skills.catVirtualization">Virtualization</span>
+          </h3>
+          <ul class="skill-tags">
+            <li class="skill-tag">Proxmox / ESXi</li>
+            <li class="skill-tag">VMware</li>
+            <li class="skill-tag">VirtualBox</li>
+          </ul>
+        </div>
+
+        <!-- Systems -->
+        <div class="skill-group">
+          <h3 class="skill-group-title">
+            <i class="fas fa-server" aria-hidden="true"></i>
+            <span data-i18n="skills.catSystems">Systems</span>
+          </h3>
+          <ul class="skill-tags">
+            <li class="skill-tag">Linux</li>
+            <li class="skill-tag">Windows Server</li>
+            <li class="skill-tag" data-i18n="skills.skStorage">NAS / Storage</li>
+            <li class="skill-tag">RAID</li>
+            <li class="skill-tag" data-i18n="skills.skHardware">Computer &amp; Server Hardware</li>
+          </ul>
+        </div>
+
+        <!-- Networking -->
+        <div class="skill-group">
+          <h3 class="skill-group-title">
+            <i class="fas fa-network-wired" aria-hidden="true"></i>
+            <span data-i18n="skills.catNetworking">Networking</span>
+          </h3>
+          <ul class="skill-tags">
+            <li class="skill-tag">Cisco Packet Tracer</li>
+            <li class="skill-tag" data-i18n="skills.skItInfra">IT Infrastructure</li>
+            <li class="skill-tag">VPN</li>
+            <li class="skill-tag">DHCP</li>
+            <li class="skill-tag" data-i18n="skills.skDbDesign">Database Design</li>
+          </ul>
+        </div>
+
+        <!-- Scripting -->
+        <div class="skill-group">
+          <h3 class="skill-group-title">
+            <i class="fas fa-terminal" aria-hidden="true"></i>
+            <span data-i18n="skills.catScripting">Scripting</span>
+          </h3>
+          <ul class="skill-tags">
+            <li class="skill-tag">Bash</li>
+            <li class="skill-tag">PowerShell</li>
+          </ul>
+        </div>
+
+        <!-- Programming -->
+        <div class="skill-group">
+          <h3 class="skill-group-title">
+            <i class="fas fa-code" aria-hidden="true"></i>
+            <span data-i18n="skills.catProgramming">Programming</span>
+          </h3>
+          <ul class="skill-tags">
+            <li class="skill-tag">Python</li>
+          </ul>
+        </div>
+
+        <!-- Office -->
+        <div class="skill-group">
+          <h3 class="skill-group-title">
+            <i class="fas fa-briefcase" aria-hidden="true"></i>
+            <span data-i18n="skills.catOffice">Office</span>
+          </h3>
+          <ul class="skill-tags">
+            <li class="skill-tag">Microsoft Word</li>
+            <li class="skill-tag">Microsoft Excel</li>
+            <li class="skill-tag">Microsoft PowerPoint</li>
+          </ul>
+        </div>
+
+        <!-- Management -->
+        <div class="skill-group">
+          <h3 class="skill-group-title">
+            <i class="fas fa-list-check" aria-hidden="true"></i>
+            <span data-i18n="skills.catManagement">Management</span>
+          </h3>
+          <ul class="skill-tags">
+            <li class="skill-tag">SCRUM / KanBan</li>
+            <li class="skill-tag">MS Planner</li>
+            <li class="skill-tag" data-i18n="skills.skResourcePlanning">Resource Planning</li>
+            <li class="skill-tag" data-i18n="skills.skDocumentation">Documentation</li>
+          </ul>
+        </div>
+
+        <!-- Other -->
+        <div class="skill-group">
+          <h3 class="skill-group-title">
+            <i class="fas fa-bolt" aria-hidden="true"></i>
+            <span data-i18n="skills.catOther">Other</span>
+          </h3>
+          <ul class="skill-tags">
+            <li class="skill-tag">Power Apps</li>
+            <li class="skill-tag">Power Automate</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -180,7 +268,6 @@
     <div class="container">
       <div class="section-header">
         <h2 data-i18n-section="workSchool">Work & Education</h2>
-        <a href="/pages/work-school/" class="btn-text" data-i18n-btn="viewAll">View All</a>
       </div>
 
       <div class="timeline-group">
@@ -345,9 +432,9 @@
           <h3 data-i18n="footer.quickLinks">Quick Links</h3>
           <ul>
             <li><a href="/index.html" data-i18n-nav="home">Home</a></li>
-            <li><a href="/pages/certifications/" data-i18n-nav="certifications">Skills</a></li>
-            <li><a href="/pages/work-school/" data-i18n-nav="workSchool">Work/School</a></li>
-            <li><a href="/pages/projects/" data-i18n-nav="projects">Projects</a></li>
+            <li><a href="#certifications-preview" data-i18n-nav="certifications">Skills</a></li>
+            <li><a href="#work-school-preview" data-i18n-nav="workSchool">Work/School</a></li>
+            <li><a href="#projects-preview" data-i18n-nav="projects">Projects</a></li>
             <li><a href="#contact" data-i18n-nav="contact">Contact</a></li>
           </ul>
         </div>
@@ -378,7 +465,7 @@
 
   <!-- JavaScript -->
   <script src="assets/js/main.js?v=20260105"></script>
-  <script src="assets/js/language-switcher.js"></script>
+  <script src="assets/js/language-switcher.js?v=20260625b"></script>
   <script src="assets/js/projects-data.js"></script>
   
   <script>
