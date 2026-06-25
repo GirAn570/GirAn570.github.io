@@ -1749,7 +1749,6 @@ select:focus-visible,
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
-  border: 2px solid var(--border-color);
   background: var(--bg-elevated);
 }
 
@@ -2609,60 +2608,4 @@ textarea.input-invalid {
   border: 2px solid var(--border-color);
   padding: 0.4rem 0.75rem;
   background: transparent;
-  transition: background var(--transition), color var(--transition);
-}
-
-.proj-modal-doc-link:hover {
-  background: var(--accent-color);
-  border-color: var(--ink-black);
-  color: var(--ink-black);
-}
-
-.projects-empty {
-  grid-column: 1 / -1;
-}
-
-@media (max-width: 780px) {
-  .projects-toolbar {
-    flex-direction: column;
-  }
-
-  .projects-status-filter {
-    justify-content: flex-start;
-  }
-
-  .project-card {
-    grid-template-columns: 92px minmax(0, 1fr);
-    align-items: start;
-  }
-
-  .project-card-image {
-    width: 92px;
-  }
-
-  .project-card-action {
-    grid-column: 1 / -1;
-    justify-content: space-between;
-    min-width: 0;
-    min-height: 44px;
-    padding: 0.75rem 0 0;
-    border-left: 0;
-  }
-}
-
-@media (max-width: 520px) {
-  .projects-toolbar {
-    padding: 0.8rem;
-  }
-
-  .project-card {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .project-card-image {
-    width: 100%;
-    max-height: 142px;
-    aspect-ratio: 16 / 7;
-  }
-}
+  transition: background var(--transition), color 

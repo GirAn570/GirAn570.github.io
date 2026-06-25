@@ -219,7 +219,8 @@
           a.href = encodeURI(doc.path);
           a.target = '_blank';
           a.rel = 'noopener noreferrer';
-          a.innerHTML = '<i class="fas fa-file-pdf" aria-hidden="true"></i> ' + (doc.label || 'Document');
+          const docIcon = /github\.com/i.test(doc.path) ? 'fab fa-github' : (/^https?:/i.test(doc.path) ? 'fas fa-arrow-up-right-from-square' : 'fas fa-file-pdf');
+          a.innerHTML = '<i class="' + docIcon + '" aria-hidden="true"></i> ' + (doc.label || 'Document');
           docsEl.appendChild(a);
         });
         if (docsSection) docsSection.hidden = false;

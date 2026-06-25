@@ -75,12 +75,29 @@ window.PROJECTS_DATA = [
     type: 'school',
     status: 'in-progress',
     image: '/assets/docs/projects/az-104-meck/image.png',
-    shortDescription: 'Documentation will be added later.',
-    longDescription: '',
-    reflection: null,
-    documents: [],
+    shortDescription: 'Built and deployed a Flask web app on Azure App Service, backed by a private PostgreSQL database and Blob Storage, to demonstrate two AZ-104 modules.',
+    longDescription: 'A hands-on Azure project to practise two AZ-104 modules. It is a small Flask web app that displays a table of flies (meck): the data comes from an Azure PostgreSQL database and the photos from Blob Storage. The app runs on App Service and reaches the database privately over a virtual network, all grouped in one resource group and deployed with the Azure CLI.',
+    reflection: 'Building this end to end made the AZ-104 concepts click in a way that reading never did. The hardest part was the private networking between the app and the database, which was a good reminder that a lot of cloud work is configuration and connectivity rather than code.',
+    documents: [
+      { label: 'Documentation', path: '../../assets/docs/projects/az-104-meck/meck-doc.pdf' }
+    ],
     video: null,
-    tags: []
+    tags: ['Azure', 'App Service', 'PostgreSQL', 'Blob Storage', 'Virtual Network', 'Azure CLI', 'Python']
+  },
+  {
+    id: 'docker-notes-test',
+    title: 'Docker Practical Test',
+    type: 'school',
+    status: 'completed',
+    image: '/context/images/skills/images.png',
+    shortDescription: 'Containerised a Node.js notes app with PostgreSQL using Docker and Docker Compose, configuring volumes and a custom network.',
+    longDescription: 'A timed practical test on Docker. The goal was to containerise a Node.js notes app and run it with a PostgreSQL database using Docker Compose. It covered writing the Dockerfile, defining the web and database services, exposing the app on port 8080, using a bind mount for logs and a named volume for the database, and linking both services on a custom private network.',
+    reflection: null,
+    documents: [
+      { label: 'GitHub Repository', path: 'https://github.com/HOFSA-EDU/BCLC25_Docker_Test_Sem2' }
+    ],
+    video: null,
+    tags: ['Docker', 'Docker Compose', 'PostgreSQL', 'Node.js', 'Networking', 'Volumes']
   },
   {
     id: 'grading-management-system',

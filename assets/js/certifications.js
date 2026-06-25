@@ -80,6 +80,28 @@
       badgeImage: '../../context/images/skills/cisco.jpg'
     },
     {
+      id: 'course-docker-basics',
+      name: 'Docker Basics',
+      delivered: '',
+      category: 'Courses',
+      description: 'Introductory Docker course covering the core building blocks of containerisation: writing Dockerfiles, container networking, volumes for persistent storage, and orchestrating multi-container applications with Docker Compose.',
+      tags: ['Docker', 'Containers'],
+      status: 'In Progress',
+      pdf: null,
+      badgeImage: '../../context/images/skills/images.png'
+    },
+    {
+      id: 'course-az-104',
+      name: 'AZ-104: Microsoft Azure Administrator',
+      delivered: '',
+      category: 'Courses',
+      description: 'Ongoing preparation for the Microsoft Azure Administrator (AZ-104) certification. Two modules completed so far: Manage Azure Identities and Governance, and Deploy and Manage Azure Compute Resources.',
+      tags: ['Azure', 'Cloud', 'Microsoft'],
+      status: 'In Progress',
+      pdf: null,
+      badgeImage: '../../context/images/skills/Azure.jpg'
+    },
+    {
       id: 'microsoft-powerpoint',
       name: 'Microsoft PowerPoint',
       delivered: '20-10-2025',
@@ -174,7 +196,7 @@
     activeCategory: 'all',
     activeStatus: 'all',
     view: 'list',
-    sort: 'date-desc',
+    sort: 'category-asc',
     lastFocusedEl: null
   };
 
@@ -463,21 +485,10 @@
     const actions = document.createElement('div');
     actions.className = 'cert-list-actions';
 
-    if (hasCertificate || hasResult) {
-      const openBtn = document.createElement('button');
-      openBtn.type = 'button';
-      openBtn.className = 'btn btn-primary';
-      openBtn.textContent =
-        item.category === 'Certification' ? t('openCertificate', 'Open certificate') : t('openPdf', 'Open PDF');
-      openBtn.addEventListener('click', () => openModal(item, openBtn));
-
-      actions.appendChild(openBtn);
-    }
-
     if (hasCertificate) {
       const openNewTab = document.createElement('a');
       openNewTab.className = 'btn btn-ghost';
-      openNewTab.textContent = t('openNewTab', 'Open in new tab');
+      openNewTab.textContent = t('openCertificate', 'Open certificate');
       openNewTab.href = encodeURI(item.pdf);
       openNewTab.target = '_blank';
       openNewTab.rel = 'noopener noreferrer';
