@@ -480,7 +480,7 @@
       const grid = document.getElementById('projects-preview-grid');
       if (!grid || !window.PROJECTS_DATA) return;
 
-      const featured = ['remote-desktop-services-rds', 'unraid', 'grading-management-system'];
+      const featured = ['remote-desktop-services-rds', 'unraid', 'vircl-esxi-proxmox'];
       const map = Object.fromEntries(window.PROJECTS_DATA.map(p => [p.id, p]));
 
       featured.forEach(id => {
