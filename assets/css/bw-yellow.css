@@ -2475,7 +2475,7 @@ textarea.input-invalid {
   min-height: 154px;
   padding: 1rem;
   background: var(--card-bg);
-  border: var(--border-width) solid var(--border-color);
+  border: var(--border-width) solid transparent;
   cursor: pointer;
   transition: border-color var(--transition), background var(--transition), transform var(--transition);
 }
@@ -2495,7 +2495,6 @@ textarea.input-invalid {
   aspect-ratio: 1;
   padding: 1rem;
   background: var(--bg-color);
-  border: 2px solid var(--border-color);
 }
 
 .project-card-image img {
@@ -2550,7 +2549,6 @@ textarea.input-invalid {
   align-self: stretch;
   min-width: 134px;
   padding-left: 1rem;
-  border-left: 2px solid var(--border-color);
   font-size: var(--fs-sm);
   font-weight: 850;
   letter-spacing: var(--ls-ui);
@@ -2649,7 +2647,6 @@ textarea.input-invalid {
     min-height: 44px;
     padding: 0.75rem 0 0;
     border-left: 0;
-    border-top: 2px solid var(--border-color);
   }
 }
 
